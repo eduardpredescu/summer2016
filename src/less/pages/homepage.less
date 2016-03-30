@@ -1,0 +1,102 @@
+.page-homepage {
+
+  .page-header {
+    overflow: hidden;
+    height: 75vh;
+    min-height: 540px;
+    max-height: 1200px;
+    background: #eabd76
+                url('@{path-images}/bg-homepage-header.png')
+                center
+                repeat-x;
+    background-size: auto 100%;
+    // @media @screen-hires {
+    //   background-image: url('@{path-images}/bg-homepage-header-hires.png');
+    // }
+  }
+
+  .page-container {
+    position: relative;
+    height: 100%;
+  }
+  
+  .jsm-logo {
+    position: relative;
+    // transform: rotate(-10deg);
+    img {
+      .utils > .center;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media @screen-md-upto {
+      position: relative;
+      float: left; 
+      left: -2rem;
+      // left: 4rem;
+      transform: rotate(-10deg);
+    }
+  }
+
+  .jsm-byjunio {
+    .utils > .inner(top-right, 0, @page-padding);
+    display: block;
+    width: 5rem;
+    float: right;
+    img {
+      .utils > .img-width;
+    }
+    &::after {
+      .utils > .size(5rem, 3.5rem);
+      .utils > .inner(bottom-right, 1rem, 1rem);
+      content: '';
+      display: block;
+      background: url('@{path-images}/stamp-wave.png') no-repeat center;
+      background-size: contain;
+    }
+    @media @screen-md-upto {
+      width: 3.5rem;
+      &::after {
+        .utils > .size(3.5rem, 3.5rem);
+      }
+    }
+  }
+
+  .jsm-date {
+    .utils > .inner(bottom-right, @page-padding / 2);
+    width: 8rem;
+    overflow: hidden;
+    img {
+      .utils > .img-width;
+      transform: rotate(18deg);
+    }
+    @media @screen-md-upto {
+      width: 6rem;
+    }
+  }
+
+  .page-title {
+    .utils > .hide-visually;
+  }
+
+  .page-subtitle {
+    font-size: @font-size-h3;
+    font-family: @font-family-heading;
+    font-style: italic;
+    letter-spacing: -.05em;
+    line-height: 1.2;
+    text-indent: .2em;
+    color: #603146;
+
+    @media @screen-md {
+      .utils > .inner(top-left, 2.5rem, 0);
+    }
+    @media @screen-md-upto {
+      position: relative;
+      float: left;
+      clear: left;
+      left: 2rem;
+      transform: rotate(-10deg);
+    }
+  }
+}

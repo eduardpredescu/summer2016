@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ro" class="{{ page.class | default:'page-default' }}">
+  
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body>
+
+    <header id="site-header">
+      {% include header.html %}
+    </header>
+
+    <div id="site-body">
+      <div class="page">
+        {{ content }}
+      </div>
+    </div>
+    
+    <footer id="site-footer">
+      {% include footer.html %}
+    </footer>
+
+    {% include scripts.html %}
+
+  </body>
+
+</html>

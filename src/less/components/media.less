@@ -1,0 +1,26 @@
+.media {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.media-object {
+  display: block;
+  img,
+  svg,
+  object,
+  picture {
+    .utils > .img-width;
+  }
+}
+
+.media-hover,
+.media-overlay {
+  .utils > .outer(bottom);
+  display: block;
+  transition: transform .2s; 
+  .media:hover &,
+  .media:focus & {
+    transform: translateY(-100%);
+  }
+}

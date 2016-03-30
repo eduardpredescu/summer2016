@@ -1,0 +1,172 @@
+// .dropdown {
+//   position: relative;
+// }
+
+// .dropdown-toggle:focus {
+//   outline: 0;
+// }
+
+// .dropdown-menu {
+//   background-color: #fff;
+//   border-radius: @radius;
+//   border: 1px solid #dbdbdb;
+//   display: none; /* 1 */
+//   float: left;
+//   left: 0;
+//   list-style: none;
+//   margin: 12px 0 0; /* 2 */
+//   min-width: 160px;
+//   padding: 5px 0;
+//   position: absolute;
+//   text-align: left; /* 3 */
+//   top: 100%;
+//   z-index: 999;
+
+//   &:before,
+//   &:after {
+//     content: "";
+//     display: block;
+//     height: 0;
+//     overflow: hidden;
+//     position: absolute;
+//     top: 0;
+//     width: 0;
+//   }
+
+//   &:before {
+//     border-bottom: 10px dashed #dbdbdb;
+//     border-left: 10px solid transparent;
+//     border-right: 10px solid transparent;
+//     left: 14px;
+//     margin-top: -10px;
+//   }
+
+//   &:after {
+//     border-bottom: 9px dashed #fff;
+//     border-left: 9px solid transparent;
+//     border-right: 9px solid transparent;
+//     left: 15px;
+//     margin-top: -9px;
+//   }
+
+//   // Links within the dropdown menu
+//   > li > a {
+//     clear: both;
+//     color: #555;
+//     display: block;
+//     font-weight: normal;
+//     line-height: 1.4;
+//     padding: 5px 15px;
+//     white-space: nowrap; /* 4 */
+//   }
+// }
+
+// /* Hover/focus state */
+
+// .dropdown-menu > li > a {
+//   &:hover,
+//   &:focus {
+//     background-color: #f0f0f0;
+//     color: #555;
+//     text-decoration: none;
+//   }
+// }
+
+// /* Active state */
+
+// .dropdown-menu > .active > a {
+//   &,
+//   &:hover,
+//   &:focus {
+//     background-color: #0070c5;
+//     color: #fff;
+//     outline: 0;
+//     text-decoration: none;
+//   }
+// }
+
+// /* Open state */
+
+// .open {
+//   /* Show the menu */
+//   > .dropdown-menu {
+//     display: block;
+//   }
+
+//   /* Remove the outline when :focus is triggered */
+//   > a {
+//     outline: 0;
+//   }
+// }
+
+// // Menu positioning
+// //
+// // Add extra class to `.dropdown-menu` to flip the alignment of the dropdown
+// // menu with the parent.
+// .dropdown-menu-right {
+//   left: auto; // Reset the default from `.dropdown-menu`
+//   right: 0;
+
+//   &:before,
+//   &:after {
+//     left: auto;
+//   }
+
+//   &:before {
+//     right: 14px;
+//   }
+
+//   &:after {
+//     right: 15px;
+//   }
+// }
+// // With v3, we enabled auto-flipping if you have a dropdown within a right
+// // aligned nav component. To enable the undoing of that, we provide an override
+// // to restore the default dropdown menu alignment.
+// //
+// // This is only for left-aligning a dropdown menu within a `.navbar-right` or
+// // `.pull-right` nav component.
+// .dropdown-menu-left {
+//   left: 0;
+//   right: auto;
+
+//   &:before,
+//   &:after {
+//     right: auto;
+//   }
+
+//   &:before {
+//     left: 14px;
+//   }
+
+//   &:after {
+//     left: 15px;
+//   }
+// }
+
+// // Backdrop to catch body clicks on mobile, etc.
+// .dropdown-backdrop {
+//   bottom: 0;
+//   left: 0;
+//   position: fixed;
+//   right: 0;
+//   top: 0;
+//   z-index: (999 - 10);
+// }
+
+// // Right aligned dropdowns
+// .pull-right > .dropdown-menu {
+//   .dropdown-menu-right();
+// }
+
+// .navbar-right,
+// .nav-secondary {
+//   .dropdown-menu {
+//     .dropdown-menu-right();
+//   }
+//   // Necessary for overrides of the default right aligned menu.
+//   // Will remove come v4 in all likelihood.
+//   .dropdown-menu-left {
+//     .dropdown-menu-left();
+//   }
+// } 
