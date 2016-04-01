@@ -1,4 +1,5 @@
 @page-padding: 2rem;
+@section-padding: 2rem;
 
 .page-header {
   padding-top: @page-padding;
@@ -17,7 +18,25 @@
 
 .page-container {
   .utils > .center;
-  max-width: 60rem;
+  max-width: 50rem;
   padding-left: @page-padding;
   padding-right: @page-padding;
+}
+
+.section {
+  padding-top: @section-padding;
+  padding-bottom: @section-padding;
+}
+
+.section-header {
+  margin-bottom: @section-padding;
+}
+
+.section-title {
+  display: inline-block;
+  margin: 0;
+}
+
+.section-body {
+
 }

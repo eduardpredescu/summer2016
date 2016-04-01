@@ -1,0 +1,27 @@
+---
+layout: default
+class: 'page-company'
+---
+
+{% assign company = page.company %}
+
+<main class="page-body">
+  
+  <div class="company">
+    <header class="company-header">
+      <div class="page-container">
+        <img src="" alt="{{ company.name }}">
+        <h1 class="company-name">{{ company.name }}</h1>
+      </div>
+    </header>
+
+    <div class="company-body">
+      <div class="page-container">
+
+        {{ content }}
+
+      </div>
+    </div>
+  </div>
+
+</main>

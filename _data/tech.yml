@@ -1,0 +1,40 @@
+amazon:
+  title: 'Amazon SES &amp; S3'
+  url: ''
+
+codeship:
+  title: 'Codeship'
+  url: ''
+
+django:
+  title: 'Django'
+  url: ''
+
+git:
+  title: 'GIT'
+  url: ''
+
+postgresql:
+  title: 'PostgreSQL'
+  url: ''
+
+python:
+  title: 'Python'
+  url: ''
+
+sentry:
+  title: 'Sentry'
+  url: ''
+
+slack:
+  title: 'Slack'
+  url: ''
+
+vagrant:
+  title: 'Vagrant'
+  url: ''
+
+virtualbox:
+  title: 'VirtualBox'
+  url: ''
+

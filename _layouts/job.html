@@ -1,29 +1,140 @@
----
-layout: default
-class: 'page-job'
----
+<!DOCTYPE html>
+<html lang="ro" class="page-job">
 
-<main class="page-body">
+  <head>
+    {% include head.html %}
+  </head>
 
-  <article class="job">
-    <header>
-      <div class="page-container">
-        
-      </div>
+  <body>
+    
+    <header id="site-header">
+      <nav class="job-nav">
+        <ul class="no-list">
+          <li>
+            <a href="" class="job-nav-btn" title="Prima pagină">
+              <span class="icon icon-home"></span>
+              <span class="text text-hover text-focus">Prima pagină</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="job-nav-btn" title="Înapoi">
+              <span class="icon icon-arrow-back"></span>
+              <span class="text text-hover text-focus">Înapoi</span>
+            </a>
+          </li>
+          <li>
+            <div class="dropdown" id="dropdown-share">
+              <button type="button" onclick="toggleShare()"
+                      class="job-nav-btn" title="Share">
+                <span class="icon icon-thumb-up"></span>
+                <span class="text text-hover text-focus">Share</span>
+              </button>
+              <div class="dropdown-menu">
+                <ul class="dropdown-list no-leading">
+                  <li>
+                    <a href="">
+                      Facebook
+                      <svg class="svg-icon">
+                        <use xlink:href="{{ site.static }}/img/sprite-social.svg#facebook"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      Twitter
+                      <svg class="svg-icon">
+                        <use xlink:href="{{ site.static }}/img/sprite-social.svg#twitter"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      LinkedIn
+                      <svg class="svg-icon">
+                        <use xlink:href="{{ site.static }}/img/sprite-social.svg#linkedin"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      Google+
+                      <svg class="svg-icon">
+                        <use xlink:href="{{ site.static }}/img/sprite-social.svg#googleplus"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <script>
+                var dropdownShare = document.getElementById('dropdown-share');
+                var toggleShare = function() {
+                  dropdownShare.classList.toggle('open');
+                };
+                document.addEventListener('click', function(e) {
+                  dropdownShare.classList.remove('open');
+                }, true);
+              </script>
+            </div>
+          </li>
+        </ul>
+
+      </nav>
     </header>
 
-    <div class="page-container">
+    <div id="site-body">
+      <div class="page">
+      
+        {% assign job = page.job %}
+        <main class="page-body">
 
-      {{ content }}
+          <article class="job">
+            <header class="job-header">
+              <div class="page-container">
+                <a href="./" class="job-company">
+                  <img src="logo-company.png" alt="Logo {{ job.company }}"
+                       style="height: 2em; width: auto;">
+                  <strong>{{ job.company }}</strong>
+                </a>
 
+                <h1 class="job-title">{{ job.title }}</h1>
+                
+                {% if job.department %}
+                  <p class="job-domain">{{ job.department }}</p>
+                {% endif %}
+
+                {% include btn-apply.html href=page.applyURL %}
+
+              </div>
+            </header>
+
+            <div class="job-body">
+              <div class="page-container">
+                {{ content }}
+              </div>
+            </div>
+
+            <footer class="job-footer">
+              <div class="page-container">
+                <div class="align-center">
+                {% include btn-apply.html href=page.applyURL %}
+                </div>
+              </div>
+            </footer>
+
+          </article>
+
+        </main>
+
+      </div>
     </div>
 
-    <footer>
-      <div class="page-container">
-        
-      </div>
+    <footer id="site-footer">
+      
     </footer>
 
-  </article>
+    {% include scripts.html %}
+    <script src="/static/js/map.js"></script>
 
-</main>
+  </body>
+  
+</html>

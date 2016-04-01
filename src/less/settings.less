@@ -41,7 +41,7 @@
 
 // Metrics
 @rem-v-small:                .2rem;
-@rem-h-small:                .25rem;
+@rem-h-small:                .4rem;
 @rem-v:                      .4rem;
 @rem-h:                      .6rem;
 @rem-v-large:                .8rem;
@@ -99,7 +99,7 @@
   //=>
   @container:                  80rem; // Default container
 
-@1rem:                       20px;
+@1rem:                       16px;
 @reading-width:              40rem; // (60 - (2 * @gutter));
 @gutter-small:               .5rem;
 @gutter:                     @leading;
@@ -138,7 +138,7 @@
 @smaller:                    percentage(13 / @1rem);
 @larger:                     120%;
 
-@line-height:                unit(30 / @1rem);
+@line-height:                unit(24 / @1rem);
 @line-height-small:          1.2;
 @line-height-body:           @line-height;
 @line-height-heading:        @line-height-small;
@@ -155,8 +155,6 @@
 @weight-strong:              500; // strong, th, dt
 @weight-label:               500;
 @weight-heading:             600;
-@weight-anchor:              ~"";
-@weight-button:              700;
 
   // =>
   @line-height-rem:            (1rem * @line-height-body);
@@ -232,7 +230,7 @@
 
 
 // Buttons
-@btn-weight:                 @weight-button;
+@btn-weight:                 600;
 @btn-padding-v:              @em-v;
 @btn-padding-h:              @em-h;
 @btn-radius:                 @radius;

@@ -1,0 +1,10 @@
+
+{% assign tech=include.tech %}
+{% assign techs=site.data.tech %}
+
+<div class="tech-thumb" title="{{ techs[tech].title }}">
+  <span class="sprite-tech sprite-{{ tech }}"></span>
+  <strong class="tech-thumb-title">
+    {{ techs[tech].title }}
+  </strong>
+</div>

@@ -39,7 +39,6 @@ h6 { font-size: @font-size-h6; }
 
 a {
   text-decoration: none;
-  font-weight: @weight-anchor;
   color: @color-anchor;
   &:hover,
   &:focus {
@@ -86,6 +85,10 @@ strong, th, dt {
   font-weight: @weight-strong;
 }
 
+.list-inline {
+  .utils > .list-inline;
+}
+
 .no-list {
   .utils > .no-list;
 }
@@ -100,6 +103,7 @@ strong, th, dt {
 .leading {
   margin-bottom: @leading;
 }
+
 .leading-small {
   margin-bottom: @leading-small;
 }
@@ -118,4 +122,16 @@ strong, th, dt {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
 }

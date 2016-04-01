@@ -1,46 +1,80 @@
-@font-face {
-    font-family: 'bise';
-    src: url('@{path-fonts}/bise.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
+.utils > .embed-font('JSM icons', 'jsm-icons', @path: @path-fonts);
 
 .icon {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'bise' !important;
+  font-family: 'JSM icons'!important;
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
+  vertical-align: middle;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-@icon-arrow_back: "\e5c4";
-@icon-arrow_downward: "\e5db";
-@icon-arrow_drop_down: "\e5c5";
-@icon-arrow_drop_up: "\e5c7";
-@icon-arrow_forward: "\e5c8";
-@icon-arrow_upward: "\e5d8";
+@icon-add: "\e145";
+@icon-arrow-back: "\e5c4";
+@icon-arrow-downward: "\e5db";
+@icon-arrow-forward: "\e5c8";
+@icon-arrow-upward: "\e5d8";
+@icon-attachment: "\e226";
+@icon-calendar: "\e8df";
+@icon-caret-down: "\e5c5";
+@icon-caret-up: "\e5c7";
 @icon-check: "\e5ca";
-@icon-navigate_before: "\e408";
-@icon-navigate_next: "\e409";
-@icon-open_in_new: "\e89e";
+@icon-close: "\e5cd";
+@icon-favorite: "\e87d";
+@icon-hellip: "\e5d3";
+@icon-home: "\e88a";
+@icon-image: "\e1bc";
+@icon-mail: "\e0e1";
+@icon-menu: "\e5d2";
+@icon-navigate-next: "\e409";
+@icon-navigate-prev: "\e408";
+@icon-new-window: "\e89e";
+@icon-person: "\e7fd";
+@icon-phone: "\e0cd";
+@icon-photo: "\e412";
+@icon-place: "\e8b4";
+@icon-remove: "\e15b";
 @icon-search: "\e8b6";
+@icon-share: "\e80d";
+@icon-thumb-up: "\e8dc";
+@icon-vellip: "\e5d4";
+@icon-view-grid: "\e8f0";
+@icon-view-list: "\e8ef";
 
-.icon-arrow_back::before { content: @icon-arrow_back; }
-.icon-arrow_downward::before { content: @icon-arrow_downward; }
-.icon-arrow_drop_down::before { content: @icon-arrow_drop_down; }
-.icon-arrow_drop_up::before { content: @icon-arrow_drop_up; }
-.icon-arrow_forward::before { content: @icon-arrow_forward; }
-.icon-arrow_upward::before { content: @icon-arrow_upward; }
+.icon-add::before { content: @icon-add; }
+.icon-arrow-back::before { content: @icon-arrow-back; }
+.icon-arrow-downward::before { content: @icon-arrow-downward; }
+.icon-arrow-forward::before { content: @icon-arrow-forward; }
+.icon-arrow-upward::before { content: @icon-arrow-upward; }
+.icon-attachment::before { content: @icon-attachment; }
+.icon-calendar::before { content: @icon-calendar; }
+.icon-caret-down::before { content: @icon-caret-down; }
+.icon-caret-up::before { content: @icon-caret-up; }
 .icon-check::before { content: @icon-check; }
-.icon-navigate_before::before { content: @icon-navigate_before; }
-.icon-navigate_next::before { content: @icon-navigate_next; }
-.icon-open_in_new::before { content: @icon-open_in_new; }
+.icon-close::before { content: @icon-close; }
+.icon-favorite::before { content: @icon-favorite; }
+.icon-hellip::before { content: @icon-hellip; }
+.icon-home::before { content: @icon-home; }
+.icon-image::before { content: @icon-image; }
+.icon-mail::before { content: @icon-mail; }
+.icon-menu::before { content: @icon-menu; }
+.icon-navigate-next::before { content: @icon-navigate-next; }
+.icon-navigate-prev::before { content: @icon-navigate-prev; }
+.icon-new-window::before { content: @icon-new-window; }
+.icon-person::before { content: @icon-person; }
+.icon-phone::before { content: @icon-phone; }
+.icon-photo::before { content: @icon-photo; }
+.icon-place::before { content: @icon-place; }
+.icon-remove::before { content: @icon-remove; }
 .icon-search::before { content: @icon-search; }
+.icon-share::before { content: @icon-share; }
+.icon-thumb-up::before { content: @icon-thumb-up; }
+.icon-vellip::before { content: @icon-vellip; }
+.icon-view-grid::before { content: @icon-view-grid; }
+.icon-view-list::before { content: @icon-view-list; }
