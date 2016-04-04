@@ -1,9 +1,12 @@
 ---
-layout: company
 company:
-  name: Junio
+  name: 'Junio'
+  address: 'Str. Maior Gherghe Șonțu nr. 8, București, România'
+  website: 'http://junio.ro'
+  social:
+    facebook: 'https://www.facebook.com/junio.recrutare'
+    twitter: 'https://twitter.com/junio_recrutare'
 ---
-
 
 <section class="section">
   <header class="section-header">
@@ -27,9 +30,20 @@ company:
   </header>
   <div class="section-body">
     <div class="listing">
+      <header class="listing-header">
+        Numarul de joburi {{ page.company.jobs.size }}
+      </header>
       <ul class="listing-body">
+        {% for JOB in page.company.jobs %}
         <li>
-          <div class="job">
+          {% assign jobId = JOB[0] %}
+          {% assign job = JOB[1]  %}
+          
+          <h4><a href="{{ job.page.url }}">{{ job.title }}</a></h4>
+
+          {{ job.page.content|strip_html|truncate: 144, '&hellip;' }}
+          
+          <!-- <div class="job">
             <div class="job-card">
               <header class="job-card-header">
                 <h4 class="job-card-title">Hello</h4>
@@ -40,8 +54,9 @@ company:
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </li>
+        {% endfor %}
       </ul>
     </div>
   </div>

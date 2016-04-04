@@ -32,7 +32,7 @@
               <div class="dropdown-menu">
                 <ul class="dropdown-list no-leading">
                   <li>
-                    <a href="">
+                    <a href="{{ page.company.social.facebook }}">
                       Facebook
                       <svg class="svg-icon">
                         <use xlink:href="{{ site.static }}/img/sprite-social.svg#facebook"></use>
@@ -40,7 +40,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="">
+                    <a href="{{ page.company.social.twitter }}">
                       Twitter
                       <svg class="svg-icon">
                         <use xlink:href="{{ site.static }}/img/sprite-social.svg#twitter"></use>
@@ -85,15 +85,16 @@
       <div class="page">
       
         {% assign job = page.job %}
+        {% assign company = page.company %}
         <main class="page-body">
 
           <article class="job">
             <header class="job-header">
               <div class="page-container">
                 <a href="./" class="job-company">
-                  <img src="logo-company.png" alt="Logo {{ job.company }}"
+                  <img src="logo-company.png" alt="Logo {{ company.name }}"
                        style="height: 2em; width: auto;">
-                  <strong>{{ job.company }}</strong>
+                  <strong>{{ company.name }}</strong>
                 </a>
 
                 <h1 class="job-title">{{ job.title }}</h1>

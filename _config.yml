@@ -13,7 +13,7 @@ url: 'http://summer.junio.ro'
 
 
 # Build settings
-
+safe: false
 excerpt_separator: <!--/excerpt-->
 
 markdown: kramdown
@@ -25,3 +25,6 @@ exclude:
   - 'src/'
   - '*.ai'
   - '.DS_Store'
+  - '._DS_Store'
+  - '.git/'
+  - '.gitignore'
