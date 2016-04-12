@@ -1,17 +1,27 @@
 var map;
 var geocoder;
 
+function loadScript() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
+      '?key=AIzaSyCgzwlVgB2yRIIW89qbpi9dAiWlD1DAjy0' +
+      '&callback=initialize';
+  document.body.appendChild(script);
+}
+
 function initialize() {
-  var mapContainer = document.getElementById('map-canvas');
-  if(!mapContainer.length) return;
+  var mapCanvas = document.getElementById('map-canvas');
+  if(!mapCanvas) return;
 
-  var address = mapContainer.getAttribute('data-address');
+  var address = mapCanvas.getAttribute('data-address');
 
-  map = new google.maps.Map(mapContainer, {
+  map = new google.maps.Map(mapCanvas, {
     zoom: 17,
     scrollwheel: false,
     center: codeAddress(address),
     styles: []
+  });
 }
 
 function codeAddress(address) {
@@ -30,7 +40,5 @@ function codeAddress(address) {
 }
 
 window.onload = function() {
-  console.log('onload');
   loadScript();
 };
-
