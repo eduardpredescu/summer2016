@@ -54,6 +54,23 @@ class: 'page-homepage'
       </div>
     </section>
 
+    <section class="section">
+      <header class="section-header">
+        <h2 class="section-title">Companii</h2>
+      </header>
+      <div class="section-body">
+        <ul class="no-list">
+        {% for COMPANY in site.data.companies %}
+          <li>
+            {% assign companyId = COMPANY[0] %}
+            {% assign company = COMPANY[1] %}
+            <h4><a href="{{ company.page.url }}">{{ company.name }}</a></h4>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </section>
+
     <section id="" class="section">
       <header class="section-header">
         <h2 class="section-title">Some title</h2>
@@ -71,16 +88,3 @@ class: 'page-homepage'
     ...
   </div>
 </footer>
-
-    <ul class="post-list">
-      {% for page in site.pages %}
-        <li>
-          <span class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</span>
-          <h2>
-            <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          </h2>
-        </li>
-      {% endfor %}
-    </ul>
-  
-

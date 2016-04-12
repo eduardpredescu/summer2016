@@ -1,0 +1,38 @@
+---
+layout: default
+permalink: 'jobs/'
+---
+
+<main class="page-body">
+  <div class="page-container">
+
+    <div class="listing">
+      <header class="listing-header">
+        <h3 class="listing-title">Joburi</h3>
+        Numarul de joburi: {{ site.data.jobs|size }}
+      </header>
+      <ul class="listing-body">
+        {% for JOB in site.data.jobs %}
+          {% assign job = JOB[1] %}
+          {% assign company = job.company %}
+          <li>
+            <div class="job">
+              <div class="company">
+                <strong>
+                  <img src="" alt="" width="60" height="60">
+                  <a href="{{ company.page.url }}">{{ company.name }}</a>
+                </strong>
+              </div>
+              <div class="job-card">
+                <h4><a href="{{ job.page.url }}">{{ job.title }}</a></h4>
+                {{ job.department }}
+                <p>{{ job.description }}</p>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+  </div>
+</main>

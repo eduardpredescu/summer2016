@@ -1,27 +1,51 @@
----
-layout: default
-class: 'page-company'
----
+<!DOCTYPE html>
+<html lang="ro" class="page-company">
+  <head>
+    {% include head.html %}
+    <meta name="description" content="{{ page.company.description }}">
+  </head>  
 
-{% assign company = page.company %}
-
-<main class="page-body">
-  
-  <div class="company">
-    <header class="company-header">
-      <div class="page-container">
-        <img src="" alt="{{ company.name }}">
-        <h1 class="company-name">{{ company.name }}</h1>
-      </div>
+  <body>
+    
+    <header id="site-header">
+      
     </header>
 
-    <div class="company-body">
-      <div class="page-container">
+    <body id="site-body">
+      
+      <div class="page">
 
-        {{ content }}
+        {% assign company = page.company %}
+        
+        <main class="page-body">
+    
+          <div class="company">
+            <header class="company-header">
+              <div class="page-container">
+                <img src="" alt="{{ company.name }}">
+                <h1 class="company-name">{{ company.name }}</h1>
+              </div>
+            </header>
+
+            <div class="company-body">
+              <div class="page-container">
+
+                {{ content }}
+
+              </div>
+            </div>
+          </div>
+
+        </main>
 
       </div>
-    </div>
-  </div>
 
-</main>
+    </body>
+
+    <footer id="site-footer">
+      
+    </footer>
+
+  </body>
+  
+</html>
