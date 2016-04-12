@@ -2,6 +2,8 @@
   position: relative;
   overflow: hidden;
   display: block;
+
+  text-align: center;
 }
 
 .media-object {
@@ -10,7 +12,15 @@
   svg,
   object,
   picture {
-    .utils > .img-width;
+    .utils > .center;
     max-width: 100%;
+    height: auto;
+    display: block;
   }
+}
+
+.media-caption {
+  margin-top: @leading-small;
+  font-size: @smaller;
+  color: @color-muted;
 }
