@@ -1,0 +1,26 @@
+{% assign jobs=include.jobs %}
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+  </header>
+  <div class="section-body">
+    <div class="listing">
+      <header class="listing-header">
+        Numarul de joburi {{ jobs.size }}
+      </header>
+      <ul class="listing-body">
+        {% for JOB in jobs %}
+        <li>
+          {% assign jobId = JOB[0] %}
+          {% assign job = JOB[1]  %}
+          
+          <h4><a href="{{ job.page.url }}">{{ job.title }}</a></h4>
+
+          {{ job.page.content|strip_html|truncate: 144, '&hellip;' }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

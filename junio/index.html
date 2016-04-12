@@ -1,6 +1,8 @@
 ---
 company:
   name: 'Junio'
+  description: > # this means to ignore newlines until "address:"
+    140 characters max
   address: 'Str. Maior Gherghe Șonțu nr. 8, București, România'
   website: 'http://junio.ro'
   social:
@@ -23,41 +25,4 @@ company:
   </div>
 </section>
 
-
-<section class="section">
-  <header class="section-header">
-    <h2 class="section-title">Joburi</h2>
-  </header>
-  <div class="section-body">
-    <div class="listing">
-      <header class="listing-header">
-        Numarul de joburi {{ page.company.jobs.size }}
-      </header>
-      <ul class="listing-body">
-        {% for JOB in page.company.jobs %}
-        <li>
-          {% assign jobId = JOB[0] %}
-          {% assign job = JOB[1]  %}
-          
-          <h4><a href="{{ job.page.url }}">{{ job.title }}</a></h4>
-
-          {{ job.page.content|strip_html|truncate: 144, '&hellip;' }}
-          
-          <!-- <div class="job">
-            <div class="job-card">
-              <header class="job-card-header">
-                <h4 class="job-card-title">Hello</h4>
-              </header>
-              <div class="job-card-body">
-                <div class="job-card-description">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, iusto, autem. Quidem dolorum expedita explicabo vitae, quos ratione veritatis accusamus. Molestias ad commodi praesentium labore, numquam eos natus voluptates voluptatibus.</p>
-                </div>
-              </div>
-            </div>
-          </div> -->
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-</section>
+{% include company-jobs.html jobs=page.company.jobs %}

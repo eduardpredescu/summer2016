@@ -1,0 +1,131 @@
+---
+job:
+  title: 'Job title'
+  description: > # this means to ignore newlines until "department:"
+    140 characters max
+  department: 'Job department'  
+  applyURL: 'xxx' # the url from the corresponding job in Junio.ro
+---
+
+<!-- Customize page here -->
+<!-- Delete <style> to see default -->
+<style>
+  
+  .job-header {
+    /* change header background */
+    background: #222;
+    color: #fff;
+  }
+
+  .job-title,
+  .job-domain,
+  .job-company {
+    color: inherit;
+  }
+
+</style>
+
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Section Title</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>First paragraph in section</p>
+      <p>Second paragraph in section</p>
+    </div>
+  </div>
+</section>
+
+<!-- TODO -->
+<!-- Section with Company social media -->
+
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Section with image</h2>
+  </header>
+  <div class="section-body">
+    <div class="media leading">
+      <div class="media-object">
+        <img src="http://www.phantomcatmotorsports.com/fanservice%20website1.png" alt="Alt as well. Anything.">
+      </div>
+      <div class="media-caption">
+        Optional Caption
+      </div>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo ut repudiandae maiores itaque temporibus, dignissimos et voluptates mollitia. Deleniti et ratione sit velit laborum illo alias assumenda mollitia dignissimos, doloremque!</p>
+  </div>
+</section>
+
+<!-- Section with technologies -->
+<!-- To add a technology check _data/tech.yml -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Section with technologies</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <ul class="list-inline align-center leading">
+        <li>{% include tech-thumb.html tech='amazon' %}</li>
+        <li>{% include tech-thumb.html tech='codeship' %}</li>
+        <li>{% include tech-thumb.html tech='django' %}</li>
+        <li>{% include tech-thumb.html tech='git' %}</li>
+        <li>{% include tech-thumb.html tech='postgresql' %}</li>
+        <li>{% include tech-thumb.html tech='python' %}</li>
+        <li>{% include tech-thumb.html tech='sentry' %}</li>
+        <li>{% include tech-thumb.html tech='slack' %}</li>
+        <li>{% include tech-thumb.html tech='vagrant' %}</li>
+        <li>{% include tech-thumb.html tech='virtualbox' %}</li>
+      </ul>
+      <p class="align-center">Should also contain at least one paragraph.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Section with teammate cards -->
+<!-- Teammate description and position are optional -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Section with teammate cards</h2>
+  </header>
+  <div class="section-body">
+    <ul class="list-inline align-center">
+      <li>
+        {% include teammate.html
+                   name='Usain'
+                   photo='usain.jpg'
+                   position='First'
+                   description="Bolt can't be his real name" %}
+      </li>
+      <li>
+        {% include teammate.html
+                   name='Rihanna'
+                   photo='rihanna.png'
+                   position='Singer'
+                   description='This girl is on fire' %}
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- Section with map -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Section with map</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, temporibus deserunt quibusdam veritatis! Voluptates dolor ipsum, nemo. Voluptates, corporis saepe ex, quisquam alias sunt itaque similique repudiandae, a eius, rem.</p>
+    </div>
+    <div class="section-media">
+      <div class="map-container">
+        <div id="map-canvas" data-address="{{ page.company.address }}"></div>
+      </div>
+    </div>
+  </div>
+</section>

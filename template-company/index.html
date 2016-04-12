@@ -1,0 +1,37 @@
+---
+company:
+  name: 'Template Company'
+  description: > # this means to ignore newlines until "address:"
+    140 characters max
+  address: 'Str. Maior Gherghe Șonțu nr. 8, București, România'
+  website: 'http://www.company-name.com'
+  social:
+    # facebook: 'https://www.facebook.com/...'
+    # twitter: ''
+    # linkedin: ''
+    # googleplus: ''
+    # instagram: ''
+    # youtube: ''
+---
+
+<!-- Customize page here -->
+<style>
+  
+</style>
+
+<p>{{ page.company.description }}</p>
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Section Title</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>First paragraph in section</p>
+      <p>Second paragraph in section</p>
+    </div>
+  </div>
+</section>
+
+{% include company-jobs.html jobs=page.company.jobs %}

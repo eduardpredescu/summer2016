@@ -1,3 +1,9 @@
+# Each sprite is 72x72 px
+# The icon is around 60x60px
+# Edit /static/img/sprite-tech.png
+# then /src/less/components/sprites.less
+# run grunt production when done
+
 amazon:
   title: 'Amazon SES &amp; S3'
   url: ''
