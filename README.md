@@ -1,6 +1,12 @@
 Junio Summerjobs 2016
 =====================
 
+## Prerequisites
+
+1. install NPM, then
+2. `[sudo] npm install -g grunt grunt-cli`
+
+
 ## Build
 
 ```
