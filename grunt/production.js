@@ -10,6 +10,16 @@ module.exports = {
       }
     }
   },
+  uglify: {
+    scripts: {
+      files: [{
+        expand: true,
+        cwd: '<%= path.static %>/js',
+        src: '**/*.js',
+        dest: '<%= path.static %>/js'
+      }]
+    }
+  },
   postcss: {
     production: {
       src: '<%= path.static %>/css/main.css',

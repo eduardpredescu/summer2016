@@ -12,6 +12,17 @@ module.exports = {
       }
     }
   },
+  copy: {
+    scripts: {
+      files: [
+        { expand: true,
+          cwd: '<%= path.src%>/js/',
+          src: ['map.js'],
+          dest: '<%= path.static %>/js/'
+        }
+      ]
+    }
+  },
   watch: {
     styles: {
       files: ['<%= path.src %>/less/**/*.less'],

@@ -29,6 +29,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('production', [
     'less:production',
+    'copy',
+    'uglify',
     'postcss'
   ]);
 
