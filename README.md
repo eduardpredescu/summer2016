@@ -25,9 +25,12 @@ jekyll build
 
   ```
   # in [company-name]/
-  cp template-job.html [job-title].html
+  mv template-job.html [job-title].html
   ```
     where `[job-title]` is the lowercased job title joined by '-' (e.g., 'Junior Frontend Developer' becomes 'junior-frontend-developer').
+
+    Be sure not to leave template-job.html in the folder. It will show up in the company's job listing.
+
 
   4. Add logos, images
 
