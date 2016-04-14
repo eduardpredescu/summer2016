@@ -3,18 +3,31 @@ Junio Summerjobs 2016
 
 ## Prerequisites
 
-1. install NPM, then
-2. `[sudo] npm install -g grunt grunt-cli`
+1. NodeJS
+2. `npm update npm`
+3. `[sudo] npm install -g grunt grunt-cli`
+4. Ruby
+5. `[sudo] gem install jekyll`
 
+
+## Development
+
+```
+npm install
+grunt development
+jekyll serve
+# open localhost:4000 to see the website
+```
 
 ## Build
 
 ```
 npm install
-grunt # for development or
 grunt production
 jekyll build
+# the build is in located in _site/
 ```
+
 
 ## Add a new company/job
 
