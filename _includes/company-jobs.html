@@ -5,22 +5,38 @@
     <h2 class="section-title">Joburi</h2>
   </header>
   <div class="section-body">
-    <div class="listing">
-      <header class="listing-header">
-        Numarul de joburi {{ jobs.size }}
-      </header>
-      <ul class="listing-body">
-        {% for JOB in jobs %}
-        <li>
-          {% assign jobId = JOB[0] %}
-          {% assign job = JOB[1]  %}
-          
-          <h4><a href="{{ job.page.url }}">{{ job.title }}</a></h4>
-
-          {{ job.page.content|strip_html|truncate: 144, '&hellip;' }}
-        </li>
-        {% endfor %}
-      </ul>
+    <div class="row">
+      <div class="col-md-4">
+        <h4>
+          <a href="{{ company.url }}">
+            <img src="logo-company.png" alt="{{ company.name }}" style="height: 2em; width: auto;">
+            {{ page.company.name }}
+          </a>
+        </h4>
+        <p>{{ page.company.description }}</p>
+        <p><a href="{{ page.company.website }}">{{ page.company.website }}</a></p>
+      </div>
+      <div class="col-md-8">
+        <div class="listing listing-jobs">
+          {% comment %}
+            <header class="listing-header">
+              Numarul de joburi {{ jobs.size }}
+            </header>
+          {% endcomment %}
+          <ul class="listing-body">
+            {% for JOB in jobs %}
+            <li>
+              {% assign jobId = JOB[0] %}
+              {% assign job = JOB[1]  %}
+              <a href="{{ job.page.url }}">
+                <h4>{{ job.title }}</h4>
+                {{ job.page.content|strip_html|truncate: 144, '&hellip;' }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
