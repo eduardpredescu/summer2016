@@ -14,3 +14,29 @@
 .center {
   .utils > .center;
 }
+
+.listing-jobs {
+  .listing-body {
+    border-bottom: 0;
+    border-top: 0;
+
+    > li {
+      > a {
+        border-radius: @radius;
+        border: 1px solid @color-soft;
+        color: inherit;
+        display: block;
+        padding: @rem-xlarge;
+
+        &:hover,
+        &:focus {
+          border-color: @color-anchor;
+        }
+
+        h4 {
+          color: @color-anchor;
+        }
+      }
+    }
+  }
+}
