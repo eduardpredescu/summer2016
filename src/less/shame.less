@@ -30,12 +30,15 @@
     border-top: 0;
 
     > li {
+      margin-bottom: @leading;
+
       > a {
         border-radius: @radius;
         border: 1px solid @color-soft;
         color: inherit;
         display: block;
         padding: @rem-xlarge;
+        transition: border .2s ease-in-out;
 
         &:hover,
         &:focus {

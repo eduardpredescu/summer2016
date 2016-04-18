@@ -27,14 +27,14 @@
           {% endcomment %}
           <ul class="listing-body">
             {% for JOB in jobs %}
-            <li>
-              {% assign jobId = JOB[0] %}
-              {% assign job = JOB[1]  %}
-              <a href="{{ job.page.url }}">
-                <h4>{{ job.title }}</h4>
-                {{ job.page.content|strip_html|truncate: 144, '&hellip;' }}
-              </a>
-            </li>
+              <li>
+                {% assign jobId = JOB[0] %}
+                {% assign job = JOB[1]  %}
+                <a href="{{ job.page.url }}">
+                  <h4>{{ job.title }}</h4>
+                  {{ job.page.content|strip_html|truncate: 144, '&hellip;' }}
+                </a>
+              </li>
             {% endfor %}
           </ul>
         </div>
