@@ -30,9 +30,12 @@
               <li>
                 {% assign jobId = JOB[0] %}
                 {% assign job = JOB[1]  %}
-                <a href="{{ job.page.url }}">
-                  <h4>{{ job.title }}</h4>
-                  {{ job.page.content|strip_html|truncate: 144, '&hellip;' }}
+                <a class="job-item" href="{{ job.page.url }}">
+                  {% if job.thumbnail %}
+                    <img class="job-thumbnail" src="{{ job.thumbnail }}" alt="{{ job.title }}">
+                  {% endif %}
+                  <h4 class="job-title">{{ job.title }}</h4>
+                  <p class="job-description">{{ job.page.content|strip_html|truncate: 144, '&hellip;' }}</p>
                 </a>
               </li>
             {% endfor %}
