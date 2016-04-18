@@ -35,7 +35,7 @@
                     <img class="job-thumbnail" src="{{ job.thumbnail }}" alt="{{ job.title }}">
                   {% endif %}
                   <h4 class="job-title">{{ job.title }}</h4>
-                  <p class="job-description">{{ job.page.content|strip_html|truncate: 144, '&hellip;' }}</p>
+                  <p class="job-description">{{ job.description }}</p>
                 </a>
               </li>
             {% endfor %}
