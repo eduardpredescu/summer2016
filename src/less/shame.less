@@ -31,24 +31,37 @@
 
     > li {
       margin-bottom: @leading;
-
-      > a {
-        border-radius: @radius;
-        border: 1px solid @color-soft;
-        color: inherit;
-        display: block;
-        padding: @rem-xlarge;
-        transition: border .2s ease-in-out;
-
-        &:hover,
-        &:focus {
-          border-color: @color-anchor;
-        }
-
-        h4 {
-          color: @color-anchor;
-        }
-      }
     }
+  }
+
+  .job-item {
+    border-radius: @radius;
+    border: 1px solid @color-soft;
+    color: inherit;
+    display: block;
+    padding: @rem-xlarge;
+    transition: border .2s ease-in-out;
+
+    &:hover,
+    &:focus {
+      border-color: @color-anchor;
+    }
+  }
+
+  .job-title {
+    color: @color-anchor;
+  }
+
+  .job-description {
+    .utils > .clearfix;
+
+    line-height: @line-height-small;
+    margin-bottom: 0;
+  }
+
+  .job-thumbnail {
+    float: right;
+    margin-left: @leading;
+    max-width: 10rem;
   }
 }
