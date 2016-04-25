@@ -8,7 +8,7 @@
   {% endcomment %}
   <div class="section-body">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-sm-6 col-md-4">
         <h4 class="company-name">
           <a href="{{ company.url }}" target="_blank">
             <img class="company-logo" src="logo-company-alt.png" alt="{{ company.name }}">
@@ -21,7 +21,7 @@
       {% for JOB in jobs %}
         {% assign jobId = JOB[0] %}
         {% assign job = JOB[1]  %}
-        <div class="col-md-4">
+        <div class="col-sm-6 col-md-4">
           <a class="job-card" href="{{ job.page.url }}" title="{{ job.title }}">
             <div class="job-card-body job-card-body-splash">
               <img class="job-thumbnail" src="{{ job.thumbnail }}" alt="{{ job.title }}">
