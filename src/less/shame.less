@@ -53,7 +53,7 @@
   }
 
   .job-description {
-    .utils > .clearfix;
+    .utils > .clearfix();
 
     line-height: @line-height-small;
     margin-bottom: 0;
@@ -63,5 +63,129 @@
     float: right;
     margin-left: @leading;
     max-width: 10rem;
+  }
+}
+
+.job-card {
+  border-radius: @radius-large;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+  display: block;
+  margin-bottom: @grid-gutter;
+  overflow: hidden;
+  padding-bottom: 100%; /* 1:1 aspect ratio */
+  position: relative;
+  transform: translate3d(0, 0, 0);
+
+  &:after {
+    border-radius: @radius-large;
+    bottom: 0;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .15);
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &:hover {
+    .job-card-body-preview {
+      opacity: 1;
+    }
+  }
+}
+
+.job-card-body {
+  bottom: 0;
+  box-sizing: border-box;
+  height: 100%;
+  left: 0;
+  line-height: @line-height-small;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.job-card-body-splash {
+  .job-thumbnail {
+    height: 100%;
+    width: 100%;
+  }
+
+  .job-meta {
+    bottom: @leading;
+    left: @leading;
+    right: @leading;
+    position: absolute;
+  }
+
+  .job-category {
+    background-color: #fff;
+    box-decoration-break: clone;
+    box-shadow: @rem-h-small 0 0 #fff, -@rem-h-small 0 0 #fff;
+    color: #034ea2;
+    display: inline;
+    padding-bottom: @rem-v-small;
+    padding-top: @rem-v-small;
+  }
+
+  .job-title {
+    background-color: #034ea2;
+    box-decoration-break: clone;
+    box-shadow: @rem-h-small 0 0 #034ea2, -@rem-h-small 0 0 #034ea2;
+    color: #fff;
+    display: inline;
+    padding-bottom: @rem-v-small;
+    padding-top: @rem-v-small;
+
+    &:before {
+      content: "";
+      display: block;
+      height: @rem-v-small;
+    }
+
+    > span {
+      position: relative;
+    }
+  }
+}
+
+.job-card-body-preview {
+  background-color: #034ea2;
+  background-color: rgba(3, 78, 162, 0.95);
+  color: #fff;
+  opacity: 0;
+  padding: @leading;
+  transition: opacity .15s linear;
+
+  .job-title {
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .job-meta {
+    .utils > .clearfix();
+
+    border-top: 1px solid #0c8dcb;
+    bottom: @leading;
+    left: @leading;
+    padding-top: @leading-small;
+    position: absolute;
+    right: @leading;
+
+    .job-location {
+      float: left;
+      margin-top: 6px;
+    }
+
+    .job-revenue {
+      float: right;
+
+      em {
+        font-size: @font-size-h4;
+        font-style: normal;
+      }
+    }
   }
 }
