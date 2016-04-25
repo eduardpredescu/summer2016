@@ -41,32 +41,6 @@
           </a>
         </div>
       {% endfor %}
-      {% comment %}
-      <div class="col-md-8">
-        <div class="listing listing-jobs">
-          {% comment %}
-            <header class="listing-header">
-              Numarul de joburi {{ jobs.size }}
-            </header>
-          {% endcomment %}
-          <ul class="listing-body">
-            {% for JOB in jobs %}
-              <li>
-                {% assign jobId = JOB[0] %}
-                {% assign job = JOB[1]  %}
-                <a class="job-item" href="{{ job.page.url }}">
-                  {% if job.thumbnail %}
-                    <img class="job-thumbnail" src="{{ job.thumbnail }}" alt="{{ job.title }}">
-                  {% endif %}
-                  <h4 class="job-title">{{ job.title }}</h4>
-                  <p class="job-description">{{ job.description }}</p>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-      {% endcomment %}
     </div>
   </div>
 </section>

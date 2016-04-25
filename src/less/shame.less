@@ -28,48 +28,6 @@
   }
 }
 
-.listing-jobs {
-  .listing-body {
-    border-bottom: 0;
-    border-top: 0;
-
-    > li {
-      margin-bottom: @leading;
-    }
-  }
-
-  .job-item {
-    border-radius: @radius;
-    border: 1px solid @color-soft;
-    color: inherit;
-    display: block;
-    padding: @rem-xlarge;
-    transition: border .2s ease-in-out;
-
-    &:hover,
-    &:focus {
-      border-color: @color-anchor;
-    }
-  }
-
-  .job-title {
-    color: @color-anchor;
-  }
-
-  .job-description {
-    .utils > .clearfix();
-
-    line-height: @line-height-small;
-    margin-bottom: 0;
-  }
-
-  .job-thumbnail {
-    float: right;
-    margin-left: @leading;
-    max-width: 10rem;
-  }
-}
-
 .job-card {
   border-radius: @radius-large;
   box-shadow: 0 0 3px rgba(0, 0, 0, .1);
