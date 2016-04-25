@@ -92,24 +92,24 @@
   }
 
   &:hover {
-    .job-card-body-preview {
+    .job-card-overlay {
       opacity: 1;
     }
   }
 }
 
-.job-card-body {
+.job-card-front,
+.job-card-overlay {
   bottom: 0;
   box-sizing: border-box;
   height: 100%;
   left: 0;
-  line-height: @line-height-small;
   position: absolute;
   top: 0;
   width: 100%;
 }
 
-.job-card-body-splash {
+.job-card-front {
   .job-thumbnail {
     height: 100%;
     width: 100%;
@@ -124,28 +124,32 @@
 
   .job-category {
     background-color: #fff;
-    box-decoration-break: clone;
     box-shadow: @rem-h-small 0 0 #fff, -@rem-h-small 0 0 #fff;
-    color: #034ea2;
-    display: inline;
-    padding-bottom: @rem-v-small;
-    padding-top: @rem-v-small;
+    color: @color-anchor;
+    font-family: @font-family-heading;
+    font-size: @font-size-h6;
+    font-weight: @weight-heading;
+
+    &:after {
+      content: "";
+      display: block;
+      height: 6px;
+    }
   }
 
   .job-title {
-    background-color: #034ea2;
-    box-decoration-break: clone;
-    box-shadow: @rem-h-small 0 0 #034ea2, -@rem-h-small 0 0 #034ea2;
+    background-color: @color-anchor;
+    box-shadow: @rem-h-small 0 0 @color-anchor, -@rem-h-small 0 0 @color-anchor;
     color: #fff;
+  }
+
+  .job-category,
+  .job-title {
+    box-decoration-break: clone;
     display: inline;
+    line-height: 1;
     padding-bottom: @rem-v-small;
     padding-top: @rem-v-small;
-
-    &:before {
-      content: "";
-      display: block;
-      height: @rem-v-small;
-    }
 
     > span {
       position: relative;
@@ -153,10 +157,11 @@
   }
 }
 
-.job-card-body-preview {
-  background-color: #034ea2;
-  background-color: rgba(3, 78, 162, 0.95);
+.job-card-overlay {
+  background-color: @color-anchor;
+  background-color: fade(@color-anchor, 95%);
   color: #fff;
+  line-height: @line-height-small;
   opacity: 0;
   padding: @leading;
   transition: opacity .15s linear;

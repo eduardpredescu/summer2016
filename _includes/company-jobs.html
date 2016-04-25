@@ -23,14 +23,14 @@
         {% assign job = JOB[1]  %}
         <div class="col-sm-6 col-md-4">
           <a class="job-card" href="{{ job.page.url }}" title="{{ job.title }}">
-            <div class="job-card-body job-card-body-splash">
+            <div class="job-card-front">
               <img class="job-thumbnail" src="{{ job.thumbnail }}" alt="{{ job.title }}">
               <div class="job-meta">
-                <span class="h6 job-category">Category</span>
+                <div class="job-category"><span>Category</span></div>
                 <h4 class="job-title"><span>{{ job.title }}</span></h4>
               </div>
             </div>
-            <div class="job-card-body job-card-body-preview">
+            <div class="job-card-overlay">
               <h4 class="job-title">{{ job.title }}</h4>
               <p class="job-description">{{ job.description }}</p>
               <div class="job-meta">
