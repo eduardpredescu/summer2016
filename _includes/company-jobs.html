@@ -18,6 +18,30 @@
         <p>{{ page.company.description }}</p>
         <p><a href="{{ page.company.website }}">{{ page.company.website }}</a></p>
       </div>
+      {% for JOB in jobs %}
+        {% assign jobId = JOB[0] %}
+        {% assign job = JOB[1]  %}
+        <div class="col-md-4">
+          <a class="job-card" href="{{ job.page.url }}" title="{{ job.title }}">
+            <div class="job-card-body job-card-body-splash">
+              <img class="job-thumbnail" src="{{ job.thumbnail }}" alt="{{ job.title }}">
+              <div class="job-meta">
+                <span class="h6 job-category">Category</span>
+                <h4 class="job-title"><span>{{ job.title }}</span></h4>
+              </div>
+            </div>
+            <div class="job-card-body job-card-body-preview">
+              <h4 class="job-title">{{ job.title }}</h4>
+              <p class="job-description">{{ job.description }}</p>
+              <div class="job-meta">
+                <div class="job-location">București</div>
+                <div class="job-revenue"><em>€350</em>/lună</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+      {% comment %}
       <div class="col-md-8">
         <div class="listing listing-jobs">
           {% comment %}
@@ -42,6 +66,7 @@
           </ul>
         </div>
       </div>
+      {% endcomment %}
     </div>
   </div>
 </section>
