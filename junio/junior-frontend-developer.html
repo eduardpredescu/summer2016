@@ -1,12 +1,12 @@
 ---
 job:
   title: Junior Frontend Developer
-  description: > # this means to ignore newlines until "department:"
+  description: >
     Platforma noastră este scrisă folosind Python și Django. Datele le analizăm utilizând tehnici de machine learning.
-  thumbnail: job-thumbnail.jpg
-  category: Software
   department: Departamentul Web development
-  applyURL: something
+  category: Software
+  thumbnail: job-thumbnail.jpg
+  applyUrl: "#" # the url from the corresponding job in Junio.ro
 ---
 
 <style>
@@ -15,6 +15,7 @@ job:
     background-size: auto 100%;
     color: #fff;
   }
+
   .job-title,
   .job-domain,
   .job-company {
@@ -23,34 +24,25 @@ job:
 </style>
 
 <section class="section">
-
   <header class="section-header">
     <h2 class="section-title">Cine suntem?</h2>
   </header>
-
   <div class="section-body">
     <div class="section-copy">
       <p>Junio este un startup lansat acum 6 luni care își propune să ofere studenților joburi part-time, ocazionale, voluntariate și stagii de vară care să le permită să capete experiență încă din timpul facultății și să își asigure un venit propriu în același timp. Astfel, au la dispoziție timpul necesar pentru a-și finaliza studiile.</p>
-
       <p>Avem o platformă fresh dezvoltată cu tehnologii noi de o echipă foarte tare și parteneriate cu cele mai importante organizații studențești. În acest moment suntem prezenți în București și Iași, cu peste 2000 de studenți înregistrați și vrem să ne extindem și în Cluj,  Constanța, Craiova și Timișoara (în ordine alfabetică aici). Obiectivul este să avem 10000 de studenți înregistrați până la finalul anului.</p>
-
       <p>Din echipa noastră fac parte mentori care țin cursuri în Politehnică și la Universitate, oameni care se vor implica activ în dezvoltarea ta. Încurajăm și susținem studenții să-și termine cu bine școala. Mulți dintre noi lucrăm la Junio part-time iar una din condițiile puse la angajare a fost să ne menținem mediile bune.</p>
     </div>
   </div>
-
 </section>
 
-
 <section class="section">
-
   <header class="section-header">
     <h2 class="section-title">Descrierea stagiului</h2>
   </header>
-
   <div class="section-body">
     <div class="section-copy">
       <p>Platforma noastră este scrisă folosind Python și Django. Datele le analizăm utilizând tehnici de machine learning. Folosim Slack ca să comunicăm, Git pentru versionare, Sentry pentru monitorizarea erorilor în timp real, Vagrant și VirtualBox pentru mediul de dezvoltare, Fabric pentru deployment, PostgreSQL să ținem datele, Amazon SES și S3, Codeship pentru rularea testelor și probabil vom mai utiliza sau măcar încerca 2-3 tehnologii noi din momentul scrierii acestui anunț până acum când îl citești :)</p>
-
       <ul class="list-inline align-center leading">
         <li>{% include tech-thumb.html tech='amazon' %}</li>
         <li>{% include tech-thumb.html tech='codeship' %}</li>
@@ -63,41 +55,29 @@ job:
         <li>{% include tech-thumb.html tech='vagrant' %}</li>
         <li>{% include tech-thumb.html tech='virtualbox' %}</li>
       </ul>
-
       <p>Pe toată durata stagiului vei lucra împreună cu noi la dezvoltarea platformei. Avem o groază de idei ce așteaptă să fie implementate și o tonă de feedback furnizat constant de utilizatorii noștri.</p>
-
       <p>Putem să-ți promitem că o să-ți lași amprenta pe produsul nostru, vei fi parte decisivă a echipei, părerea ta fiind importantă pentru noi dar și pentru dezvoltarea aplicației.</p>
-
-
     </div>
   </div>
-
 </section>
 
 <section class="section">
-
   <header class="section-header">
     <h2 class="section-title">Training</h2>
   </header>
-
   <div class="section-body">
     <div class="section-copy">
       <p>Din prima zi îți vor fi asignate task-uri reale, vei participa la ședințele de analiză și îți vei putea vedea codul în producție, după ce treci de code review. Un program de training va fi special adaptat pentru tine astfel încât să acumulezi o mulțime de cunoștințe într-un timp relativ scurt.</p>
-
       <p>Mentorul tău va aloca 20% din timpul lui pentru trainingul tău. Este important pentru noi să nu te simți uitat într-un birou așa că vei lucra exact in biroul lui. Poți explora însă și celelalte departamente (marketing, SEO, dev-ops, support) astfel încât să poți avea o idee foarte clară asupra a ce facem noi la Junio.</p>
-
       <p>Oricând poți avea o discuție liberă cu oricare dintre membrii echipei pentru a le cere sfaturi sau pentru a rezolva eventualele probleme.</p>
     </div>
   </div>
-
 </section>
-
 
 <section class="section">
   <header class="section-header">
     <h2 class="section-title">Procesul de selecție</h2>
   </header>
-
   <div class="section-body">
     <div class="section-copy">
       <p>Căutam colegi care să semene cu noi, cu care să ne facă plăcere să ieșim în oraș, oameni cu următoarele calități:</p>
@@ -107,9 +87,7 @@ job:
         <li>Capacitatea de a comunica eficient și coerent o idee sau o problemă.</li>
       </ul>
       <p>Pentru a fi acceptat la stagiu nu-ți trebuie experiență anterioară. Selectăm însă studenții care au medie școlară bună. Nu trebuie să fii excepțional, însă vrem să vedem că o dată ce ți-ai propus să faci facultatea o și iei în serios.</p>
-
       <p>Dacă îndeplinești toate cerințele de mai sus atunci suntem mai mult decât interesați să te întâlnim. Pentru a aplica, folosește butonul “Vreau acest stagiu” din partea superioară a paginii. Dacă vrei să afli mai multe despre job înainte să aplici scrie-ne pe adresa <a href="mailto:cariere@junio.ro">cariere@junio.ro</a></p>
-
       <p>Întrucât și timpul este prețios, vom chema la interviu doar o treime din numărul de aplicanți. Alegerea o facem exclusiv pe baza informațiilor din CV, așa că sfatul nostru este să-ți treci cât mai multe lucruri care te pun în evidență. Informații precum liceul absolvit sau voluntariatul pe care l-ai făcut acum 2 ani pot face diferența.</p>
     </div>
   </div>
@@ -159,7 +137,6 @@ job:
     <div class="section-copy">
       <p>Suntem 12 oameni în echipă așa că, pe perioada verii, tu vei fi numărul 13 (sau 12bis dacă ești superstițios). Avem colegi maratoniști, triatloniști și mtb-iști. Ieșim la ture și concursuri și credem în dezvoltarea spiritului de echipă prin sport. Dacă vremea este urâtă, poți oricând juca o partida de șah, un board game sau poți rezolva cuburile Rubik.</p>
       <p>Vei face parte din echipa de dezvoltare așa că ne-am gândit să-ți prezentăm pe trei dintre colegii tăi: Andreea, Ioana și Dragoș.</p>
-
       <ul class="list-inline align-center">
         <li>
           {% include teammate.html
@@ -190,7 +167,6 @@ job:
   </header>
   <div class="section-body">
     <div class="section-copy">
-
       <div class="media leading">
         <div class="media-object">
           <img class="center" src="office.jpg" alt="Biroul">
