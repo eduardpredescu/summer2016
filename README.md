@@ -53,5 +53,5 @@ jekyll build
 
   4. Add logos, images
 
-    All images and assets for the company and it's jobs are placed inside the company folder.
+    All images and assets for the company and its jobs are placed inside the company folder.
 
