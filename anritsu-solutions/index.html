@@ -1,0 +1,36 @@
+---
+company:
+  name: 'Anritsu Solutions'
+  description: > # this means to ignore newlines until "address:"
+  address: 'Piața Montreal 10, Bucharest, Romania'
+  website: 'http://www.anritsu.com'
+  social:
+    # facebook: 'https://www.facebook.com/Anritsu-154993397921220/?rf=104052309631413'
+    # twitter: ''
+    # linkedin: ''
+    # googleplus: ''
+    # instagram: ''
+    # youtube: ''
+---
+
+<!-- Customize page here -->
+<style>
+  
+</style>
+
+<p>{{ page.company.description }}</p>
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Our company</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>ANRITSU Solutions Romania is a subsidiary of Anritsu Corporation based in Atsugi, Japan. Recognized as a Tier One provider of communications solutions for 120 years, Anritsu has become a global leader in the telecommunications, optical and wireless industries by providing diverse product offerings ranging from test and measurement solutions to high-speed devices and components for use in R&D, production, and maintenance. </p>
+      <p>Our team in Bucharest office delivers development and quality assurance services for MasterClaw - the flagship product of Anritsu’s OSS portfolio. Anritsu’s probe-based non-intrusive monitoring system is designed to provide full e2e monitoring of converged networks, being the leading service and network monitoring system for GSM, GPRS, UMTS, SS7 and VoIP networks.</p>
+    </div>
+  </div>
+</section>
+
+{% include company-jobs.html jobs=page.company.jobs %}
