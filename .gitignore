@@ -8,3 +8,5 @@ _site/
 *.ai
 static/css/
 static/js/
+*.sublime-project
+*.sublime-workspace
