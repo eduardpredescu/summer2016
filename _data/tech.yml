@@ -44,3 +44,6 @@ virtualbox:
   title: 'VirtualBox'
   url: ''
 
+java:
+  title: 'Java'
+  url: ''

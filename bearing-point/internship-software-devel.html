@@ -1,0 +1,132 @@
+---
+job:
+  title: 'Internship Software Development (Java, C#, SQL)'
+  description: > # this means to ignore newlines until "department:"
+    140 characters max
+  department: 'IT/Telecom'  
+  applyURL: 'https://junio.ro/jobs/i-ittelecom-j-internship-software-development-java-c-sql-c-bearing-point-85481' # the url from the corresponding job in Junio.ro
+---
+
+<!-- Customize page here -->
+<!-- Delete <style> to see default -->
+<style>
+  
+  .job-header {
+    /* change header background */
+    background: #222;
+    color: #fff;
+  }
+
+  .job-title,
+  .job-domain,
+  .job-company {
+    color: inherit;
+  }
+
+</style>
+
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Who are we</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>We offer management and consulting services to achieve sustainable profitable growth of companies by improving their logistic, commercial, and financial processes. BearingPoint consultants understand that the world of business changes constantly and that the resulting complexities demand intelligent and adaptive solutions. We customize solutions for our clients, covering various industries for helping them to deliver operational excellence by maximizing efficiency and reducing cost.</p>
+      <p>Our clients, whether in commercial or financial industries or in government, experience real results when they work with us. We combine industry, operational and technology skills with relevant proprietary and other assets in order to tailor solutions for each client’s individual challenges. This adaptive approach is at the heart of our culture and has led to long-standing relationships with many of the world’s leading companies and organisations.Our global consulting network of 9200 people serves clients in more than 70 countries and engages with them for measurable results and long-lasting success. </p>
+    </div>
+  </div>
+</section>
+
+<!-- TODO -->
+<!-- Section with Company social media -->
+
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Job description</h2>
+  </header>
+  <div class="section-body">
+    <div class="media leading">
+      <div class="media-object">
+        <img src="description.jpg" alt="Alt as well. Anything.">
+      </div>
+      <div class="media-caption">
+        
+      </div>
+    </div>
+    <p>We offer an Internship for IT/ Economics students with programming knowledge with excellent opportunities for advancement in just 6 months!After an initial training and induction period, you will assist our clients in the development of future software solutions and successful implementations of our tools together with an experienced project team. You can get involved in projects with java and sql developing new features for a regulatory reporting tool for the banking sector or GuideWire Business Suite implementation for the insurance industry.</p>
+  </div>
+</section>
+
+<!-- Section with technologies -->
+<!-- To add a technology check _data/tech.yml -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Technologies used</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <ul class="list-inline align-center leading">
+        <li>{% include tech-thumb.html tech='amazon' %}</li>
+        <li>{% include tech-thumb.html tech='codeship' %}</li>
+        <li>{% include tech-thumb.html tech='django' %}</li>
+        <li>{% include tech-thumb.html tech='git' %}</li>
+        <li>{% include tech-thumb.html tech='postgresql' %}</li>
+        <li>{% include tech-thumb.html tech='python' %}</li>
+        <li>{% include tech-thumb.html tech='sentry' %}</li>
+        <li>{% include tech-thumb.html tech='slack' %}</li>
+        <li>{% include tech-thumb.html tech='vagrant' %}</li>
+        <li>{% include tech-thumb.html tech='virtualbox' %}</li>
+        <li>{% include tech-thumb.html tech='java' %}</li>
+      </ul>
+      <p class="align-center">BearingPoint employs over 3.500 highly skilled consultants in Europe. Their entrepreneurial, adaptive approach is the key to our success. In Romania, we are present since 2007 and we have more than 250 skilled consultants in our teams operating from Bucharest, Sibiu and Timisoara, whose expertise brought value to more than 160 international projects in the past 8 years.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Section with teammate cards -->
+<!-- Teammate description and position are optional -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Section with teammate cards</h2>
+  </header>
+  <div class="section-body">
+    <ul class="list-inline align-center">
+      <li>
+        {% include teammate.html
+                   name='Costin'
+                   photo='costin.jpg'
+                   position='Senior Technology Consultant'
+                   description="I am selling the future" %}
+      </li>
+      <li>
+        {% include teammate.html
+                   name='Andreea'
+                   photo='andreea.jpg'
+                   position='Senior Technology Consultant'
+                   description='To reinvent yourself, get a piece of trusted advice that can really support you go the extra mile towards success' %}
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- Section with map -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">How to find us</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>We are located in Bucharest at the following address: Strada Izvor 80</p>
+    </div>
+    <div class="section-media">
+      <div class="map-container">
+        <div id="map-canvas" data-address="{{ page.company.address }}"></div>
+      </div>
+    </div>
+  </div>
+</section>
