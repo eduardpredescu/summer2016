@@ -15,27 +15,142 @@
   .utils > .center;
 }
 
-.section-jobs {
+
+.listing-jobs {
+  .listing-group {
+    margin-bottom: @rem-v-xlarge;
+  }
+  .listing-group-header {
+    padding-top: @leading-large;
+    border-top: 1px solid @color-soft;
+  }
+  @media @screen-md {
+    .listing-group {
+      overflow: hidden;
+    }
+    .listing-group-header {
+      float: left;
+      width: 16rem;
+      margin-right: @rem-x-xlarge;
+    }
+    .listing-items,
+    .listing-item {
+      overflow: hidden;
+    }
+    .listing-item {
+      border-top: 1px solid @color-soft;
+    }
+  }
+}
+
+
+
+
+.social {
+  display: inline-block;
+  // padding-right: @em-h;
+  svg {
+    .utils > .square(@line-height-body * 1em);
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+
+
+.site-description {
+  // font-size: @larger;
+  del {
+    position: relative;
+    text-decoration: none;
+    &::after {
+      content: '';
+      position: absolute;
+      border: 1px solid @color-orange;
+      top: 50%;
+      left: 0;
+      right: 0;
+    }
+  }
+  em {
+    color: @color-orange;
+    font-style: normal;
+  }
+}
+
+
+
+.list-partners {
+  .utils > .list-inline(@em-v-large, @em-h-large, top);
+  font-size: @smaller;
+  line-height: @line-height-small;
+  > li {
+  }
+  .sprite-partners {
+    .utils > .center;
+    display: block;
+  }
+  a {
+    display: inline-block;
+    width: 12em;
+    text-align: center;
+    color: @color-muted;
+  }
+}
+
+#site-footer {
   border-top: 1px solid @color-soft;
+}
 
-  .company-name {
-    margin-top: @rem-h;
+
+.section {
+  position: relative;
+}
+.section:target {
+  &::before {
+    content: '';
+    .utils > .inner(left, -@page-padding, 0);
+    border-right: 5px solid @color-green;
   }
+}
 
-  .job-title {
-    color: @color-anchor;
+
+.inline {
+  display: inline;
+}
+.inline-block {
+  display: inline-block;
+}
+.block {
+  display: block;
+}
+
+
+.page-title {
+  color: @color-orange;
+  em {
+    color: @color-heading;
+    font-style: inherit;
+    display: block;
   }
+}
 
-  .job-description {
-    .utils > .clearfix;
 
-    line-height: @line-height-small;
+.company-name {
+  .snippet & {
+    display: inline-block;
     margin-bottom: 0;
+    vertical-align: middle;
   }
+}
 
-  .job-thumbnail {
-    float: right;
-    margin-left: @leading;
-    max-width: 10rem;
+.company-logo {
+  .snippet & {
+    display: inline-block;
+    vertical-align: middle;
+    img {
+      max-width: 3rem;
+      max-height: 3rem;
+    }
   }
 }

@@ -53,5 +53,24 @@ jekyll build
 
   4. Add logos, images
 
-    All images and assets for the company and its jobs are placed inside the company folder.
+    All images and assets for the company and its jobs are placed inside the company folder. This includes logos, job thumbnails, company cover and job cover.
+
+    Logos and thumbnails need to be specified in the company/job template.
+    Covers are added using inline CSS.
+
+
+The result should look something like this:
+
+```
+/company
+  index.html               # the company page
+  company-logo.png         # default company logo
+  company-logo-alt.png     # optional logo for dark backgrounds
+  job-title.html           # job page
+  job-title-thumb.jpg      # job page thumbnail
+  job-title-cover.png      # job page cover
+  
+  ...
+  # other photos
+```
 

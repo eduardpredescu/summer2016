@@ -29,12 +29,13 @@
     white-space: nowrap;
   }
 
-  .list-inline(@gutter: 1em, @vertical-align: top) {
+  .list-inline(@gutter-v: .2em, @gutter-h: @gutter-v, @vertical-align: top) {
     .utils > .no-list;
-    margin: -@gutter / 2;
+    display: inline-block;
+    margin: (-@gutter-v / 2) (-@gutter-h / 2);
     > li {
       display: inline-block;
-      margin: @gutter / 2;
+      padding: (@gutter-v / 2) (@gutter-h / 2);
       vertical-align: @vertical-align;
     }
   }

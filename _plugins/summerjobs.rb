@@ -44,12 +44,10 @@ module Summerjobs
 
           company['jobs'][job['id']] = job
 
-
           page.data.merge!({
             'layout' => 'job',
             'job' => job,
             'company' => company
-            # 'permalink' => slug(job['title'])
           })
 
           @jobs[job['id']] = job

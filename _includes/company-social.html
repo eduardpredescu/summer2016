@@ -1,0 +1,14 @@
+{% assign social=include.social %}
+
+<ul class="list-inline">
+  {% for media in social %}
+  <li>
+    <a href="{{ media[1] }}" class="social" target="_blank">
+      <svg class="svg-icon">
+        <use xlink:href="/static/img/sprite-social.svg#{{ media[0] }}"></use>
+      </svg>
+      /{{ media[1] | split:"/" | last }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>

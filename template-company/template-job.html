@@ -1,12 +1,14 @@
 ---
 job:
-  title: Job title
+  title: 'Job title'
   description: >
     140 characters max
-  department: Job department
-  category: Software
-  thumbnail: job-thumbnail.jpg
-  applyUrl: "#" # the url from the corresponding job in Junio.ro
+  department: 'Job department'
+  category: 'Software'
+  thumbnail: 'job-thumbnail.jpg'
+  applyUrl: '#' # the url from the corresponding job in Junio.ro
+  
+useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
 ---
 
 <!-- Customize page here -->
@@ -23,6 +25,14 @@ job:
   .job-domain,
   .job-company {
     color: inherit;
+  }
+
+  .btn-apply {
+    color: #fff;
+    background-color: #21c374;
+    background-image: linear-gradient(#16b15b, #21c374);
+    box-shadow: 0 3px 0 #16b15b, 0 3px 5px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 -1px 0 #16b15b;
   }
 
 </style>

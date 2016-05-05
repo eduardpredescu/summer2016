@@ -1,38 +1,131 @@
 ---
 layout: default
-permalink: jobs/
+permalink: joburi
 ---
+
+<script 
+  src="https://code.jquery.com/jquery-2.2.3.min.js"
+  integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+  crossorigin="anonymous">
+</script>
+
+
+<header class="page-header">
+  <div class="page-container">
+    <h1 class="page-title">
+      Junio Summerjobs
+      <em>Joburi</em>
+    </h1>
+
+    <small>
+      {{ site.data.companies|size }} Companii,
+      {{ site.data.jobs|size }} Joburi
+    </small>
+  </div>
+</header>
 
 <main class="page-body">
   <div class="page-container">
 
-    <div class="listing">
-      <header class="listing-header">
-        <h3 class="listing-title">Joburi</h3>
-        Numarul de joburi: {{ site.data.jobs|size }}
-      </header>
-      <ul class="listing-body">
-        {% for JOB in site.data.jobs %}
-          {% assign job = JOB[1] %}
-          {% assign company = job.company %}
-          <li>
-            <div class="job">
-              <div class="company">
-                <strong>
-                  <img src="" alt="" width="60" height="60">
-                  <a href="{{ company.page.url }}">{{ company.name }}</a>
-                </strong>
+    <div class="listing listing-jobs">
+
+      
+
+      <div class="listing-body">
+        
+        {% for COMPANY in site.data.companies %}
+        {% assign companyId = COMPANY[0] %}
+        {% assign company = COMPANY[1] %}
+        <div class="listing-group">
+          
+          <header class="listing-group-header">
+
+            <div id="{{ companyId }}" class="company snippet">
+              <div class="leading">
+                {% if company.logo %}
+                  <a class="company-logo"
+                     href="{{ company.page.url }}" 
+                     title="Detalii despre companie">
+                    <img src="{{ company.logo | folder: company.page }}"
+                         alt="{{ company.name }} logo">
+                  </a>
+                {% endif %}
+                <h3 class="company-name">
+                  <a href="{{ company.page.url }}" title="Detalii despre companie">
+                    {{ company.name }}
+                  </a>
+                </h3>
               </div>
-              <div class="job-card">
-                <h4><a href="{{ job.page.url }}">{{ job.title }}</a></h4>
-                {{ job.department }}
-                <p>{{ job.description }}</p>
-              </div>
+              <p class="company-description">{{ company.description }}</p>
+              <a class="company-website" href="{{ company.website }}" target="_blank" rel="external">{{ company.website | split:"://" | last }}</a>
             </div>
-          </li>
+          </header>
+
+          <ul class="listing-items">
+
+            {% for JOB in company.jobs %}
+            {% assign jobId = JOB[0] %}
+            {% assign job = JOB[1] %}
+            <li class="listing-item">
+              
+              <div id="{{ jobId }}" class="job snippet">
+                {% if job.thumbnail %}
+                  <div class="job-thumbnail">
+                    <img src="{{ job.thumbnail | folder: job.page }}" alt="{{ job.title }}">
+                  </div>
+                {% endif %}
+                <h4 class="job-title">
+                  <a href="{{ job.page.url }}" title="Detalii despre job">{{ job.title }}</a>
+                </h4>
+                <p class="job-description">{{ job.description }}</p>
+              </div>
+
+            </li>
+            {% endfor %}
+          </ul>
+
+        </div>
         {% endfor %}
-      </ul>
+
+      </div>
+
     </div>
 
   </div>
 </main>
+
+<footer class="page-footer">
+  
+</footer>
+
+<script>
+  (function($){
+ 
+    $.fn.shuffle = function() {
+ 
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function(){
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+           });
+
+        this.each(function(i){
+            $(this).replaceWith($(shuffled[i]));
+        });
+ 
+        return $(shuffled);
+ 
+    };
+ 
+  })(jQuery);
+  $('.listing-jobs .listing-group').shuffle();
+</script>
+
+
+
+

@@ -1,83 +1,22 @@
 .page-homepage {
 
+  #site-header {
+    border-bottom: 0; 
+  }
   .page-header {
-    overflow: hidden;
-    height: 75vh;
-    min-height: 540px;
-    max-height: 1200px;
-    background: #eabd76
-                url('@{path-images}/bg-homepage-header.png')
-                center
-                repeat-x;
-    background-size: auto 100%;
-    @media @screen-hires {
-      background-image: url('@{path-images}/bg-homepage-header-hires.png');
-    }
+    padding: 0;
   }
-
-  .page-container {
-    .utils > .clear;
-    position: relative;
-    height: 100%;
-  }
-
-  .page-title {
-    .utils > .hide-visually;
-  }
-
-  .page-subtitle {
-    .utils > .inner(top-left, 0, @page-padding);
-    font-size: 1.25rem;
-    font-family: @font-family-heading;
-    font-style: italic;
-    letter-spacing: -.05em;
-    line-height: 1.2;
-    text-indent: .2em;
-    color: #603146;
-    @media @screen-md-upto {
-      margin-top: 1rem;
-      font-size: 1rem;
-    }
-  }
-
-  .page-description {
-    .utils > .center;
-    max-width: 40rem;
+  .page-body {
     text-align: center;
-    color: #603146;
   }
-
-  .jsm-logo {
-    position: relative;
-    margin-top: 3.5rem;
-    text-align: center;
-    img {
-      max-width: 100%;
-      height: auto;
+  .section-title {
+    color: @color-orange;
+  }
+  .section {
+    border-top: 1px solid @color-orange;
+    &:first-child {
+      border-top: 0;
+      padding-top: 0;
     }
-  }
-
-  .jsm-byjunio {
-    .utils > .inner(top-right, 0, @page-padding);
-    display: block;
-    height: 4rem;
-    img {
-      .utils > .img-height;
-    }
-  }
-
-  .jsm-date {
-    .utils > .inner(bottom-right, 0, @page-padding / 2);
-    width: 6rem;
-    overflow: hidden;
-    img {
-      .utils > .img-width;
-      transform: rotate(18deg);
-    }
-  }
-
-  .jsm-nav {
-    .utils > .inner(bottom-left, 2rem, @page-padding);
-    // text-align: center;
   }
 }

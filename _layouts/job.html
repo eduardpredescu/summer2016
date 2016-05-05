@@ -9,77 +9,7 @@
   <body>
 
     <header id="site-header">
-      <nav class="job-nav">
-        <ul class="no-list">
-          <li>
-            <a href="" class="job-nav-btn" title="Prima pagină">
-              <span class="icon icon-home"></span>
-              <span class="text text-hover text-focus">Prima pagină</span>
-            </a>
-          </li>
-          <li>
-            <a href="" class="job-nav-btn" title="Înapoi">
-              <span class="icon icon-arrow-back"></span>
-              <span class="text text-hover text-focus">Înapoi</span>
-            </a>
-          </li>
-          <li>
-            <div class="dropdown" id="dropdown-share">
-              <button type="button" onclick="toggleShare()"
-                      class="job-nav-btn" title="Share">
-                <span class="icon icon-thumb-up"></span>
-                <span class="text text-hover text-focus">Share</span>
-              </button>
-              <div class="dropdown-menu">
-                <ul class="dropdown-list no-leading">
-                  <li>
-                    <a href="{{ page.company.social.facebook }}">
-                      Facebook
-                      <svg class="svg-icon">
-                        <use xlink:href="{{ site.static }}/img/sprite-social.svg#facebook"></use>
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{{ page.company.social.twitter }}">
-                      Twitter
-                      <svg class="svg-icon">
-                        <use xlink:href="{{ site.static }}/img/sprite-social.svg#twitter"></use>
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      LinkedIn
-                      <svg class="svg-icon">
-                        <use xlink:href="{{ site.static }}/img/sprite-social.svg#linkedin"></use>
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      Google+
-                      <svg class="svg-icon">
-                        <use xlink:href="{{ site.static }}/img/sprite-social.svg#googleplus"></use>
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <script>
-                var dropdownShare = document.getElementById('dropdown-share');
-                var toggleShare = function() {
-                  dropdownShare.classList.toggle('open');
-                };
-                document.addEventListener('click', function(e) {
-                  dropdownShare.classList.remove('open');
-                }, true);
-              </script>
-            </div>
-          </li>
-        </ul>
-
-      </nav>
+      {% include header.html %}
     </header>
 
     <div id="site-body">
@@ -89,12 +19,21 @@
         {% assign company = page.company %}
         <main class="page-body">
 
-          <article class="job">
+          <article class="job" id="{{ job.id }}">
             <header class="job-header">
               <div class="page-container">
                 <a href="./" class="job-company">
-                  <img src="logo-company.png" alt="Logo {{ company.name }}"
-                       style="height: 2em; width: auto;">
+
+                  {% if company.logo %}
+                    {% assign logo = company.logo %}
+                    {% if page.useLogoAlt and company.logoAlt %}
+                      {% assign logo = company.logoAlt %}
+                    {% endif %}
+
+                    <img src="{{ logo }}" alt="Logo {{ company.name }}"
+                         style="height: 2em; width: auto;">
+                  {% endif %}
+
                   <strong>{{ company.name }}</strong>
                 </a>
 
@@ -125,17 +64,120 @@
 
           </article>
 
+          <!-- <aside>
+            <h5>Recomandă jobul mai departe</h5>
+            <ul class="list-inline">
+              <li>
+                <a href="{{ page.company.social.facebook }}">
+                  Facebook
+                  <svg class="svg-icon">
+                    <use xlink:href="{{ site.static }}/img/sprite-social.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="{{ page.company.social.twitter }}">
+                  Twitter
+                  <svg class="svg-icon">
+                    <use xlink:href="{{ site.static }}/img/sprite-social.svg#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  LinkedIn
+                  <svg class="svg-icon">
+                    <use xlink:href="{{ site.static }}/img/sprite-social.svg#linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  Google+
+                  <svg class="svg-icon">
+                    <use xlink:href="{{ site.static }}/img/sprite-social.svg#googleplus"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+
+            <nav>
+              
+              {% if company.jobs|size > 1 %}
+
+
+                {% for OTHERJOB in company.jobs %}
+                  {% assign otherJobId = OTHERJOB[0] %}
+                  {% assign otherJob = OTHERJOB[1] %}
+                  {% unless job.id == otherJobId %}
+                    
+                    <a href="{{ otherJob.page.url }}">{{ otherJob.title }}</a>
+                    <p>
+                      {{ otherJob.description }}
+                    </p>
+
+                  {% endunless %}
+                {% endfor %}
+              hello
+
+              {% endif %}
+
+            </nav>
+
+          </aside> -->
+
         </main>
+
+        <footer class="page-footer">
+          
+        </footer>
 
       </div>
     </div>
 
     <footer id="site-footer">
-
+      {% include footer.html %}
     </footer>
 
     {% include scripts.html %}
     <script src="/static/js/map.js"></script>
+    <script>
+      (function() {
+        var viewed = window.localStorage.getItem('viewedJobs') || '';
+
+        if (viewed !== '') {
+          if (viewed.split) {
+            viewed = viewed.split(', ');
+          } else {
+            viewed = [viewed];
+          }
+        }
+
+        viewed.forEach(function(jobId) {
+          console.log(jobId);
+          job = document.getElementById(jobId);
+          if (job)
+            job.classList.add('viewed');
+        });
+      }())
+    </script>
+    <script>
+      (function() {
+        if (window.localStorage) {
+          var viewed = window.localStorage.getItem('viewedJobs') || '',
+              jobId = '{{ job.id }}';
+
+          if (viewed.indexOf(jobId) === -1) {
+            if (viewed === '') {
+              viewed = jobId;
+            } else {
+              viewed += ', ' + jobId;
+            }
+          }
+          window.localStorage.setItem('viewedJobs', viewed);
+        }
+      }())
+    </script>
 
   </body>
 

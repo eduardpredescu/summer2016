@@ -3,9 +3,8 @@ company:
   name: 'Bearing Point'
   description: > # this means to ignore newlines until "address:"
     We offer management and consulting services to achieve sustainable profitable growth of companies by improving their logistic, commercial, and financial processes.
-    BearingPoint consultants understand that the world of business changes constantly and that the resulting complexities demand intelligent and adaptive solutions. We customize solutions for our clients, covering various industries for helping them to deliver operational excellence by maximizing efficiency and reducing cost.
   address: 'Strada Izvor 80, Bucharest, Romania'
-  website: 'http://www.bearingpoint.com/ro-ro/'
+  website: 'http://www.bearingpoint.com'
   social:
     # facebook: ' https://www.facebook.com/BearingPoint-Romania-198446380219567/?fref=ts'
     # twitter: ''
@@ -17,10 +16,27 @@ company:
 
 <!-- Customize page here -->
 <style>
-  
+  .company-header {
+    background-color: #D52B1E;
+    color: #fff;
+  }
+  .company-name,
+  .company-description {
+    color: inherit;
+  }
+  .company-website {
+    display: inline-block;
+    color: inherit;
+    border-bottom: 1px dashed;
+  }
+  .company-website:hover,
+  .company-website:focus {
+    border-bottom-style: solid;
+    color: #fff;
+  }
 </style>
 
-<p>{{ page.company.description }}</p>
+{% assign company=page.company %}
 
 <!-- Basic section markup -->
 <section class="section">
@@ -35,4 +51,12 @@ company:
   </div>
 </section>
 
-{% include company-jobs.html jobs=page.company.jobs %}
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+    <!-- {{ company.jobs|size }} Joburi -->
+  </header>
+  <div class="section-body">
+    {% include company-jobs.html jobs=company.jobs %}
+  </div>
+</section>

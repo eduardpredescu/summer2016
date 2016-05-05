@@ -2,10 +2,10 @@
 title: Junio Summerjobs
 email: suport@junio.ro
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: ''
+  Summer job = job de vară. Este un mod în care poți câștiga niște bani și acumula un pic de experiență în loc să procrastinezi timp de trei luni.
+descriptionHTML: >
+  Summer job = job de vară. Este un mod în care poți câștiga niște bani și acumula un pic de experiență în loc <del>să freci menta</del> <del>să tragi mâța de coadă</del> <em>să procrastinezi</em> timp de trei luni.
+baseurl: '/'
 static: '/static'
 url: 'http://summer.junio.ro'
 # twitter_username: jekyllrb

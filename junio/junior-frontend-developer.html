@@ -5,13 +5,15 @@ job:
     Platforma noastră este scrisă folosind Python și Django. Datele le analizăm utilizând tehnici de machine learning.
   department: Departamentul Web development
   category: Software
-  thumbnail: job-thumbnail.jpg
+  thumbnail: junior-frontend-developer-thumb.jpg
   applyUrl: "#" # the url from the corresponding job in Junio.ro
+  
+useLogoAlt: true
 ---
 
 <style>
   .job-header {
-    background: #0b317c url('bg-header.jpg') no-repeat right center;
+    background: #0b317c url('junior-frontend-developer-cover.jpg') no-repeat right center;
     background-size: auto 100%;
     color: #fff;
   }
@@ -137,26 +139,28 @@ job:
     <div class="section-copy">
       <p>Suntem 12 oameni în echipă așa că, pe perioada verii, tu vei fi numărul 13 (sau 12bis dacă ești superstițios). Avem colegi maratoniști, triatloniști și mtb-iști. Ieșim la ture și concursuri și credem în dezvoltarea spiritului de echipă prin sport. Dacă vremea este urâtă, poți oricând juca o partida de șah, un board game sau poți rezolva cuburile Rubik.</p>
       <p>Vei face parte din echipa de dezvoltare așa că ne-am gândit să-ți prezentăm pe trei dintre colegii tăi: Andreea, Ioana și Dragoș.</p>
-      <ul class="list-inline align-center">
-        <li>
-          {% include teammate.html
-                     name='Andreea'
-                     photo='andreea.jpg'
-                     position='Engineering' %}
-        </li>
-        <li>
-          {% include teammate.html
-                     name='Ioana'
-                     photo='ioana.jpg'
-                     position='Data Scientist' %}
-        </li>
-        <li>
-          {% include teammate.html
-                     name='Dragoș'
-                     photo='dragos.jpg'
-                     position='Head of Engineering' %}
-        </li>
-      </ul>
+      <div class="leading align-center">
+        <ul class="list-inline">
+          <li>
+            {% include teammate.html
+                       name='Andreea'
+                       photo='andreea.jpg'
+                       position='Engineering' %}
+          </li>
+          <li>
+            {% include teammate.html
+                       name='Ioana'
+                       photo='ioana.jpg'
+                       position='Data Scientist' %}
+          </li>
+          <li>
+            {% include teammate.html
+                       name='Dragoș'
+                       photo='dragos.jpg'
+                       position='Head of Engineering' %}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

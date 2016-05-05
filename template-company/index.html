@@ -12,6 +12,8 @@ company:
     # googleplus: ''
     # instagram: ''
     # youtube: ''
+
+useLogoAlt: false # uses dark bg version of logo. delete entirely to remove
 ---
 
 <!-- Customize page here -->
@@ -19,7 +21,7 @@ company:
 
 </style>
 
-<p>{{ page.company.description }}</p>
+{% assign company=page.company %}
 
 <!-- Basic section markup -->
 <section class="section">
@@ -28,10 +30,20 @@ company:
   </header>
   <div class="section-body">
     <div class="section-copy">
-      <p>First paragraph in section</p>
-      <p>Second paragraph in section</p>
+      Cine suntem
     </div>
   </div>
 </section>
 
-{% include company-jobs.html jobs=page.company.jobs %}
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+  </header>
+  <div class="section-body">
+
+    {% include company-jobs.html jobs=company.jobs %}
+  
+  </div>
+</section>
+

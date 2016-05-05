@@ -2,6 +2,7 @@
 job:
   title: 'Intern Software Research&Testing'
   description: > # this means to ignore newlines until "department:"
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis fugit, excepturi nam harum! Incidunt aliquam sit repellendus. Incidunt doloremque voluptatem minus et, adipisci error commodi aspernatur fugiat consectetur! Facilis, laboriosam!
   department: 'IT Telecom'  
   applyURL: 'xxx' # the url from the corresponding job in Junio.ro
 ---
@@ -32,7 +33,7 @@ job:
   </header>
   <div class="section-body">
     <div class="section-copy">
-      <p>ANRITSU Solutions Romania is a subsidiary of Anritsu Corporation based in Atsugi, Japan. Recognized as a Tier One provider of communications solutions for 120 years, Anritsu has become a global leader in the telecommunications, optical and wireless industries by providing diverse product offerings ranging from test and measurement solutions to high-speed devices and components for use in R&D, production, and maintenance. </p>
+      <p>ANRITSU Solutions Romania is a subsidiary of Anritsu Corporation based in Atsugi, Japan. Recognized as a Tier One provider of communications solutions for 120 years, Anritsu has become a global leader in the telecommunications, optical and wireless industries by providing diverse product offerings ranging from test and measurement solutions to high-speed devices and components for use in R&amp;D, production, and maintenance. </p>
       <p>Our team in Bucharest office delivers development and quality assurance services for MasterClaw - the flagship product of Anritsu’s OSS portfolio. Anritsu’s probe-based non-intrusive monitoring system is designed to provide full e2e monitoring of converged networks, being the leading service and network monitoring system for GSM, GPRS, UMTS, SS7 and VoIP networks.</p>
     </div>
   </div>
@@ -93,22 +94,24 @@ job:
     <h2 class="section-title">Section with teammate cards</h2>
   </header>
   <div class="section-body">
-    <ul class="list-inline align-center">
-      <li>
-        {% include teammate.html
-                   name='Usain'
-                   photo='usain.jpg'
-                   position='First'
-                   description="Bolt can't be his real name" %}
-      </li>
-      <li>
-        {% include teammate.html
-                   name='Rihanna'
-                   photo='rihanna.png'
-                   position='Singer'
-                   description='This girl is on fire' %}
-      </li>
-    </ul>
+    <div class="leading align-center">
+      <ul class="list-inline">
+        <li>
+          {% include teammate.html
+                     name='Usain'
+                     photo='usain.jpg'
+                     position='First'
+                     description="Bolt can't be his real name" %}
+        </li>
+        <li>
+          {% include teammate.html
+                     name='Rihanna'
+                     photo='rihanna.png'
+                     position='Singer'
+                     description='This girl is on fire' %}
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 

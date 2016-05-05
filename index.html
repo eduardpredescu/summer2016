@@ -1,45 +1,13 @@
 ---
 layout: default
 class: page-homepage
+showBanner: yes
 ---
 
-
 <header class="page-header">
-  <div class="page-container">
-
-    <div class="jsm-logo">
-      <img src="{{ site.static }}/img/jsm-logo.png" alt="Summerjobs"
-           width="480" height="auto">
-    </div>
-
-    <h1 class="page-title">Junio Summerjobs</h1>
-
-    <a class="jsm-byjunio"
-       href="http://junio.ro" title="Organizat de Junio">
-      <img src="{{ site.static }}/img/jsm-byjunio.png"
-           alt="Organizat de Junio"
-           width="210" height="160">
-    </a>
-
-    <p class="page-subtitle">Fă-ți odată stagiul<br/> și vino la mare!</p>
-
-    <!-- <p class="page-description">{{ site.description }}</p> -->
-
-
-    <div class="jsm-date" title="Joburile sunt deschise toata luna Aprilie 2016">
-      <img src="{{ site.static }}/img/jsm-stamp-date.png"
-           alt="Aprilie 2016"
-           width="180" height="180">
-    </div>
-
-
-
-    <nav class="jsm-nav">
-      <a class="btn btn-white" href="">Vezi joburile</a>
-      <a class="btn btn-white" href="">Află mai multe</a>
-    </nav>
-
-  </div>
+  {% if page.showBanner %}
+    {% include banner.html %}
+  {% endif %}
 </header>
 
 <main class="page-body">
@@ -50,11 +18,158 @@ class: page-homepage
         <h2 class="section-title">Ce este Summerjobs?</h2>
       </header>
       <div class="section-body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem eos, officia ullam? Consequuntur perferendis temporibus molestiae unde earum neque, dolore blanditiis sint quidem inventore eos, magnam omnis accusantium aliquam cum.</p>
+
+        <p class="site-description large leading-xxlarge">{{ site.descriptionHTML }}</p>
+
+        <div class="row container-small">
+          <div class="col xs-6">
+            <div class="align-left">
+              <h5>Pentru Studenți</h5>
+              <ul class="no-list">
+                <li>
+                  <a href="{{ '/joburi' | prepend: site.baseurl }}">Joburi</a>
+                </li>
+                <li>
+                  <a href="{{ '/pentru-studenti#cum-pot-sa-aplic' | prepend: site.baseurl }}">Cum pot să aplic?</a>
+                </li>
+                <li>
+                  <a href="{{ '/pentru-studenti' | prepend: site.baseurl }}">Mai multe</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col xs-6">
+            <div class="align-left">
+              <h5>Pentru Companii</h5>
+              <ul class="no-list">
+                <li>
+                  <a href="{{ '/pentru-companii#cum-adaug-un-job' | prepend: site.baseurl }}">Cum adaug un job?</a>
+                </li>
+                <li>
+                  <a href="{{ '/pentru-companii#pachetul' | prepend: site.baseurl }}">Ce include pachetul?</a>
+                </li>
+                <li>
+                  <a href="{{ '/pentru-companii#cost' | prepend: site.baseurl }}">Cât costă?</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+
+
+
+
+
+
+    <section class="section align-left">
+      <header class="section-header align-center">
+        <h2 class="section-title">Joburi</h2>
+      </header>
+      <div class="section-body">
+        
+        <div class="listing listing-jobs">
+
+      
+
+      <div class="listing-body">
+        
+        {% for COMPANY in site.data.companies %}
+        {% assign companyId = COMPANY[0] %}
+        {% assign company = COMPANY[1] %}
+        <div class="listing-group">
+          
+          <header class="listing-group-header">
+
+            <div id="{{ companyId }}" class="company snippet">
+              <div class="leading">
+                {% if company.logo %}
+                  <a class="company-logo"
+                     href="{{ company.page.url }}" 
+                     title="Detalii despre companie">
+                    <img src="{{ company.logo | folder: company.page }}"
+                         alt="{{ company.name }} logo">
+                  </a>
+                {% endif %}
+                <h3 class="company-name">
+                  <a href="{{ company.page.url }}" title="Detalii despre companie">
+                    {{ company.name }}
+                  </a>
+                </h3>
+              </div>
+              <p class="company-description">{{ company.description }}</p>
+              <a class="company-website" href="{{ company.website }}" target="_blank" rel="external">{{ company.website | split:"://" | last }}</a>
+            </div>
+          </header>
+
+          <ul class="listing-items">
+
+            {% for JOB in company.jobs %}
+            {% assign jobId = JOB[0] %}
+            {% assign job = JOB[1] %}
+            <li class="listing-item">
+              
+              <div id="{{ jobId }}" class="job snippet">
+                {% if job.thumbnail %}
+                  <div class="job-thumbnail">
+                    <img src="{{ job.thumbnail | folder: job.page }}" alt="{{ job.title }}">
+                  </div>
+                {% endif %}
+                <h4 class="job-title">
+                  <a href="{{ job.page.url }}" title="Detalii despre job">{{ job.title }}</a>
+                </h4>
+                <p class="job-description">{{ job.description }}</p>
+              </div>
+
+            </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+        {% endfor %}
+
+      </div>
+
+
+      </div>
+    </section>
+    <script 
+  src="https://code.jquery.com/jquery-2.2.3.min.js"
+  integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+  crossorigin="anonymous">
+</script>
+    <script>
+  (function($){
+ 
+    $.fn.shuffle = function() {
+ 
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function(){
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+           });
+
+        this.each(function(i){
+            $(this).replaceWith($(shuffled[i]));
+        });
+ 
+        return $(shuffled);
+ 
+    };
+ 
+  })(jQuery);
+  $('.listing-jobs .listing-group').shuffle();
+</script>
+
+    <!--
+    <section id="companii" class="section">
       <header class="section-header">
         <h2 class="section-title">Companii</h2>
       </header>
@@ -69,22 +184,52 @@ class: page-homepage
         {% endfor %}
         </ul>
       </div>
-    </section>
+    </section> -->
 
-    <section id="" class="section">
+    <section id="parteneri" class="section">
       <header class="section-header">
-        <h2 class="section-title">Some title</h2>
+        <h2 class="section-title">Parteneri</h2>
       </header>
       <div class="section-body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dicta eligendi inventore quasi atque magnam veritatis aspernatur non velit nihil odio facere unde cumque repudiandae officia, quibusdam possimus, porro eos.</p>
+        <ul class="list-partners">
+          <li>
+            <a href="http://www.asaff.ro/" rel="external" target="_blank">
+              <span class="sprite-partners sprite-asaff"></span>
+              Asociația Studenților și Absolvenților Francofoni ASAFF
+            </a>
+          </li>
+          <li>
+            <a href="http://ascig.ro/" rel="external" target="_blank">
+              <span class="sprite-partners sprite-ascig"></span>
+              Asociația Studenților în Contabilitate și Informatică de Gestiune ASCIG
+            </a>
+          </li>
+          <li>
+            <a href="http://as-mi.ro" rel="external" target="_blank">
+              <span class="sprite-partners sprite-asmi"></span>
+              Asociația Studenților la Matematică și Informatică ASMI
+            </a>
+          </li>
+          <li>
+            <a href="http://lsacbucuresti.ro/" rel="external" target="_blank">
+              <span class="sprite-partners sprite-lsac"></span>
+              Liga Studenților din Facultatea de Automatică și Calculatoare LSAC
+            </a>
+          </li>
+          <li>
+            <a href="http://lse.org.ro/" rel="external" target="_blank">
+              <span class="sprite-partners sprite-lse"></span>
+              Liga Studenților Electroniști LSE
+            </a>
+          </li>
+          <li>
+            <a href="http://sisc.ro/" rel="external" target="_blank">
+              <span class="sprite-partners sprite-sisc"></span>
+              Sindicatul Studenților din Cibernetică
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
   </div>
 </main>
-
-<footer class="page-footer">
-  <div class="page-container">
-    <h3>Parteneri</h3>
-    ...
-  </div>
-</footer>

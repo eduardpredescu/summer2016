@@ -13,7 +13,7 @@ job:
   
   .job-header {
     /* change header background */
-    background: #222;
+    background: #D52B1E;
     color: #fff;
   }
 
@@ -21,6 +21,17 @@ job:
   .job-domain,
   .job-company {
     color: inherit;
+  }
+
+  .job-header .btn-apply {
+    background-color: #47C3E8;
+    background-image: linear-gradient(#2D97D4, #47C3E8);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% 100%;
+    box-shadow: 0 3px 0 #2D97D4,
+                0 3px 5px rgba(0,0,0, .25);
+    text-shadow: 0 -1px 0 #2D97D4;
   }
 
 </style>
@@ -94,22 +105,24 @@ job:
     <h2 class="section-title">Section with teammate cards</h2>
   </header>
   <div class="section-body">
-    <ul class="list-inline align-center">
-      <li>
-        {% include teammate.html
-                   name='Costin'
-                   photo='costin.jpg'
-                   position='Senior Technology Consultant'
-                   description="I am selling the future" %}
-      </li>
-      <li>
-        {% include teammate.html
-                   name='Andreea'
-                   photo='andreea.jpg'
-                   position='Senior Technology Consultant'
-                   description='To reinvent yourself, get a piece of trusted advice that can really support you go the extra mile towards success' %}
-      </li>
-    </ul>
+    <div class="leading align-center">
+      <ul class="list-inline">
+        <li>
+          {% include teammate.html
+                     name='Costin'
+                     photo='costin.jpg'
+                     position='Senior Technology Consultant'
+                     description="I am selling the future" %}
+        </li>
+        <li>
+          {% include teammate.html
+                     name='Andreea'
+                     photo='andreea.jpg'
+                     position='Senior Technology Consultant'
+                     description='To reinvent yourself, get a piece of trusted advice that can really support you go the extra mile towards success' %}
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 

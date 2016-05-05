@@ -1,0 +1,26 @@
+.page-company {
+  #site-header {
+    border-bottom: 0;
+  }
+  .page-body {
+    padding: 0;
+  }
+}
+
+.company-header {
+  box-sizing: border-box; 
+  // min-height: 30rem;
+  max-height: 50rem;
+  padding: 2rem 2rem;
+  background-color: @color-soft;
+  background-repeat: no-repeat;
+  @media @screen-sm-upto {
+    padding-top: 6rem;
+    text-align: center;
+    max-height: none;
+    height: auto;
+  }
+  @media @screen-lg {
+    border-radius: @page-padding / 2;
+  }  
+}

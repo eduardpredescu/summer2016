@@ -5,10 +5,31 @@ company:
     Junio este un startup care își propune să ofere studenților joburi part-time care să le permită să capete experiență încă din timpul facultății.
   address: Str. Maior Gherghe Șonțu nr. 8, București, România
   website: http://junio.ro
+  logo: junio-logo.png
+  logoAlt: junio-logo-alt.png
   social:
     facebook: https://www.facebook.com/junio.recrutare
     twitter: https://twitter.com/junio_recrutare
+
+useLogoAlt: true
 ---
+
+<style>
+  .company-header {
+    background: #0b317c no-repeat right center;
+    background-size: auto 100%;
+    color: #fff;
+  }
+  .company-name,
+  .company-description {
+    color: inherit;
+  }
+  .company-website {
+    color: #2A9D5D;
+  }
+</style>
+
+{% assign company=page.company %}
 
 <section class="section">
   <header class="section-header">
@@ -20,7 +41,17 @@ company:
       <p>Avem o platformă fresh dezvoltată cu tehnologii noi de o echipă foarte tare și parteneriate cu cele mai importante organizații studențești. În acest moment suntem prezenți în București și Iași, cu peste 2000 de studenți înregistrați și vrem să ne extindem și în Cluj,  Constanța, Craiova și Timișoara (în ordine alfabetică aici). Obiectivul este să avem 10000 de studenți înregistrați până la finalul anului.</p>
       <p>Din echipa noastră fac parte mentori care țin cursuri în Politehnică și la Universitate, oameni care se vor implica activ în dezvoltarea ta. Încurajăm și susținem studenții să-și termine cu bine școala. Mulți dintre noi lucrăm la Junio part-time iar una din condițiile puse la angajare a fost să ne menținem mediile bune.</p>
     </div>
+    {% include company-social.html social=page.company.social %}
   </div>
 </section>
 
-{% include company-jobs.html jobs=page.company.jobs %}
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+    <!-- {{ company.jobs|size }} Joburi -->
+  </header>
+  <div class="section-body">
+    {% include company-jobs.html jobs=company.jobs %}
+  </div>
+</section>
+

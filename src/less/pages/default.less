@@ -21,6 +21,14 @@
   max-width: 50rem;
   padding-left: @page-padding;
   padding-right: @page-padding;
+  @media @screen-lg {
+    max-width: 60rem;
+  }
+}
+
+.container-small {
+  .utils > .center;
+  max-width: @container-sm;
 }
 
 .section {
@@ -39,4 +47,18 @@
 
 .section-body {
 
+}
+
+@media @screen-lg {
+  body {
+    .utils > .center;
+    max-width: 50rem + @page-padding * 2;
+    padding: @page-padding;
+  }
+  .page-container {
+    padding-left: @page-padding / 2;
+    padding-right: @page-padding / 2;
+    // max-width: none;
+    // padding: 0;
+  }
 }
