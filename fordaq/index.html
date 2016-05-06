@@ -1,0 +1,50 @@
+---
+company:
+  name: Fordaq
+  description: Fordaq administreaza o piata online pentru profesionistii lemnului. 
+  address: Str. Maior Gherghe Șonțu nr. 8, București, România
+  website: http://www.fordaq.com/
+  logo: ./fordaq-logo.png
+  logoAlt:
+  social:
+    # facebook: https://www.facebook.com/...
+    # twitter: ''
+    # linkedin: ''
+    # googleplus: ''
+    # instagram: ''
+    # youtube: ''
+
+useLogoAlt: false # uses dark bg version of logo. delete entirely to remove
+---
+
+<!-- Customize page here -->
+<style>
+
+</style>
+
+{% assign company=page.company %}
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Cine suntem</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      Mai mult de 140.000 de profesionisti ai lemnului (producatori de bustean, cherestea, furnir, panel, importatori si consumatori industriali) au ales sa devina membri Fordaq. Multe din cele mai mari companii din Europa sunt membre Fordaq. Fordaq are birouri in Belgia, Franta, Germania, Italia, Olanda, Croatia, Romania, Polonia si China. Noi vizitam membrii atit cit este posibil astfel incit sa garantam ca tu poti face afaceri adevarate cu parteneri adevarati.
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+  </header>
+  <div class="section-body">
+
+    {% include company-jobs.html jobs=company.jobs %}
+  
+  </div>
+</section>
+
