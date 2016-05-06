@@ -154,3 +154,34 @@
     }
   }
 }
+
+
+blockquote {
+  position: relative;
+  margin-left: 0;
+  padding-left: 4rem;
+  padding-right: @indent;
+  color: @color-emphasis;
+  // max-width: @container-md;
+  p {
+    margin-bottom: @leading-small;
+  }
+  .quote-source {
+    font-size: @smaller;
+  }
+  &::before {
+    content: '“';
+    font-family: @font-family-serif;
+    font-size: 4em;
+    color: @color-muted;
+    line-height: 1;
+    width: 3rem;
+    text-align: right;
+    .utils > .inner(top-left);
+  }
+}
+
+
+.container-sm {
+  max-width: @container-sm;
+}
