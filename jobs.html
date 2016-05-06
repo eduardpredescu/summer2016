@@ -46,7 +46,7 @@ permalink: joburi
                   <a class="company-logo"
                      href="{{ company.page.url }}" 
                      title="Detalii despre companie">
-                    <img src="{{ company.logo | folder: company.page }}"
+                    <img src="{{ company.page.dir }}/{{ company.logo }}"
                          alt="{{ company.name }} logo">
                   </a>
                 {% endif %}
@@ -71,7 +71,7 @@ permalink: joburi
               <div id="{{ jobId }}" class="job snippet">
                 {% if job.thumbnail %}
                   <div class="job-thumbnail">
-                    <img src="{{ job.thumbnail | folder: job.page }}" alt="{{ job.title }}">
+                    <img src="{{ job.page.dir }}/{{ job.thumbnail }}" alt="{{ job.title }}">
                   </div>
                 {% endif %}
                 <h4 class="job-title">

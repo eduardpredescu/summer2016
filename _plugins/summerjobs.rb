@@ -19,6 +19,11 @@ module Summerjobs
 
       site.pages.each do |page|
 
+        # dateCreated = File.ctime(page['path']).iso8601
+        # dateModified = File.mtime(page['path']).iso8601
+        # page.data['dateCreated'] = dateCreated
+        # page.data['dateModified'] = dateModified
+
         # Companies
         if page.data['company']
 
