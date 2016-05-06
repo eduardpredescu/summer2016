@@ -137,6 +137,9 @@
 
 
 .company-name {
+  .full & {
+    display: inline-block;
+  }
   .snippet & {
     display: inline-block;
     margin-bottom: 0;
@@ -144,7 +147,18 @@
   }
 }
 
+.company-description {
+  .full & {
+    margin-top: @leading;
+    max-width: @container-sm;
+  }
+}
+
 .company-logo {
+  .full & {
+    display: inline-block;
+    vertical-align: middle;
+  }
   .snippet & {
     display: inline-block;
     vertical-align: middle;
