@@ -16,7 +16,7 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
 
   .job-header {
     /* change header background */
-    background: #222;
+    background: #B00000;
     color: #fff;
   }
 
@@ -24,14 +24,6 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
   .job-domain,
   .job-company {
     color: inherit;
-  }
-
-  .btn-apply {
-    color: #fff;
-    background-color: #21c374;
-    background-image: linear-gradient(#16b15b, #21c374);
-    box-shadow: 0 3px 0 #16b15b, 0 3px 5px rgba(0, 0, 0, 0.25);
-    text-shadow: 0 -1px 0 #16b15b;
   }
 
 </style>
@@ -76,10 +68,13 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
   </header>
   <div class="section-body">
     <div class="section-copy">
-      <ul class="list-inline align-center leading">
-        <li>{% include tech-thumb.html tech='java' %}</li>
-        <li>{% include tech-thumb.html tech='matlab' %}</li>
-        <li>{% include tech-thumb.html tech='cplusplus' %}</li>
+      <div class="align-center leading">
+        <ul class="list-inline">
+          <li>{% include tech-thumb.html tech='java' %}</li>
+          <li>{% include tech-thumb.html tech='matlab' %}</li>
+          <li>{% include tech-thumb.html tech='cplusplus' %}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
