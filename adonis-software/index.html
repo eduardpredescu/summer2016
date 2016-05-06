@@ -1,0 +1,94 @@
+---
+company:
+  name: Adonis Software
+  description: >
+    We are magicians trained in the art of app dev. We mostly do iOS/Android apps for clients and we rock our own projects at the same time.
+  address: Strada Polona, Nr. 43, Et. 1, Ap. 1, Sector 1, Bucharest, Romania
+  website: http://adonissoft.com
+  logo: adonis-software-logo.png
+  social:
+    facebook: https://www.facebook.com/Adonis.Software
+    twitter: https://twitter.com/adonissoftware
+    linkedin: https://www.linkedin.com/company/adonis-software
+    googleplus: https://plus.google.com/114702123079498240800
+
+useLogoAlt: false # uses dark bg version of logo. delete entirely to remove
+---
+
+<!-- Customize page here -->
+<style>
+  .company-header {
+    background-color: #fff;
+    border-radius: 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+</style>
+
+{% assign company=page.company %}
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">About us</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>We are a team of young professionals from Bucharest, Romania. Our team is formed of creative designers and expert developers with great experience in programming, especially in smartphone application development. We believe that each one of us is a unique and creative force for the company.</p>
+      <p>New technologies make our eyes spark, so we like to play with beacons, leap motion, AR, VR, Unity (gaming) and what not. We are among the first to build projects with new technologies and we are proud of that... although working with betas and new technologies sometimes is a big headache.</p>
+      <blockquote class="leading-large">
+        <p>Great team. Very professional, knowledgeable and experienced. Easy to communicate and work with. Strongly recommended and would love to do business with you again. Thank you Ancu, Lucian, Vlad and the rest of the team. You guys rock!</p>
+        <div class="quote-source">TOMA APOSTOLOV-INTERNET MARKETER, WASHINGTON</div>
+      </blockquote>
+    </div>
+    Follow us {% include company-social.html social=page.company.social %}
+  </div>
+</section>
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Our work</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+
+      <div class="row">
+        <div class="col sm-6">
+          <div class="align-center">
+            <div class="leading">
+              <img src="urbanhero.png" alt="Urban Hero App Logo"
+                   width="150" height="150">
+            </div>
+            <h4><a href="https://play.google.com/store/apps/details?id=com.adonissoft.urbanhero&hl=ro" rel="extenal" target="_blank">Urban Hero</a></h4>
+            <p>We created Urban Hero because of our love for environment and got awarded 3rd place at Ericsson Application Awards in Sweden.</p>
+          </div>
+        </div>
+        <div class="col sm-6">
+          <div class="align-center">
+            <div class="leading">
+              <img src="watercolors.png" alt="Water Colors App Logo"
+                   width="150" height="150">
+            </div>
+            <h4><a href="http://watercolorsapp.com/" rel="external" target="_blank">Watercolors</a></h4>
+            <p>We are also the creators of the game Watercolors, which was downloaded more than 2 million times world wide and are now working on a sequel.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>These are just a few. <a href="http://adonissoft.com/mobile-applications-development/" rel="external" target="_blank">See all of our work</a> on our website.</p>
+            
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+  </header>
+  <div class="section-body">
+
+    {% include company-jobs.html jobs=company.jobs %}
+  
+  </div>
+</section>
+
