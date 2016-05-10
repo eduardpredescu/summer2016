@@ -10,3 +10,4 @@ static/css/
 static/js/
 *.sublime-project
 *.sublime-workspace
+.idea/
