@@ -1,0 +1,58 @@
+---
+company:
+  name: Info World
+  description: >
+    Solutii IT dedicate domeniului medical.
+  address: Intrarea Glucozei nr. 37-39, București, România
+  website: http://infoworld.ro/
+  logo: logo-company.png
+  #logoAlt:
+  social:
+    facebook: https://www.facebook.com/Info-World-135520659868906
+    # twitter: ''
+    # linkedin: ''
+    # googleplus: ''
+    # instagram: ''
+    # youtube: ''
+
+useLogoAlt: false # uses dark bg version of logo. delete entirely to remove
+---
+
+<!-- Customize page here -->
+<style>
+  .company-header {
+
+  }
+  .company-name,
+  .company-description {
+    
+  }
+</style>
+
+{% assign company=page.company %}
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Cine suntem</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>Info World ofera solutii informatice extinse care acopera un spectru larg de necesitati si care raspund nevoilor oricarui tip de institutie din domeniul medical. Sistemele Info World sunt modulare si pot fi combinate in configuratii unice astfel incat sa se adapteze cerintelor clientului si sa satisfaca orice necesitati de Enterprise Resource Planning. De asemenea, Info World ofera o gama larga de servicii, ajutandu-si clientii sa dezvolte un flux de lucru clinic cu maximum de productivitate si eficienta din punctul de vedere al costurilor, contribuid astfel la imbunatatirea ingrijirii de care beneficiaza pacientul.</p>
+      <p>Solutiile clinice oferite de Info World sunt sprijinite de puternice instrumente de management si financiare care permit fluidizarea proceselor si controlul costurilor, oferind suport decizional. Info World detine o cota de piata de 40% din totalul paturilor de spital din Romania care sunt administrate cu ajutorul solutiilor informatice.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+  </header>
+  <div class="section-body">
+
+    {% include company-jobs.html jobs=company.jobs %}
+  
+  </div>
+</section>
+

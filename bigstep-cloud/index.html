@@ -1,0 +1,59 @@
+---
+company:
+  name: Bigstep Cloud
+  description: >
+    Bigstep was created by passionate big data aficionados. We set out to empower organizations determined to make sense of their data, by providing a full-stack big data ecosystem running in a high-performance bare metal cloud
+  address:  Soldat Stefan Velicu, nr 43, sector 3, Bucuresti, Romania
+  website: http://bigstep.com/
+  logo: logo-company.png
+  logoAlt:
+  social:
+    facebook: https://www.facebook.com/bigstepINC
+    twitter: https://twitter.com/BigStepInc
+    linkedin: https://www.linkedin.com/company/2923988
+    googleplus: https://plus.google.com/104078819661791126614
+    # instagram: ''
+    # youtube: ''
+
+useLogoAlt: false # uses dark bg version of logo. delete entirely to remove
+---
+
+<!-- Customize page here -->
+<style>
+  .company-header {
+
+  }
+  .company-name,
+  .company-description {
+    
+  }
+</style>
+
+{% assign company=page.company %}
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Who are we</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>Bigstep’s Full Metal Cloud is a Big Data as a Service platform that makes highly complex, and highly integrated state of the art big data stacks easy to use. Our customers use it for risk modelling, health care research, customer modelling and many other situations that warrant machine learning to be applied at scale. </p>
+      <p>Our main market is the UK and we are rapidly expanding. As part of our team you will be shaping the future of the Big Data market, working alongside a very experienced team. Our bread and butter are cutting edge technologies such as Apache Cassandra, Couchbase, Apache Mesos, Apache Spark, Apache Hadoop and we combine them in novel ways to enable plain data to change the world.</p>
+    </div>
+    Follow us {% include company-social.html social=page.company.social %}
+  </div>
+</section>
+
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+  </header>
+  <div class="section-body">
+
+    {% include company-jobs.html jobs=company.jobs %}
+  
+  </div>
+</section>
+

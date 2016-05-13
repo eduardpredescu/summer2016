@@ -1,0 +1,59 @@
+---
+company:
+  name: 'NXP Semiconductors'
+  description: >
+    NXP Semiconductors is the leader in innovative high-performance mixed signal solutions which, combined with deep application insight, enable the secure connections needed for a smarter world.
+  address: Bulevardul Tudor Vladimirescu 45, Bucharest, Romania
+  website: http://www.nxp.com/
+  logo: company-logo.png
+  logoAlt:
+  social:
+    # facebook: https://www.facebook.com/nxpsemi/
+    # twitter: https://twitter.com/NXP
+    # linkedin: https://www.linkedin.com/company/nxp-semiconductors
+    # googleplus: ''
+    # instagram: ''
+    # youtube: ''
+
+useLogoAlt: false # uses dark bg version of logo. delete entirely to remove
+---
+
+<!-- Customize page here -->
+<style>
+  .company-header {
+
+  }
+  .company-name,
+  .company-description {
+    
+  }
+</style>
+
+{% assign company=page.company %}
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Our company</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>NXP Semiconductors is the leader in innovative high-performance mixed signal solutions which, combined with deep application insight, enable the secure connections needed for a smarter world.</p>
+      <p>NXP Semiconductors N.V. (NASDAQ: NXPI) enables secure connections and infrastructure for a smarter world, advancing solutions that make lives easier, better and safer. As the world leader in secure connectivity solutions for embedded applications, NXP is driving innovation in the secure connected vehicle, end-to-end security & privacy and smart connected solutions markets. Built on more than 60 years of combined experience and expertise, the company has 45,000 employees in more than 35 countries.</p>
+    </div>
+    Follow us {% include company-social.html social=page.company.social %}
+  </div>
+</section>
+
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+  </header>
+  <div class="section-body">
+
+    {% include company-jobs.html jobs=company.jobs %}
+  
+  </div>
+</section>
+
