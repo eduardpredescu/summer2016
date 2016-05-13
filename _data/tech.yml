@@ -55,4 +55,15 @@ matlab:
 cplusplus:
   title: 'C/C++'
   url: ''
+
+csharp:
+  title: 'C#'
+  url: ''
   
+sql:
+  title: 'SQL'
+  url: ''
+
+linux:
+  title: 'Linux'
+  url: ''

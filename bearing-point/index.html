@@ -1,20 +1,19 @@
 ---
 company:
-  name: 'Bearing Point'
+  name: Bearing Point
   description: > # this means to ignore newlines until "address:"
     We offer management and consulting services to achieve sustainable profitable growth of companies by improving their logistic, commercial, and financial processes.
-  address: 'Strada Izvor 80, Bucharest, Romania'
-  website: 'http://www.bearingpoint.com'
+  address: Strada Izvor 80, Bucharest, Romania
+  website: http://www.bearingpoint.com
+  logo: company-logo.png
+  logoAlt: logo-company.png
   social:
-    # facebook: ' https://www.facebook.com/BearingPoint-Romania-198446380219567/?fref=ts'
-    # twitter: ''
-    # linkedin: ''
-    # googleplus: ''
-    # instagram: ''
-    # youtube: ''
+    facebook:  https://www.facebook.com/BearingPoint-Romania-198446380219567/?fref=ts
+    twitter: https://twitter.com/BearingPoint
+    linkedin: https://www.linkedin.com/company/bearingpoint
+    youtube: https://www.youtube.com/user/BearingPointVideo
 ---
 
-<!-- Customize page here -->
 <style>
   .company-header {
     background-color: #D52B1E;
@@ -27,7 +26,7 @@ company:
   .company-website {
     display: inline-block;
     color: inherit;
-    border-bottom: 1px dashed;
+    border-bottom: 1px;
   }
   .company-website:hover,
   .company-website:focus {
@@ -38,16 +37,17 @@ company:
 
 {% assign company=page.company %}
 
-<!-- Basic section markup -->
 <section class="section">
   <header class="section-header">
     <h2 class="section-title">Our activity</h2>
   </header>
   <div class="section-body">
     <div class="section-copy">
-      <p>Our clients, whether in commercial or financial industries or in government, experience real results when they work with us. We combine industry, operational and technology skills with relevant proprietary and other assets in order to tailor solutions for each client’s individual challenges. This adaptive approach is at the heart of our culture and has led to long-standing relationships with many of the world’s leading companies and organisations. Our global consulting network of 9200 people serves clients in more than 70 countries and engages with them for measurable results and long-lasting success. BearingPoint employs over 3.500 highly skilled consultants in Europe. Their entrepreneurial, adaptive approach is the key to our success.</p>
+      <p>Our clients, whether in commercial or financial industries or in government, experience real results when they work with us. We combine industry, operational and technology skills with relevant proprietary and other assets in order to tailor solutions for each client’s individual challenges. This adaptive approach is at the heart of our culture and has led to long-standing relationships with many of the world’s leading companies and organisations.</p> 
+      <p> Our global consulting network of 9200 people serves clients in more than 70 countries and engages with them for measurable results and long-lasting success. BearingPoint employs over 3.500 highly skilled consultants in Europe. Their entrepreneurial, adaptive approach is the key to our success.</p>
       <p>In Romania, we are present since 2007 and we have more than 250 skilled consultants in our teams operating from Bucharest, Sibiu and Timisoara, whose expertise brought value to more than 160 international projects in the past 8 years.</p>
     </div>
+    Follow us {% include company-social.html social=page.company.social %}
   </div>
 </section>
 
