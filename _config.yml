@@ -29,5 +29,4 @@ exclude:
   - '.git/'
   - '.gitignore'
   - 'template-company/'
-  - 'bearing-point/'
   - 'anritsu-solutions/'

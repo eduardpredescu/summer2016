@@ -1,0 +1,102 @@
+---
+job:
+  title: 'Automotive SW Internship'
+  description: >
+    140 characters max
+  department: 'IT Telecom'
+  category: 'Software'
+  applyUrl: 'https://junio.ro/jobs/i-ittelecom-j-automotive-sw-internship-c-nxp-76974'
+  date: 2016-05-13
+  
+useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
+---
+
+<!-- Customize page here -->
+<!-- Delete <style> to see default -->
+<style>
+
+  .job-header {
+    /* change header background */
+    background: #222;
+    color: #fff;
+  }
+
+  .job-title,
+  .job-domain,
+  .job-company {
+    color: inherit;
+  }
+
+  .btn-apply {
+    color: #fff;
+    background-color: #21c374;
+    background-image: linear-gradient(#16b15b, #21c374);
+    box-shadow: 0 3px 0 #16b15b, 0 3px 5px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 -1px 0 #16b15b;
+  }
+
+</style>
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Job Description</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>You will be part of the software team working on products that will power the autonomous cars of tomorrow.</p>
+      <p>By joining our team, besides an attractive salary package, you’ll have the opportunity to be part of a high-performance team, who has already patented innovative ideas in the automotive software domain, and to work in a secure, pleasant and dynamic environment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TODO -->
+<!-- Section with Company social media -->
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Section with image</h2>
+  </header>
+  <div class="section-body">
+    <div class="media leading">
+      <div class="media-object">
+        <img src="job-image.jpg" alt="Smart transportation">
+      </div>
+    </div>
+    <p>You will learn about embedded software programming as part of our projects on device drivers and operating systems, interact with leading global experts for automotive technologies and get familiar with quality standards and models required in the automotive industry. Some of the technologies developed in Romania include Linux operating systems, real-time operating systems, device drivers and integrated embedded solutions, ADAS vision and graphics components (OpenCL, OpenGL, OpenVG).</p>
+  </div>
+</section>
+
+<!-- Section with technologies -->
+<!-- To add a technology check _data/tech.yml -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Skills that recommend you</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <div class="align-center leading">
+        <ul class="list-inline">
+          <li>{% include tech-thumb.html tech='linux' %}</li>
+          <li>{% include tech-thumb.html tech='cplusplus' %}</li>
+        </ul>
+      </div>
+      <p class="align-center">To ensure your successful performance in this role, the following experience is a plus: Programming experience (ANSI C), General CPU/Computer architecture know-how, Linux operating system, Real Time Operating Systems, Debugging skills for embedded targets and low-level software, Makefiles, scripting languages, English (spoken and written)</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Section with map -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">You can find us here</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-media">
+      <div class="map-container">
+        <div id="map-canvas" data-address="{{ page.company.address }}"></div>
+      </div>
+    </div>
+  </div>
+</section>
