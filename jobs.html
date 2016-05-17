@@ -36,11 +36,11 @@ permalink: joburi
         {% for COMPANY in site.data.companies %}
         {% assign companyId = COMPANY[0] %}
         {% assign company = COMPANY[1] %}
-        <div class="listing-group">
+        <div id ="{{ companyId }}" class="listing-group">
           
           <header class="listing-group-header">
 
-            <div id="{{ companyId }}" class="company snippet">
+            <div class="company snippet">
               <div class="leading">
                 {% if company.logo %}
                   <a class="company-logo"
@@ -124,6 +124,8 @@ permalink: joburi
  
   })(jQuery);
   $('.listing-jobs .listing-group').shuffle();
+  $('.listing-jobs').prepend($('#bitdefender'));
+
 </script>
 
 
