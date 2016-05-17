@@ -5,6 +5,7 @@ job:
         Poziția de UI/UX Developer presupune, pe lângă lucrul la partea de frontend a soluțiilor noastre, și păstrarea unei atitudini orientate utilizator, pentru corectarea din timp a eventualelor probleme de interacțiune.
     department: 'Enterprise User Experience'
     category: 'Software'
+    applyUrl: 'https://junio.ro/jobs/i-ittelecom-j-uiux-developer-internship-c-bitdefender-35118'
     date: 2016-05-16
 
 useLogoAlt: true
@@ -16,14 +17,19 @@ useLogoAlt: true
 
     .job-header {
         /* change header background */
-        background: #ED1C24;
+        background: url("company-bitdefender-cover-desktop.png") #000;
+        background-size:contain;
+        background-repeat:no-repeat;
+        background-position:center;
         color: #fff;
+        text-shadow:  0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
     }
 
     .job-title,
     .job-domain,
     .job-company {
         color: inherit;
+        background: rgba(0,0,0,0.1);
     }
 
     .btn-apply {
@@ -34,6 +40,23 @@ useLogoAlt: true
         text-shadow: 0 -1px 0 #16b15b;
     }
 
+    @media only screen and (max-width: 768px) {
+        .job-header {
+            background: url("company-bitdefender-cover-tablet.png") #000;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    @media only screen and (max-width: 425px) {
+        .job-header {
+            background: url("company-bitdefender-cover-mobile.png") #000;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
 </style>
 
 <!-- Basic section markup -->

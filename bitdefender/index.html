@@ -11,9 +11,9 @@ company:
         facebook: https://www.facebook.com/bitdefender
         twitter: twitter.com/Bitdefender
         linkedin: ro.linkedin.com/company/bitdefender
-# googleplus: ''
-instagram:  ''
-# youtube: ''
+        googleplus: https://plus.google.com/+Bitdefender
+# instagram:  ''
+        youtube: https://www.youtube.com/c/bitdefender
 
 
 ---
@@ -21,22 +21,45 @@ instagram:  ''
 <!-- Customize page here -->
 <style>
     .company-header {
-        background-color: #fff;
-        color: #000;
+        background: url("company-bitdefender-cover-desktop.png.png") #000;
+        background-size:contain;
+        background-repeat:no-repeat;
+        background-position:right center;
+        color: #fff;
+        text-shadow:  0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
     }
     .company-name,
     .company-description {
         color: inherit;
+        background: rgba(0,0,0,0.1);
     }
     .company-website {
         display: inline-block;
         color: inherit;
         border-bottom: 1px;
+        background: rgba(0,0,0,0.1);
     }
     .company-website:hover,
     .company-website:focus {
         border-bottom-style: solid;
         color: #fff;
+    }
+    @media only screen and (max-width: 768px) {
+        .company-header {
+            background: url("company-bitdefender-cover-tablet.png") #000;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    @media only screen and (max-width: 425px) {
+        .company-header {
+            background: url("company-bitdefender-cover-mobile.png") #000;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
     }
 </style>
 
