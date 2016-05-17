@@ -59,11 +59,67 @@ cplusplus:
 csharp:
   title: 'C#'
   url: ''
-  
+
 sql:
   title: 'SQL'
   url: ''
 
 linux:
   title: 'Linux'
+  url: ''
+
+mercurial:
+  title: 'Mercurial'
+  url: ''
+
+sciter:
+  title: 'Sciter'
+  url: ''
+
+sass:
+  title: 'Sass'
+  url: ''
+
+jira:
+  title: 'Jira'
+  url: ''
+
+confluence:
+  title: 'Confluence'
+  url: ''
+
+html:
+  title: 'HTML'
+  url: ''
+
+css:
+  title: 'CSS'
+  url: ''
+
+js:
+  title: 'JS'
+  url: ''
+
+php:
+  title: 'PHP'
+  url: ''
+
+tortoisesvn:
+  title: 'Tortoise SVN'
+  url: ''
+
+photoshop:
+  title: 'Photoshop'
+  url: ''
+
+illustrator:
+  title: 'Illustrator'
+  url: ''
+
+nodejs:
+  title: 'NodeJS'
+  url: ''
+
+mongodb:
+  title: 'MongoDB'
   url: ''
