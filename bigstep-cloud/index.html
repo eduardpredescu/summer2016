@@ -4,7 +4,7 @@ company:
   description: >
     Bigstep was created by passionate big data aficionados. We set out to empower organizations determined to make sense of their data, by providing a full-stack big data ecosystem running in a high-performance bare metal cloud
   address:  Soldat Stefan Velicu, nr 43, sector 3, Bucuresti, Romania
-  website: http://bigstep.com/
+  website: http://bigstep.com
   logo: logo-company.png
   logoAlt:
   social:
@@ -21,12 +21,18 @@ useLogoAlt: false # uses dark bg version of logo. delete entirely to remove
 <!-- Customize page here -->
 <style>
   .company-header {
+    background-color: #000;
 
   }
   .company-name,
-  .company-description {
-    
+  .company-description, 
+  .company-website{
+    color: #fff;    
   }
+  .company-website:hover{
+    color: #D91729;
+  }
+
 </style>
 
 {% assign company=page.company %}

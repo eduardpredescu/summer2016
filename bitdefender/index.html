@@ -1,0 +1,77 @@
+---
+company:
+    name: Bitdefender
+    description: >
+        Bitdefender este compania care livrează soluții de securitate în mai mult de 100 de țări din lume, chiar de aici, din București.
+    address: "Delea Veche 24, Sector 2, București"
+    website: www.bitdefender.ro
+    logo: logo-company.png
+    logoAlt: logo-company-alt.png
+    social:
+        facebook: https://www.facebook.com/bitdefender
+        twitter: twitter.com/Bitdefender
+        linkedin: ro.linkedin.com/company/bitdefender
+# googleplus: ''
+instagram:  ''
+# youtube: ''
+
+
+---
+
+<!-- Customize page here -->
+<style>
+    .company-header {
+        background-color: #fff;
+        color: #000;
+    }
+    .company-name,
+    .company-description {
+        color: inherit;
+    }
+    .company-website {
+        display: inline-block;
+        color: inherit;
+        border-bottom: 1px;
+    }
+    .company-website:hover,
+    .company-website:focus {
+        border-bottom-style: solid;
+        color: #fff;
+    }
+</style>
+
+{% assign company=page.company %}
+
+<!-- Basic section markup -->
+<section class="section">
+    <header class="section-header">
+        <h2 class="section-title">Cine suntem</h2>
+    </header>
+    <div class="section-body">
+        <div class="section-copy">
+            <p>
+            Peste 500 de milioane de utilizatori se bazează pe tehnologia Bitdefender pentru a-și proteja device-urile
+            împotriva atacurilor cibernetice, iar noi, folosim tot ce e mai bun din inteligența românească pentru a
+            livra soluții sigure și stabile, zi de zi.</p>
+            <p>
+            Atunci când vorbim de protecție cibernetică, adesea marja de eroare este zero. Bitdefender e unul din cei
+            mai mari jucători într-o industrie unde, doar cele mai clare viziuni și cele mai bune soluții ramân în
+            picioare să lupte împotriva atacurilor cibernetice protejând clienții săi.
+            </p>
+            Ne puteți găsi pe: {% include company-social.html social=page.company.social %}
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <header class="section-header">
+        <h2 class="section-title">Joburi</h2>
+    </header>
+    <div class="section-body">
+
+        {% include company-jobs.html jobs=company.jobs %}
+
+    </div>
+</section>
+
