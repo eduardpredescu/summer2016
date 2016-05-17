@@ -113,7 +113,13 @@ permalink: joburi
                 allElems.splice(random, 1);
                 return randEl;
            });
-
+      var position=0;
+      $(shuffled).each(function(i){
+        if($(this).find('.listing-group-header div').is('#bitdefender')==true){position=i;}
+      });
+      var aux=shuffled[0];
+      shuffled[0]=shuffled[position];
+      shuffled[position]=aux;
         this.each(function(i){
             $(this).replaceWith($(shuffled[i]));
         });
@@ -125,6 +131,7 @@ permalink: joburi
   })(jQuery);
   $('.listing-jobs .listing-group').shuffle();
 </script>
+
 
 
 
