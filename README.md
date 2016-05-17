@@ -66,6 +66,7 @@ The result should look something like this:
   index.html               # the company page
   company-logo.png         # default company logo
   company-logo-alt.png     # optional logo for dark backgrounds
+  company-name-cover.png   # company page cover
   job-title.html           # job page
   job-title-thumb.jpg      # job page thumbnail
   job-title-cover.png      # job page cover
