@@ -17,7 +17,7 @@ useLogoAlt: true
 
     .job-header {
         /* change header background */
-        background: url("company-bitdefender-cover.png") #000;
+        background: url("company-bitdefender-cover-desktop.png") #000;
         background-size:contain;
         background-repeat:no-repeat;
         background-position:center;
@@ -40,6 +40,23 @@ useLogoAlt: true
         text-shadow: 0 -1px 0 #16b15b;
     }
 
+    @media only screen and (max-width: 768px) {
+        .job-header {
+            background: url("company-bitdefender-cover-tablet.png") #000;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    @media only screen and (max-width: 425px) {
+        .job-header {
+            background: url("company-bitdefender-cover-mobile.png") #000;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
 </style>
 
 <!-- Basic section markup -->
@@ -101,7 +118,7 @@ useLogoAlt: true
             <p>
                 De la implementarea de feature-uri noi, la corectarea comportamentelor pe diferite componente, la înțelegerea funcționalității diferitelor feature și produse. Totul făcut ca la carte așa cum ai lucra în orice altă companie. Îți vom oferi o experiență completă de producție din care îți vom explica fiecare etapă.
             </p>
-            <h5>giCât din timp îi este alocat trainingului?</h5>
+            <h5>Cât din timp îi este alocat trainingului?</h5>
             <p>
                 Prima lună este alocată training-ului pentru a ridica nivelul de cunoștințe al intern-ului până la capacitatea de a înțelege code base-ul din produsele noastre.
             </p>
