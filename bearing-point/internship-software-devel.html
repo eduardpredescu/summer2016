@@ -40,7 +40,8 @@ job:
 
 
 <!-- Basic section markup -->
-<section class="section">
+<div vocab="http://schema.org/" typeof="JobPosting">
+<section property="hiringOrganization" class="section">
   <header class="section-header">
     <h2 class="section-title">Who are we</h2>
   </header>
@@ -56,7 +57,7 @@ job:
 <!-- Section with Company social media -->
 
 
-<section class="section">
+<section property="description" class="section">
   <header class="section-header">
     <h2 class="section-title">Job description</h2>
   </header>
@@ -75,7 +76,7 @@ job:
 
 <!-- Section with technologies -->
 <!-- To add a technology check _data/tech.yml -->
-<section class="section">
+<section property="skills" class="section">
   <header class="section-header">
     <h2 class="section-title">Technologies used</h2>
   </header>
@@ -124,7 +125,7 @@ job:
 
 
 <!-- Section with map -->
-<section class="section">
+<section property="jobLocation" class="section">
   <header class="section-header">
     <h2 class="section-title">Where can you find us</h2>
   </header>
@@ -139,3 +140,4 @@ job:
     </div>
   </div>
 </section>
+</div>

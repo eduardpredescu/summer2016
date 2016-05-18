@@ -36,9 +36,9 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
   }
 
 </style>
-
+<div vocab="http://schema.org/" typeof="JobPosting">
 <!-- Basic section markup -->
-<section class="section">
+<section property="description" class="section">
   <header class="section-header">
     <h2 class="section-title">Job Description</h2>
   </header>
@@ -53,7 +53,7 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
 <!-- TODO -->
 <!-- Section with Company social media -->
 
-<section class="section">
+<section property="responsibilities" class="section">
   <header class="section-header">
     <h2 class="section-title">Section with image</h2>
   </header>
@@ -69,7 +69,7 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
 
 <!-- Section with technologies -->
 <!-- To add a technology check _data/tech.yml -->
-<section class="section">
+<section property="skills" class="section">
   <header class="section-header">
     <h2 class="section-title">Skills that recommend you</h2>
   </header>
@@ -88,7 +88,7 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
 
 
 <!-- Section with map -->
-<section class="section">
+<section property="jobLocation" class="section">
   <header class="section-header">
     <h2 class="section-title">You can find us here</h2>
   </header>
@@ -100,3 +100,4 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
     </div>
   </div>
 </section>
+</div>
