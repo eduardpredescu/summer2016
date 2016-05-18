@@ -140,46 +140,7 @@
     </footer>
 
     {% include scripts.html %}
-    <script src="/static/js/map.js"></script>
-    <script>
-      (function() {
-        var viewed = window.localStorage.getItem('viewedJobs') || '';
-
-        if (viewed !== '') {
-          if (viewed.split) {
-            viewed = viewed.split(', ');
-          } else {
-            viewed = [viewed];
-          }
-        }
-
-        viewed.forEach(function(jobId) {
-          console.log(jobId);
-          job = document.getElementById(jobId);
-          if (job)
-            job.classList.add('viewed');
-        });
-      }())
-    </script>
-    <script>
-      (function() {
-        if (window.localStorage) {
-          var viewed = window.localStorage.getItem('viewedJobs') || '',
-              jobId = '{{ job.id }}';
-
-          if (viewed.indexOf(jobId) === -1) {
-            if (viewed === '') {
-              viewed = jobId;
-            } else {
-              viewed += ', ' + jobId;
-            }
-          }
-          window.localStorage.setItem('viewedJobs', viewed);
-        }
-      }())
-    </script>
-    {% include scripts.html %}
-
+    
   </body>
 
 </html>
