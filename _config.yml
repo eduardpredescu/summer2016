@@ -5,7 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Summer job = job de vară. Este un mod în care poți câștiga niște bani și acumula un pic de experiență în loc să procrastinezi timp de trei luni.
 descriptionHTML: >
   Summer job = job de vară. Este un mod în care poți câștiga niște bani și acumula un pic de experiență în loc <del>să freci menta</del> <del>să tragi mâța de coadă</del> <em>să procrastinezi</em> timp de trei luni.
-baseurl: '/'
+baseurl: ''
 static: '/static'
 url: 'http://summer.junio.ro'
 # twitter_username: jekyllrb
@@ -15,7 +15,8 @@ url: 'http://summer.junio.ro'
 # Build settings
 safe: false
 excerpt_separator: <!--/excerpt-->
-
+gems:
+  - jekyll-sitemap
 markdown: kramdown
 exclude:
   - 'package.json'

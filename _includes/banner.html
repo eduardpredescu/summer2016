@@ -3,7 +3,7 @@
 
     <h1 class="site-title">Junio Summerjobs</h1>
 
-    <a href="{{ site.baseurl }}"
+    <a href="{{ '/' | site.baseurl }}"
        class="summer-logo"
        title="Prima pagină">
       <img src="{{ site.static }}/img/summer-logo.png" alt="Summerjobs"
@@ -14,7 +14,7 @@
     <div class="site-banner-copy">
       <!-- <p class="site-description">{{ site.descriptionHTML }}</p> -->
       <a class="btn btn-cta"
-         href="{{ 'joburi.html' | prepend: site.baseurl }}" onclick="goog_report_conversion()">Vezi joburi</a>
+         href="{{ '/joburi.html' | prepend: site.baseurl  }}" onclick="goog_report_conversion()">Vezi joburi</a>
     </div>
 
   </div>
