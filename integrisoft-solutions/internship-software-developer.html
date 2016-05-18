@@ -35,9 +35,10 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
   }
 
 </style>
-
-<!-- Basic section markup -->
-<section class="section">
+<div vocab="http://schema.org/" typeof="JobPosting">
+  <span property="url" class="hidden">{{page.job.applyUrl}}</span>
+  <span property="datePosted" class="hidden">{{page.job.date}}</span>
+<section property="description" class="section">
   <header class="section-header">
     <h2 class="section-title">Descrierea jobului</h2>
   </header>
@@ -63,7 +64,7 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
     </div>
   </div>
 </section>
-<section class="section">
+<section property="benefits" class="section">
   <header class="section-header">
     <h2 class="section-title">Beneficii</h2>
   </header>
@@ -102,7 +103,7 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
   </div>
 </section>
 
-<section class="section">
+<section property="qualifications" class="section">
   <header class="section-header">
     <h2 class="section-title">Interviul</h2>
   </header>
@@ -129,7 +130,7 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
   </div>
 </section>
 <!-- Section with map -->
-<section class="section">
+<section property="jobLocation" class="section">
   <header class="section-header">
     <h2 class="section-title">Ne găsiți aici:</h2>
   </header>
@@ -141,3 +142,4 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
     </div>
   </div>
 </section>
+</div>
