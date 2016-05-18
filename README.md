@@ -8,6 +8,7 @@ Junio Summerjobs 2016
 3. `[sudo] npm install -g grunt grunt-cli`
 4. Ruby
 5. `[sudo] gem install jekyll`
+6. `[sudo] gem install jekyll-sitemap`
 
 
 ## Development
