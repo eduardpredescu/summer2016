@@ -4,17 +4,17 @@
   <nav class="nav nav-global">
     <ul class="nav-items">
       <li>
-        <a href="{{ site.baseurl }}"
+        <a href="{{ '/' | prepend: site.baseurl }}"
            title="Prima pagină">Junio Summerjobs</a>
       </li>
       <li>
-        <a href="{{ 'joburi.html' | prepend: site.baseurl }}" onclick="goog_report_conversion()">Joburi</a>
+        <a href="{{ '/joburi.html' | prepend: site.baseurl  }}" onclick="goog_report_conversion()">Joburi</a>
       </li>
       <li>
-        <a href="{{ 'pentru-studenti.html' | prepend: site.baseurl }}">Studenți</a>
+        <a href="{{ '/pentru-studenti.html' | prepend: site.baseurl  }}">Studenți</a>
       </li>
       <li>
-        <a href="{{ 'pentru-companii.html' | prepend: site.baseurl }}">Companii</a>
+        <a href="{{ '/pentru-companii.html' | prepend: site.baseurl  }}">Companii</a>
       </li>
       <li>
         <a href="mailto:suport@junio.ro">suport@junio.ro</a>
