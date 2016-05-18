@@ -8,7 +8,8 @@ Junio Summerjobs 2016
 3. `[sudo] npm install -g grunt grunt-cli`
 4. Ruby
 5. `[sudo] gem install jekyll`
-6. `[sudo] gem install jekyll-sitemap`
+6. `[sudo] gem install jekyll-minibundle`
+7. `[sudo] gem install jekyll-sitemap`
 
 
 ## Development
@@ -75,6 +76,13 @@ The result should look something like this:
   ...
   # other photos
 ```
+
+# Asset versioning
+
+CSS and JS files are versioned using the `jekyll-minibundle` gem. For that to work, we need to build the files in `_static/` and the gem takes care of the rest.
+
+In order to correctly link to assets read [the jekyll-minibundle documentation](https://github.com/tkareine/jekyll-minibundle)
+
 
 # Sitemap
 

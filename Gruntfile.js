@@ -7,7 +7,7 @@ module.exports = function(grunt) {
       config = {};
 
   config.path = {
-    'static': 'static',
+    'static': '_static',
     'src': 'src',
     'node': 'node_modules'
   };

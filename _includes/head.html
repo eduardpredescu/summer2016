@@ -4,5 +4,6 @@
 
 <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
 
-<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.static }}">
+<link rel="stylesheet" 
+      href="/{{ site.baseurl }}{% ministamp _static/css/main.css static/css/main.css %}">
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">

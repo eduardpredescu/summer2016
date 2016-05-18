@@ -16,6 +16,7 @@ url: 'http://summer.junio.ro'
 safe: false
 excerpt_separator: <!--/excerpt-->
 gems:
+  - jekyll/minibundle
   - jekyll-sitemap
 markdown: kramdown
 exclude:

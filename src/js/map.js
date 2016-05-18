@@ -40,5 +40,6 @@ function codeAddress(address) {
 }
 
 window.onload = function() {
-  loadScript();
+  if (document.getElementById('map-canvas'))
+    loadScript();
 };
