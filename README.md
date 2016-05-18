@@ -76,3 +76,11 @@ The result should look something like this:
   # other photos
 ```
 
+# Sitemap
+
+Most of the sitemap is generated automatically by the _jekyll-sitemap_ gem.
+In order to add `<changefreq/>` or `<priority/>` to some locations you need to add:
+
+  1. Add `sitemap: false` to the front matter of that page. This excludes it from the automatic sitemap generator, then
+  2. Add that url and additional properties in `sitemap_handmade.xml`
+
