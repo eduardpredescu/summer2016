@@ -5,7 +5,7 @@
     <title>{{ page.company.name }} | Summerjobs</title>
     <meta property="og:title" content="{{page.company.name}} | Summerjobs">
     <meta property="og:url" content="{{page.company.website}}">
-    <meta property="og:image" content="{{page.company.logo}}">
+    <meta property="og:image" content="{% if page.company.logo %}{{page.company.logo}}{% else %}/summer-cover.jpg{% endif %}">
     <meta name="description" content="{{ page.company.description }}">
   </head>  
 
