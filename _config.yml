@@ -15,7 +15,8 @@ url: 'http://summer.junio.ro'
 # Build settings
 safe: false
 excerpt_separator: <!--/excerpt-->
-
+gems:
+  - jekyll-sitemap
 markdown: kramdown
 exclude:
   - 'package.json'
