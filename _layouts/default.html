@@ -4,11 +4,13 @@
   <head>
     {% include head.html %}
     <title>{% if page.title %}{{ page.title }} | Summerjobs{% else %}Summerjobs{% endif %}</title>
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} | Summerjobs{% else %}Summerjobs{% endif %}">
+    <meta property="og:url" content="{{site.url}}{{page.url}}">
+    <meta property="og:image" content="/summer-cover.jpg">
     <meta name="description" content="{{ site.description }}">
   </head>
 
   <body>
-
     <header id="site-header">
       {% include header.html %}
     </header>
