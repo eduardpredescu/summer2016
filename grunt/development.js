@@ -30,6 +30,13 @@ module.exports = {
       options: {
         nospawn: true
       }
+    },
+    scripts: {
+      files: ['<%= path.src %>/js/**/*.js'],
+      tasks: ['copy'],
+      options: {
+        nospawn: true
+      }
     }
   }
 }
