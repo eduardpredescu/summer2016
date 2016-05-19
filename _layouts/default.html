@@ -3,7 +3,7 @@
   
   <head>
     {% include head.html %}
-    <meta name="title" content="{{page.title}}|Summerjobs">
+    <title>{% if page.title %}{{ page.title }} | Summerjobs{% else %}Summerjobs{% endif %}</title>
     <meta name="description" content="{{ site.description }}">
   </head>
 
