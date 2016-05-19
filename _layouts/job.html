@@ -3,10 +3,11 @@
 
   <head>
     {% include head.html %}
-    <title>{{page.job.title}} at {{page.job.company.name}} | Summerjobs</title>
-    <meta property="og:title" content="{{page.job.title}} at {{page.job.company.name}} | Summerjobs">
-    <meta property="og:url" content="{{page.job.applyUrl}}">
-    <meta property="og:image" content="{{page.job.thumbnail}}">
+    
+    <title>{{page.job.title}} @ {{page.job.company.name}} | Summerjobs</title>
+    <meta property="og:title" content="{{page.job.title}} @ {{page.job.company.name}} | Summerjobs">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}{{ page.dir }}{{ page.company.logo }}">
     <meta name="description" content="{{ page.job.description }}">
   </head>
 
