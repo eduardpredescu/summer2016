@@ -27,14 +27,14 @@ sitemap: false
       
 
       <div class="listing-body">
-        
+
         {% for COMPANY in site.data.companies %}
         {% assign companyId = COMPANY[0] %}
         {% assign company = COMPANY[1] %}
         <div class="listing-group">
-          
+          <span>{{company.weight}}{{COMPANY[0]}}</span>
+          <span>{{page.company.weight}}</span>
           <header class="listing-group-header">
-
             <div id="{{ companyId }}" class="company snippet">
               <div class="leading">
                 {% if company.logo %}

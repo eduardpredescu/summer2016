@@ -31,12 +31,13 @@ module Summerjobs
           company['id'] = slug(company['name'])
           company['jobs'] = {}
           company['page'] = page
-
+          company['weight']=page.data['weight']
           page.data.merge!({
             'layout' => 'company',
-            'company' => company
+            'company' => company,
           })
           @companies[company['id']] = company
+
         else
           page.data['layout'] = 'company'  
         end
