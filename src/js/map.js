@@ -37,7 +37,7 @@ function mapper(){
     var request = {
       origin: start,
       destination: address,
-      travelMode: google.maps.TravelMode.DRIVING
+      travelMode: google.maps.TravelMode.TRANSIT
     };
     directionsService.route(request, function (result, status) {
       if (status == google.maps.DirectionsStatus.OK) {
@@ -52,7 +52,7 @@ function mapper(){
     });
     directionsDisplay.setMap(map);
   }
-  
+
   function showError(error) {
     switch (error.code) {
       case error.PERMISSION_DENIED:
