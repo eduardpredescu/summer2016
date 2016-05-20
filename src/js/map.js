@@ -1,6 +1,5 @@
 var map;
 var geocoder;
-var start;
 var address;
 var directionsDisplay;
 var mapCanvas;
@@ -20,26 +19,20 @@ summermap.initialize = function() {
   mapCanvas = document.getElementById('map-canvas');
   directionsDisplay = new google.maps.DirectionsRenderer();
   address = mapCanvas.getAttribute('data-address');
-  navigate();
   mapper();
+
 }
-function navigate(){
-  if(navigate.geolocation) {
-    navigate.geolocation.getCurrentPosition(function (position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      start= new google.maps.LatLng(pos.lat,pos.lng);
-    });
-  }
-  else{
-    console.log("Location not found!");
-  }
-}
+
+
 function mapper(){
   if (!mapCanvas) return;
-  if(start!=undefined){
+  var start = {};
+  navigator.geolocation.watchPosition(showPosition, showError);
+  function showPosition(position) {
+    start = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    };
     var directionsService = new google.maps.DirectionsService();
     var request = {
       origin: start,
@@ -59,14 +52,32 @@ function mapper(){
     });
     directionsDisplay.setMap(map);
   }
-  else{
+  
+  function showError(error) {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        console.warn("User denied the request for Geolocation.");
+        break;
+      case error.POSITION_UNAVAILABLE:
+        console.warn("Location information is unavailable.");
+        break;
+      case error.TIMEOUT:
+        console.warn("The request to get user location timed out.");
+        break;
+      case error.UNKNOWN_ERROR:
+        console.warn("An unknown error occurred.");
+        break;
+    }
     map = new google.maps.Map(mapCanvas, {
       zoom: 17,
       scrollwheel: false,
       center: codeAddress(address),
       styles: []
     });
+
   }
+
+
 }
 function codeAddress(address) {
   geocoder = new google.maps.Geocoder();
