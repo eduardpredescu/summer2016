@@ -69,7 +69,8 @@ module Summerjobs
       puts @companies.keys
       puts @jobs.keys
 
-      site.data['companies'] = @companies
+      @companies_sorted=@companies.sort_by { |k, v| v['weight'] }.reverse
+      site.data['companies'] = @companies_sorted
       site.data['jobs'] = @jobs
       # p(otherPages)
 
