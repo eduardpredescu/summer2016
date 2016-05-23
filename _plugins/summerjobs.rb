@@ -31,12 +31,13 @@ module Summerjobs
           company['id'] = slug(company['name'])
           company['jobs'] = {}
           company['page'] = page
-
+          company['weight']=page.data['weight']?page.data['weight']:0
           page.data.merge!({
             'layout' => 'company',
-            'company' => company
+            'company' => company,
           })
           @companies[company['id']] = company
+
         else
           page.data['layout'] = 'company'  
         end
@@ -68,7 +69,8 @@ module Summerjobs
       puts @companies.keys
       puts @jobs.keys
 
-      site.data['companies'] = @companies
+      @companies_sorted=@companies.sort_by { |k, v| v['weight'] }.reverse
+      site.data['companies'] = @companies_sorted
       site.data['jobs'] = @jobs
       # p(otherPages)
 
