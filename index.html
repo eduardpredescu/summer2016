@@ -142,33 +142,6 @@ sitemap: false
   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
   crossorigin="anonymous">
 </script>
-    <script>
-  (function($){
- 
-    $.fn.shuffle = function() {
- 
-        var allElems = this.get(),
-            getRandom = function(max) {
-                return Math.floor(Math.random() * max);
-            },
-            shuffled = $.map(allElems, function(){
-                var random = getRandom(allElems.length),
-                    randEl = $(allElems[random]).clone(true)[0];
-                allElems.splice(random, 1);
-                return randEl;
-           });
-
-        this.each(function(i){
-            $(this).replaceWith($(shuffled[i]));
-        });
- 
-        return $(shuffled);
- 
-    };
- 
-  })(jQuery);
-  $('.listing-jobs .listing-group').shuffle();
-</script>
 
     <!--
     <section id="companii" class="section">
