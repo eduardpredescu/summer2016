@@ -62,7 +62,7 @@ if (summer.plugins === undefined)
       summer.plugins['google-maps'].map = new google.maps.Map(summer.dom.mapCanvas, {
         zoom: 17,
         scrollwheel: false,
-        center: codeAddress(summer.plugins['google-maps'].address),
+        center: summer.plugins['google-maps'].codeAddress(summer.plugins['google-maps'].address),
         styles: []
       });
 
@@ -87,7 +87,7 @@ summer.plugins['google-maps'].codeAddress=function codeAddress(address) {
   summer.plugins['google-maps'].geocoder = new google.maps.Geocoder();
   summer.plugins['google-maps'].geocoder.geocode( { 'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
-      map.setCenter(results[0].geometry.location);
+      summer.plugins['google-maps'].map.setCenter(results[0].geometry.location);
       var marker = new google.maps.Marker({
         map: summer.plugins['google-maps'].map,
         position: results[0].geometry.location
