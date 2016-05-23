@@ -31,7 +31,7 @@ module Summerjobs
           company['id'] = slug(company['name'])
           company['jobs'] = {}
           company['page'] = page
-          company['weight']=page.data['weight']
+          company['weight']=page.data['weight']?page.data['weight']:0
           page.data.merge!({
             'layout' => 'company',
             'company' => company,
