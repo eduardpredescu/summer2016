@@ -4,8 +4,7 @@ function loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
   script.src = 'https://maps.googleapis.com/maps/api/js' +
-      '?key=AIzaSyCgzwlVgB2yRIIW89qbpi9dAiWlD1DAjy0' + '&libraries=places'+
-      '&callback=summer.init';
+      '?key=AIzaSyCgzwlVgB2yRIIW89qbpi9dAiWlD1DAjy0' + '&libraries=places'+"&callback=summer.init";
   document.body.appendChild(script);
 }
 
@@ -99,8 +98,31 @@ summer.plugins['google-maps'].codeAddress=function codeAddress(address) {
 }
 
 window.onload = function() {
-  if (document.getElementById('map-canvas')) {
-    loadScript();
-  }
+  function once(fn, context) {
+    var result;
 
+    return function() {
+      if(fn) {
+        result = fn.apply(context || this, arguments);
+        fn = null;
+      }
+
+      return result;
+    };
+  }
+  var handler = once(onVisibilityChange(document.getElementById('map-canvas'), function() {
+    loadScript();
+  }));
+  if (window.addEventListener) {
+    addEventListener('DOMContentLoaded', handler, false);
+    addEventListener('load', handler, false);
+    addEventListener('scroll', handler, false);
+    addEventListener('resize', handler, false);
+  } else if (window.attachEvent)  {
+    attachEvent('onDOMContentLoaded', handler); // IE9+ :(
+    attachEvent('onload', handler);
+    attachEvent('onscroll', handler);
+    attachEvent('onresize', handler);
+  }
 };
+
