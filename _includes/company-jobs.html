@@ -3,12 +3,12 @@
 <div class="listing">
   
   <div class="listing-body">
-    <span>{{jobs}}</span>
+    <span>{{jobs]|debug}}</span>
     {% for JOB in jobs %}
       {% assign jobId = JOB[0] %}
       {% assign job = JOB[1]  %}
-      <span>{{JOB[1].status}}</span>
-      <span>{{JOB[1].weight}}</span>
+      <span>status={{JOB[1].status}}</span>
+      <span>weight={{JOB[1].weight}}</span>
       <div class="listing-items">
         
         <div id="{{ jobId }}" class="job snippet">
