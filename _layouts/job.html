@@ -62,17 +62,43 @@
             <div class="job-body">
               <div class="page-container">
                 {{ content }}
+
               </div>
             </div>
 
             <footer class="job-footer">
               <div class="page-container">
-                <div class="align-center">
+                <div class="align-center leading">
                 {% include btn-apply.html href=job.applyUrl %}
                 </div>
+                {% if company.jobs|size > 1 %}
+                  {% for OTHERJOB in company.jobs %}
+                  {% assign otherJobId = OTHERJOB[0] %}
+                  {% assign otherJob = OTHERJOB[1] %}
+                  {% unless job.id == otherJobId %}
+                <h2 class="align-center">Alte joburi:</h2>
+                <ul class="list-inline">
+                  <li>
+
+                    <div id="{{ jobId }}" class="job snippet">
+                      {% if job.thumbnail %}
+                      <div class="job-thumbnail">
+                        <img src="{{ job.page.dir }}{{ job.thumbnail }}" alt="{{ job.title }}">
+                      </div>
+                      {% endif %}
+                      <h4 class="align-center">
+                        <a href="{{ otherJob.page.url }}" title="Detalii despre job">{{ otherJob.title }}</a>
+                      </h4>
+                      <p>{{ otherJob.description }}</p>
+                    </div>
+
+                  </li>
+                  {% endunless %}
+                  {% endfor %}
+                </ul>
+                {% endif %}
               </div>
             </footer>
-
           </article>
 
           <!-- <aside>
@@ -112,30 +138,9 @@
               </li>
             </ul>
 
-            <nav>
-              
-              {% if company.jobs|size > 1 %}
-
-
-                {% for OTHERJOB in company.jobs %}
-                  {% assign otherJobId = OTHERJOB[0] %}
-                  {% assign otherJob = OTHERJOB[1] %}
-                  {% unless job.id == otherJobId %}
-                    
-                    <a href="{{ otherJob.page.url }}">{{ otherJob.title }}</a>
-                    <p>
-                      {{ otherJob.description }}
-                    </p>
-
-                  {% endunless %}
-                {% endfor %}
-              hello
-
-              {% endif %}
-
-            </nav>
-
           </aside> -->
+
+
 
         </main>
 
