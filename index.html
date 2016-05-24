@@ -76,12 +76,24 @@ sitemap: false
       
 
       <div class="listing-body">
-        
+        {% assign check = 0 %}
         {% for COMPANY in site.data.companies %}
         {% assign companyId = COMPANY[0] %}
         {% assign company = COMPANY[1] %}
+        {% assign check = 0 %}
+        {% assign dim=company.jobs | size %}
+        {% if dim <= 1 %}
+          {% for JOB in company.jobs %}
+            {% assign jobId = JOB[0] %}
+            {% assign job = JOB[1] %}
+            {% if JOB[1].status == "closed" %}
+              {% assign check=1 %}
+            {% endif %}
+           {% endfor %}
+        {% endif %}
+        {% if check == 0 %}
         <div class="listing-group">
-          
+
           <header class="listing-group-header">
 
             <div id="{{ companyId }}" class="company snippet">
@@ -110,6 +122,7 @@ sitemap: false
             {% for JOB in company.jobs %}
             {% assign jobId = JOB[0] %}
             {% assign job = JOB[1] %}
+            {% if JOB[1].status == "open" %}
             <li class="listing-item">
               
               <div id="{{ jobId }}" class="job snippet">
@@ -126,10 +139,12 @@ sitemap: false
               </div>
 
             </li>
+            {% endif %}
             {% endfor %}
           </ul>
 
         </div>
+        {% endif %}
         {% endfor %}
 
       </div>
