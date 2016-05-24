@@ -66,9 +66,6 @@ module Summerjobs
         end
       end
 
-      puts @companies.keys
-      puts @jobs.keys
-
       @companies_sorted=@companies.sort_by { |k, v| v['weight'] }.reverse
       site.data['companies'] = @companies_sorted
       site.data['jobs'] = @jobs
