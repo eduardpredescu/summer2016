@@ -71,16 +71,22 @@
                 <div class="align-center leading">
                 {% include btn-apply.html href=job.applyUrl %}
                 </div>
-                {% if company.jobs|size > 1 %}
+
+
+                {% assign dim=company.jobs | size %}
+                {% if dim > 1 %}
+                <div class="listing listing-jobs">
+                  <div class="listing-body">
+                <h2 class="align-center">Alte joburi:</h2>
                   {% for OTHERJOB in company.jobs %}
                   {% assign otherJobId = OTHERJOB[0] %}
                   {% assign otherJob = OTHERJOB[1] %}
                   {% unless job.id == otherJobId %}
-                <h2 class="align-center">Alte joburi:</h2>
-                <ul class="list-inline">
-                  <li>
+                <ul class="listing-items">
+                  <li class="listing-item">
 
                     <div id="{{ jobId }}" class="job snippet">
+                      </div>
                       {% if job.thumbnail %}
                       <div class="job-thumbnail">
                         <img src="{{ job.page.dir }}{{ job.thumbnail }}" alt="{{ job.title }}">
@@ -89,13 +95,19 @@
                       <h4 class="align-center">
                         <a href="{{ otherJob.page.url }}" title="Detalii despre job">{{ otherJob.title }}</a>
                       </h4>
-                      <p>{{ otherJob.description }}</p>
-                    </div>
+                      <p class="job-description">{{ otherJob.description }}</p>
+
 
                   </li>
+
                   {% endunless %}
-                  {% endfor %}
                 </ul>
+                  {% endfor %}
+
+
+                  </div>
+                  </div>
+
                 {% endif %}
               </div>
             </footer>
