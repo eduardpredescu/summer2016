@@ -31,7 +31,7 @@ module Summerjobs
           company['id'] = slug(company['name'])
           company['jobs'] = {}
           company['page'] = page
-          company['weight']=page.data['weight']?page.data['weight']:0
+          company['weight']= (page.data['weight']) ? page.data['weight'] : 0
           page.data.merge!({
             'layout' => 'company',
             'company' => company,
@@ -50,8 +50,8 @@ module Summerjobs
           job['company'] = (company = getCompany(page))
           job['id'] = company['id'] + '_' + slug(job['title'])
           job['page'] = page
-          job['weight']=page.data['status']=="closed"?-1:0
-          job['status']=page.data['status']?page.data['status']:'open'
+          job['weight'] = (page.data['status']=="closed") ? -1 : 0
+          job['status'] = (page.data['status']) ? page.data['status'] : 'open'
           company['jobs'].merge!({
             job['id'] => job
           })
@@ -67,13 +67,14 @@ module Summerjobs
         end
       end
 
-      puts @companies.keys
-      puts @jobs.keys
+      @companies.each do |key,value|
+        @jobs_sorted = value['jobs'].sort_by{ |k, v| v['weight'] }.reverse
+        value['jobs'] = @jobs_sorted
+      end
 
       @companies_sorted=@companies.sort_by { |k, v| v['weight'] }.reverse
       site.data['companies'] = @companies_sorted
-      @jobs_sorted=@jobs.sort_by { |key, value| value['weight'].to_i }
-      site.data['jobs'] = @jobs_sorted
+      site.data['jobs'] = @jobs
       # p(otherPages)
 
     end
