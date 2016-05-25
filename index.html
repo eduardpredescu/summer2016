@@ -123,22 +123,7 @@ sitemap: false
             {% assign jobId = JOB[0] %}
             {% assign job = JOB[1] %}
             {% if JOB[1].status == "open" %}
-            <li class="listing-item">
-              
-              <div id="{{ jobId }}" class="job snippet">
-                {% if job.thumbnail %}
-                  <div class="job-thumbnail">
-                    <img src="{{ company.page.dir }}{{ job.thumbnail }}"
-                         alt="{{ job.title }}">
-                  </div>
-                {% endif %}
-                <h4 class="job-title">
-                  <a href="{{ job.page.url }}" title="Detalii despre job">{{ job.title }}</a>
-                </h4>
-                <p class="job-description">{{ job.description }}</p>
-              </div>
-
-            </li>
+            {% include job-snippet.html %}
             {% endif %}
             {% endfor %}
           </ul>
