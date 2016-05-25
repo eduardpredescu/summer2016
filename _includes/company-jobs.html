@@ -3,25 +3,15 @@
 <div class="listing">
   
   <div class="listing-body">
+    <ul class="listing-items">
     {% for JOB in jobs %}
       {% assign jobId = JOB[0] %}
       {% assign job = JOB[1]  %}
-      <div class="listing-items">
-        
-        <div id="{{ jobId }}" class="job snippet">
-          <!-- {% if job.thumbnail %}
-            <div class="job-thumbnail">
-              <img src="{{ job.thumbnail }}" alt="{{ job.title }}">
-            </div>
-          {% endif %} -->
-          <h4 class="job-title">
-            <a href="{{ job.page.url }}">{{ job.title }}</a>
-          </h4>
-          <p class="job-description">{{ job.description }}</p>
-        </div>
-
-      </div>
+      <li class="listing-items">
+        {% include job-snippet.html job = job %}        
+      </li>
     {% endfor %}
+    </ul>
   </div>
   
 </div>

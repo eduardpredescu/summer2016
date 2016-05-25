@@ -1,16 +1,13 @@
-<li class="listing-item">
-
-    <div id="{{ jobId }}" class="job snippet">
-        {% if job.thumbnail %}
-        <div class="job-thumbnail">
-            <img src="{{ company.page.dir }}{{ job.thumbnail }}"
-                 alt="{{ job.title }}">
-        </div>
-        {% endif %}
-        <h4 class="job-title">
-            <a href="{{ job.page.url }}" title="Detalii despre job">{{ job.title }}</a>
-        </h4>
-        <p class="job-description">{{ job.description }}</p>
-    </div>
-
-</li>
+{% assign job = include.job %}
+<div id="{{ jobId }}" class="job snippet is-{{ job.status }}">
+  {% if job.thumbnail %}
+  <div class="job-thumbnail">
+    <img src="{{ company.page.dir }}{{ job.thumbnail }}"
+         alt="{{ job.title }}">
+  </div>
+  {% endif %}
+  <h4 class="job-title">
+    <a href="{{ job.page.url }}" title="Detalii despre job">{{ job.title }}</a>
+  </h4>
+  <p class="job-description">{{ job.description }}</p>
+</div>

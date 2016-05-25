@@ -118,13 +118,14 @@ sitemap: false
           </header>
 
           <ul class="listing-items">
-
             {% for JOB in company.jobs %}
-            {% assign jobId = JOB[0] %}
-            {% assign job = JOB[1] %}
-            {% if JOB[1].status == "open" %}
-            {% include job-snippet.html %}
-            {% endif %}
+              {% assign jobId = JOB[0] %}
+              {% assign job = JOB[1] %}
+              {% if job.status == "open" %}
+                <li class="listing-item">
+                  {% include job-snippet.html job=job %}
+                </li>
+              {% endif %}
             {% endfor %}
           </ul>
 

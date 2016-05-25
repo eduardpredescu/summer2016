@@ -77,36 +77,20 @@
                 {% if dim > 1 %}
                 <div class="listing listing-jobs">
                   <div class="listing-body">
-                <h2 class="align-center">Alte joburi:</h2>
-                  {% for OTHERJOB in company.jobs %}
-                  {% assign otherJobId = OTHERJOB[0] %}
-                  {% assign otherJob = OTHERJOB[1] %}
-                  {% unless job.id == otherJobId %}
-                <ul class="listing-items">
-                  <li class="listing-item">
-
-                    <div id="{{ jobId }}" class="job snippet">
-                      </div>
-                      {% if job.thumbnail %}
-                      <div class="job-thumbnail">
-                        <img src="{{ job.page.dir }}{{ job.thumbnail }}" alt="{{ job.title }}">
-                      </div>
-                      {% endif %}
-                      <h4 class="align-center">
-                        <a href="{{ otherJob.page.url }}" title="Detalii despre job">{{ otherJob.title }}</a>
-                      </h4>
-                      <p class="job-description">{{ otherJob.description }}</p>
-
-
-                  </li>
-
-                  {% endunless %}
-                </ul>
-                  {% endfor %}
-
-
+                    <h2 class="align-center">Alte joburi:</h2>
+                    <ul class="listing-items">
+                      {% for OTHERJOB in company.jobs %}
+                      {% assign otherJobId = OTHERJOB[0] %}
+                      {% assign otherJob = OTHERJOB[1] %}
+                      {% unless job.id == otherJobId %}
+                      <li class="listing-item">
+                        {% include job-snippet.html job=otherJob %}
+                      </li>
+                      {% endunless %}
+                      {% endfor %}
+                    </ul>
                   </div>
-                  </div>
+                </div>
 
                 {% endif %}
               </div>
