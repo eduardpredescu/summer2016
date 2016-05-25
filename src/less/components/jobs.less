@@ -173,8 +173,14 @@
   border: 1px solid @color-soft;
   border-radius: @radius;
   .job-thumbnail {
-    float: right;
     margin-left: @rem-h-large;
+    float:right;
+  }
+  .muted{
+    color:@color-muted;
+    a:hover,a:focus{
+      color:@color-anchor-hover;
+    }
   }
 }
 
@@ -191,12 +197,10 @@
 }
 
 .job-description {
+  float:left;
   .snippet-large & {
     font-size: @larger;
 
-  }
-  .snippet & {
-    max-width: @container-sm;
   }
 }
 
@@ -206,6 +210,7 @@
     color: @color-muted;
   }
 }
+
 
 
 .company-description {
