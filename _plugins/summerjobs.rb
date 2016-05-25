@@ -31,7 +31,7 @@ module Summerjobs
           company['id'] = slug(company['name'])
           company['jobs'] = {}
           company['page'] = page
-          company['weight']= (page.data['weight']) ? page.data['weight'] : 0
+          company['weight']= (page.data['company']['weight']) ? page.data['company']['weight'] : 0
           page.data.merge!({
             'layout' => 'company',
             'company' => company,
@@ -50,8 +50,8 @@ module Summerjobs
           job['company'] = (company = getCompany(page))
           job['id'] = company['id'] + '_' + slug(job['title'])
           job['page'] = page
-          job['weight'] = (page.data['status']=="closed") ? -1 : 0
-          job['status'] = (page.data['status']) ? page.data['status'] : 'open'
+          job['weight'] = (page.data['job']['status'] == "closed") ? -1 : 0
+          job['status'] = (page.data['job']['status']) ? page.data['job']['status'] : 'open'
           company['jobs'].merge!({
             job['id'] => job
           })
