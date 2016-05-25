@@ -54,8 +54,11 @@
                   <p class="job-domain">{{ job.department }}</p>
                 {% endif %}
 
+                {% if job.status == "open" %}
                 {% include btn-apply.html href=job.applyUrl %}
-
+                {% else %}
+                <span style="font-size:1rem;padding:2px;" class="btn btn-apply">Job închis</span>
+                {% endif %}
               </div>
             </header>
 
@@ -69,7 +72,48 @@
             <footer class="job-footer">
               <div class="page-container">
                 <div class="align-center leading">
-                {% include btn-apply.html href=job.applyUrl %}
+                  {% if job.status == "open" %}
+                  {% include btn-apply.html href=job.applyUrl %}
+                  <section class="section">
+                    <header class="section-header">
+                  <h5 class="section-title">Recomandă jobul mai departe</h5>
+                      </header>
+                    <div class="section-body">
+                  <ul class="list-inline">
+                    <li>
+                      <a class="social" href="https://www.facebook.com/sharer/sharer.php?u={{ page.job.applyUrl }}">
+                        <svg class="svg-icon">
+                          <use xlink:href="{{ site.static }}/img/sprite-social.svg#facebook"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social" href="https://twitter.com/home?status={{ page.job.applyUrl }}">
+                        <svg class="svg-icon">
+                          <use xlink:href="{{ site.static }}/img/sprite-social.svg#twitter"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social" href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.job.applyUrl }}">
+                        <svg class="svg-icon">
+                          <use xlink:href="{{ site.static }}/img/sprite-social.svg#linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="social" href="https://plus.google.com/share?url={{ page.job.applyUrl }}">
+                        <svg class="svg-icon">
+                          <use xlink:href="{{ site.static }}/img/sprite-social.svg#googleplus"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                      </div>
+                    </section>
+                  {% else %}
+                  <span style="font-size:1rem;padding:2px" class="btn btn-apply">S-a dat :)</span>
+                  {% endif %}
                 </div>
 
 
