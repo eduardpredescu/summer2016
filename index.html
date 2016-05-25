@@ -76,12 +76,24 @@ sitemap: false
       
 
       <div class="listing-body">
-        
+        {% assign check = 0 %}
         {% for COMPANY in site.data.companies %}
         {% assign companyId = COMPANY[0] %}
         {% assign company = COMPANY[1] %}
+        {% assign check = 0 %}
+        {% assign dim=company.jobs | size %}
+        {% if dim <= 1 %}
+          {% for JOB in company.jobs %}
+            {% assign jobId = JOB[0] %}
+            {% assign job = JOB[1] %}
+            {% if JOB[1].status == "closed" %}
+              {% assign check=1 %}
+            {% endif %}
+           {% endfor %}
+        {% endif %}
+        {% if check == 0 %}
         <div class="listing-group">
-          
+
           <header class="listing-group-header">
 
             <div id="{{ companyId }}" class="company snippet">
@@ -110,6 +122,7 @@ sitemap: false
             {% for JOB in company.jobs %}
             {% assign jobId = JOB[0] %}
             {% assign job = JOB[1] %}
+            {% if JOB[1].status == "open" %}
             <li class="listing-item">
               
               <div id="{{ jobId }}" class="job snippet">
@@ -126,10 +139,12 @@ sitemap: false
               </div>
 
             </li>
+            {% endif %}
             {% endfor %}
           </ul>
 
         </div>
+        {% endif %}
         {% endfor %}
 
       </div>
@@ -141,33 +156,6 @@ sitemap: false
   src="https://code.jquery.com/jquery-2.2.3.min.js"
   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
   crossorigin="anonymous">
-</script>
-    <script>
-  (function($){
- 
-    $.fn.shuffle = function() {
- 
-        var allElems = this.get(),
-            getRandom = function(max) {
-                return Math.floor(Math.random() * max);
-            },
-            shuffled = $.map(allElems, function(){
-                var random = getRandom(allElems.length),
-                    randEl = $(allElems[random]).clone(true)[0];
-                allElems.splice(random, 1);
-                return randEl;
-           });
-
-        this.each(function(i){
-            $(this).replaceWith($(shuffled[i]));
-        });
- 
-        return $(shuffled);
- 
-    };
- 
-  })(jQuery);
-  $('.listing-jobs .listing-group').shuffle();
 </script>
 
     <!--

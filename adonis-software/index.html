@@ -18,11 +18,18 @@ useLogoAlt: false # uses dark bg version of logo. delete entirely to remove
 <!-- Customize page here -->
 <style>
   .company-header {
-    background-color: #fff;
+    position: relative;
     border-radius: 0;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+    background: #fff;
+  }
+  @media (min-width: 720px) {
+    .company-header {
+      background: #fff url('adonis-software-cover.jpg') no-repeat right center;
+      background-size: auto 100%;
     }
+  }
 </style>
 
 {% assign company=page.company %}
