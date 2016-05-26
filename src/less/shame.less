@@ -196,3 +196,29 @@ blockquote {
 .container-sm {
   max-width: @container-sm;
 }
+
+.uni-button {
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  background-color: #599bb3;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  width: 200px;
+  height: 100px;
+
+  &:hover {
+    background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+    background-color: #408c99;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+.uni-button a {
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a;
+}
