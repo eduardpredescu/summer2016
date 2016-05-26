@@ -53,11 +53,7 @@
                     <p class="job-domain">{{ job.department }}</p>
                   {% endif %}
 
-                  {% if job.status == "open" %}
                   {% include btn-apply.html href=job.applyUrl %}
-                  {% else %}
-                  <span style="font-size:1rem;padding:2px;" class="btn btn-apply">Job închis</span>
-                  {% endif %}
 
                   <div class="job-date">Publicat pe {{ job.date | humanday }}</div>
                 </div>
@@ -73,7 +69,6 @@
               <footer class="job-footer">
                 <div class="page-container">
                   <div class="align-center leading">
-                    {% if job.status == "open" %}
                     {% include btn-apply.html href=job.applyUrl %}
                     <section class="section">
                       <header class="section-header">
@@ -112,9 +107,6 @@
                     </ul>
                         </div>
                       </section>
-                    {% else %}
-                    <span style="font-size:1rem;padding:2px" class="btn btn-apply">S-a dat :)</span>
-                    {% endif %}
                   </div>
                 </div>
               </footer>
