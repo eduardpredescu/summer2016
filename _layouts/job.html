@@ -25,171 +25,126 @@
 
     <div id="site-body">
       <div class="page">
+        <div class="page-body">
+          {% assign job = page.job %}
+          {% assign company = page.company %}
+          <main class="page-main">
+            <article class="job" id="{{ job.id }}">
+              <header class="job-header">
+                <div class="page-container">
+                  <a href="./" class="job-company">
 
-        {% assign job = page.job %}
-        {% assign company = page.company %}
-        <main class="page-body">
+                    {% if company.logo %}
+                      {% assign logo = company.logo %}
+                      {% if page.useLogoAlt and company.logoAlt %}
+                        {% assign logo = company.logoAlt %}
+                      {% endif %}
 
-          <article class="job" id="{{ job.id }}">
-            <header class="job-header">
-              <div class="page-container">
-                <a href="./" class="job-company">
-
-                  {% if company.logo %}
-                    {% assign logo = company.logo %}
-                    {% if page.useLogoAlt and company.logoAlt %}
-                      {% assign logo = company.logoAlt %}
+                      <img src="{{ logo }}" alt="Logo {{ company.name }}"
+                           style="height: 2em; width: auto;">
                     {% endif %}
 
-                    <img src="{{ logo }}" alt="Logo {{ company.name }}"
-                         style="height: 2em; width: auto;">
+                    <strong>{{ company.name }}</strong>
+                  </a>
+
+                  <h1 class="job-title">{{ job.title }}</h1>
+
+                  {% if job.department %}
+                    <p class="job-domain">{{ job.department }}</p>
                   {% endif %}
 
-                  <strong>{{ company.name }}</strong>
-                </a>
-
-                <h1 class="job-title">{{ job.title }}</h1>
-
-                {% if job.department %}
-                  <p class="job-domain">{{ job.department }}</p>
-                {% endif %}
-
-                {% if job.status == "open" %}
-                {% include btn-apply.html href=job.applyUrl %}
-                {% else %}
-                <span style="font-size:1rem;padding:2px;" class="btn btn-apply">Job închis</span>
-                {% endif %}
-
-                <div class="job-date">Publicat pe {{ job.date | humanday }}</div>
-              </div>
-            </header>
-
-            <div class="job-body">
-              <div class="page-container">
-                {{ content }}
-
-              </div>
-            </div>
-
-            <footer class="job-footer">
-              <div class="page-container">
-                <div class="align-center leading">
                   {% if job.status == "open" %}
                   {% include btn-apply.html href=job.applyUrl %}
-                  <section class="section">
-                    <header class="section-header">
-                  <h5 class="section-title">Recomandă jobul mai departe</h5>
-                      </header>
-                    <div class="section-body">
-                  <ul class="list-inline">
-                    <li>
-                      <a class="social" href="https://www.facebook.com/sharer/sharer.php?u={{ page.job.applyUrl }}">
-                        <svg class="svg-icon">
-                          <use xlink:href="{{ site.static }}/img/sprite-social.svg#facebook"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social" href="https://twitter.com/home?status={{ page.job.applyUrl }}">
-                        <svg class="svg-icon">
-                          <use xlink:href="{{ site.static }}/img/sprite-social.svg#twitter"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social" href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.job.applyUrl }}">
-                        <svg class="svg-icon">
-                          <use xlink:href="{{ site.static }}/img/sprite-social.svg#linkedin"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="social" href="https://plus.google.com/share?url={{ page.job.applyUrl }}">
-                        <svg class="svg-icon">
-                          <use xlink:href="{{ site.static }}/img/sprite-social.svg#googleplus"></use>
-                        </svg>
-                      </a>
-                    </li>
-                  </ul>
-                      </div>
-                    </section>
                   {% else %}
-                  <span style="font-size:1rem;padding:2px" class="btn btn-apply">S-a dat :)</span>
+                  <span style="font-size:1rem;padding:2px;" class="btn btn-apply">Job închis</span>
                   {% endif %}
+
+                  <div class="job-date">Publicat pe {{ job.date | humanday }}</div>
                 </div>
+              </header>
 
+              <div class="job-body">
+                <div class="page-container">
+                  {{ content }}
 
-                {% assign dim=company.jobs | size %}
-                {% if dim > 1 %}
-                <div class="listing listing-jobs">
-                  <div class="listing-body">
-                    <h2 class="align-center">Alte joburi:</h2>
-                    <ul class="listing-items">
-                      {% for OTHERJOB in company.jobs %}
-                      {% assign otherJobId = OTHERJOB[0] %}
-                      {% assign otherJob = OTHERJOB[1] %}
-                      {% unless job.id == otherJobId %}
-                      <li class="listing-item">
-                        {% include job-snippet.html job=otherJob %}
+                </div>
+              </div>
+
+              <footer class="job-footer">
+                <div class="page-container">
+                  <div class="align-center leading">
+                    {% if job.status == "open" %}
+                    {% include btn-apply.html href=job.applyUrl %}
+                    <section class="section">
+                      <header class="section-header">
+                    <h5 class="section-title">Recomandă jobul mai departe</h5>
+                        </header>
+                      <div class="section-body">
+                    <ul class="list-inline">
+                      <li>
+                        <a class="social" href="https://www.facebook.com/sharer/sharer.php?u={{ page.job.applyUrl }}">
+                          <svg class="svg-icon">
+                            <use xlink:href="{{ site.static }}/img/sprite-social.svg#facebook"></use>
+                          </svg>
+                        </a>
                       </li>
-                      {% endunless %}
-                      {% endfor %}
+                      <li>
+                        <a class="social" href="https://twitter.com/home?status={{ page.job.applyUrl }}">
+                          <svg class="svg-icon">
+                            <use xlink:href="{{ site.static }}/img/sprite-social.svg#twitter"></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="social" href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.job.applyUrl }}">
+                          <svg class="svg-icon">
+                            <use xlink:href="{{ site.static }}/img/sprite-social.svg#linkedin"></use>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="social" href="https://plus.google.com/share?url={{ page.job.applyUrl }}">
+                          <svg class="svg-icon">
+                            <use xlink:href="{{ site.static }}/img/sprite-social.svg#googleplus"></use>
+                          </svg>
+                        </a>
+                      </li>
                     </ul>
+                        </div>
+                      </section>
+                    {% else %}
+                    <span style="font-size:1rem;padding:2px" class="btn btn-apply">S-a dat :)</span>
+                    {% endif %}
                   </div>
                 </div>
+              </footer>
+            </article>
+          </main>
 
-                {% endif %}
+          {% assign dim=company.jobs | size %}
+          {% if dim > 1 %}
+          <aside class="page-aside">
+            <div class="listing listing-jobs">
+              <div class="listing-header">
+                <h3 class="listing-title">Alte joburi de la {{ company.name }}</h3>
               </div>
-            </footer>
-          </article>
-
-          <!-- <aside>
-            <h5>Recomandă jobul mai departe</h5>
-            <ul class="list-inline">
-              <li>
-                <a href="{{ page.company.social.facebook }}">
-                  Facebook
-                  <svg class="svg-icon">
-                    <use xlink:href="{{ site.static }}/img/sprite-social.svg#facebook"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="{{ page.company.social.twitter }}">
-                  Twitter
-                  <svg class="svg-icon">
-                    <use xlink:href="{{ site.static }}/img/sprite-social.svg#twitter"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  LinkedIn
-                  <svg class="svg-icon">
-                    <use xlink:href="{{ site.static }}/img/sprite-social.svg#linkedin"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  Google+
-                  <svg class="svg-icon">
-                    <use xlink:href="{{ site.static }}/img/sprite-social.svg#googleplus"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-
-          </aside> -->
-
-
-
-        </main>
-
-        <footer class="page-footer">
-          
-        </footer>
-
+              <div class="listing-body">
+                <ul class="listing-items">
+                  {% for OTHERJOB in company.jobs %}
+                  {% assign otherJobId = OTHERJOB[0] %}
+                  {% assign otherJob = OTHERJOB[1] %}
+                  {% unless job.id == otherJobId %}
+                  <li class="listing-item">
+                    {% include job-snippet.html job=otherJob %}
+                  </li>
+                  {% endunless %}
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </aside>
+          {% endif %}
+        </div> 
       </div>
     </div>
 
