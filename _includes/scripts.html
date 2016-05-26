@@ -36,3 +36,12 @@
   ga('send', 'pageview');
 
 </script>
+
+<script src="/{{ site.baseurl }}{% ministamp _static/js/list.js static/js/list.js %}"></script>
+<script>
+var options = {
+  valueNames: [ 'company-name','job-title' ]
+};
+
+var companyList = new List('jobs', options);
+</script>

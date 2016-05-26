@@ -21,6 +21,12 @@ module.exports = {
           dest: '<%= path.static %>/js/'
         }
       ]
+    },
+    node:{
+      expand:true,
+      cwd:'<%= path.node%>/list.js/dist/',
+      src:['list.js'],
+      dest:'<%= path.src %>/js/'
     }
   },
   watch: {

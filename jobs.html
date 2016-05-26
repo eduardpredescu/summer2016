@@ -22,12 +22,10 @@ sitemap: false
 <main class="page-body">
   <div class="page-container">
 
-    <div class="listing listing-jobs">
+    <div id=jobs class="listing listing-jobs">
 
-      
-
-      <div class="listing-body">
-
+        <input class="search leading" type="search" placeholder="Search" />
+      <div class="list listing-body">
         {% for COMPANY in site.data.companies %}
         {% assign companyId = COMPANY[0] %}
         {% assign company = COMPANY[1] %}
@@ -76,5 +74,6 @@ sitemap: false
 </main>
 
 <footer class="page-footer">
-  
+  {% include scripts.html %}
+  <script src="/{{ site.baseurl }}{% ministamp _static/js/list.js static/js/list.js %}"></script>
 </footer>
