@@ -169,11 +169,9 @@
 
 .job.snippet {
   overflow: hidden;
-  @media @screen-md-upto {
-    padding: @rem-x-xlarge;
-    border: 1px solid @color-soft;
-    border-radius: @radius;
-  }
+  padding: @rem-x-xlarge;
+  border: 1px solid @color-soft;
+  border-radius: @radius;
   .job-thumbnail {
     float: right;
     margin-left: @rem-h-large;
@@ -202,7 +200,12 @@
   }
 }
 
-
+.job-date {
+  font-size: @smaller;
+  .snippet & {
+    color: @color-muted;
+  }
+}
 
 
 .company-description {
