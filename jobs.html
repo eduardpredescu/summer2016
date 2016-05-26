@@ -1,4 +1,5 @@
 ---
+title: Joburi
 layout: default
 permalink: joburi
 sitemap: false
@@ -26,14 +27,12 @@ sitemap: false
       
 
       <div class="listing-body">
-        
+
         {% for COMPANY in site.data.companies %}
         {% assign companyId = COMPANY[0] %}
         {% assign company = COMPANY[1] %}
         <div class="listing-group">
-          
           <header class="listing-group-header">
-
             <div id="{{ companyId }}" class="company snippet">
               <div class="leading">
                 {% if company.logo %}
@@ -60,21 +59,9 @@ sitemap: false
             {% for JOB in company.jobs %}
             {% assign jobId = JOB[0] %}
             {% assign job = JOB[1] %}
-            <li class="listing-item">
-              
-              <div id="{{ jobId }}" class="job snippet">
-                {% if job.thumbnail %}
-                  <div class="job-thumbnail">
-                    <img src="{{ job.page.dir }}{{ job.thumbnail }}" alt="{{ job.title }}">
-                  </div>
-                {% endif %}
-                <h4 class="job-title">
-                  <a href="{{ job.page.url }}" title="Detalii despre job">{{ job.title }}</a>
-                </h4>
-                <p class="job-description">{{ job.description }}</p>
-              </div>
-
-            </li>
+              <li class="listing-item">
+                {% include job-snippet.html job=job %}
+              </li>
             {% endfor %}
           </ul>
 

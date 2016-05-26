@@ -1,0 +1,83 @@
+---
+company:
+  name: Integrisoft Solutions
+  description: >
+    Established in 1999, Integrisoft Solutions operates in the software development field, creating business applications targeted to small and medium enterprises.
+
+  address: Matei Voievod  nr. 55, Bucuresti
+  website: http://www.integrisoft.ro
+  logo: logo-company.png
+  social:
+    facebook: https://www.facebook.com/Integrisoft
+    twitter: https://twitter.com/integrisoft
+    linkedin: https://www.linkedin.com/company/integrisoft-solutions
+    # googleplus: ''
+    # instagram: ''
+    # youtube: ''
+
+
+---
+
+<!-- Customize page here -->
+<style>
+  .company-header {
+    background-color:#d8d8d8;
+    background: url("company-integrisoft-cover.png");
+
+  }
+  .company-name,
+  .company-description {
+    
+  }
+</style>
+
+{% assign company=page.company %}
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Integrisoft Solutions</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>
+        We are focusing mainly on product development & support, custom software and outsourcing services.Given our
+        strong commitment to continuous improvement, we have evolved steadily both in terms of technology and
+        methodology. On the technology side, Integrisoft is proud to have delivered complex solutions using the most
+        advanced technologies, our current focus being on web and mobile applications. As a consequence of the strong
+        direction of using best practices in software development and management, we have been ISO 9001 - 2001 certified
+        since 2008 by TUV Thuringen, ISO 27001
+      </p>
+      <p>
+        Our dedication to excellence and customer satisfaction promoted our products and services as market leaders in
+        the
+        segments we are addressing (ERP solutions for SME, integrated solutions for local government). We are currently
+        the number one provider of local tax software solutions for local government in Romania. Since this is a highly
+        demanding domain, having high performance requirements and allowing very few errors, we consider we have passed
+        a
+        difficult market test, so we are ready to take on new challenges.
+      </p>
+      <p>
+        One of our most important strategic directions is investing in people. Corroborated with the sustained success
+        of
+        the last several years, our team has doubled over the last 3 years, despite the harsh economic conditions. Our
+        staff brings to the table a tremendous amount of knowledge and expertise, as well as international and
+        interdisciplinary experience.
+      </p>
+        You can find us on: {% include company-social.html social=page.company.social %}
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+  </header>
+  <div class="section-body">
+
+    {% include company-jobs.html jobs=company.jobs %}
+  
+  </div>
+</section>
+
