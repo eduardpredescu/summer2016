@@ -108,7 +108,7 @@ summer.utils.once=function once(fn, context) {
     return result;
   };
 }
-summer.utils.load=function loadScript() {
+summer.load=function loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
   script.src = 'https://maps.googleapis.com/maps/api/js' +
@@ -116,17 +116,17 @@ summer.utils.load=function loadScript() {
   document.body.appendChild(script);
 }
 window.onload = function() {
-  summer.utils.handler = summer.utils.once(onVisibilityChange(document.getElementById('map-canvas'),summer.utils.load()));
+  summer.handler = summer.utils.once(onVisibilityChange(document.getElementById('map-canvas'),summer.load()));
   if (window.addEventListener) {
-    addEventListener('DOMContentLoaded', summer.utils.handler, false);
-    addEventListener('load', summer.utils.handler, false);
-    addEventListener('scroll', summer.utils.handler, false);
+    addEventListener('DOMContentLoaded', summer.handler, false);
+    addEventListener('load', summer.handler, false);
+    addEventListener('scroll', summer.handler, false);
     addEventListener('resize', summer.utils.handler, false);
   } else if (window.attachEvent)  {
     attachEvent('onDOMContentLoaded', handler); // IE9+ :(
-    attachEvent('onload', summer.utils.handler);
-    attachEvent('onscroll', summer.utils.handler);
-    attachEvent('onresize', summer.utils.handler);
+    attachEvent('onload', summer.handler);
+    attachEvent('onscroll', summer.handler);
+    attachEvent('onresize', summer.handler);
   }
 };
 
