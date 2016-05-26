@@ -16,48 +16,43 @@
     </header>
 
     <body id="site-body">
-      
       <div class="page">
+        <div class="page-body">
+          {% assign company = page.company %}
+          <main class="page-main">
+            <div class="company full">
+              <header class="company-header">
+                <div class="page-container">
+                  <!-- <img src="" alt="{{ company.name }}"> -->
 
-        {% assign company = page.company %}
-        
-        <main class="page-body">
-    
-          <div class="company full">
-            <header class="company-header">
-              <div class="page-container">
-                <!-- <img src="" alt="{{ company.name }}"> -->
-
-                {% if company.logo %}
-                  {% assign logo = company.logo %}
-                  {% if page.useLogoAlt and company.logoAlt %}
-                    {% assign logo = company.logoAlt %}
+                  {% if company.logo %}
+                    {% assign logo = company.logo %}
+                    {% if page.useLogoAlt and company.logoAlt %}
+                      {% assign logo = company.logoAlt %}
+                    {% endif %}
+                    <span class="company-logo">
+                      <img src="{{ logo }}" alt="Logo {{ company.name }}"
+                           style="height: 4em; width: auto;">
+                    </span>
                   {% endif %}
-                  <span class="company-logo">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="{{ logo }}" alt="Logo {{ company.name }}"
-                         style="height: 4em; width: auto;">
-                  </span>
-                {% endif %}
 
-                <h1 class="company-name">{{ company.name }}</h1>
-                <p class="company-description">{{ company.description }}</p>
-                <a class="company-website" href="{{ company.website }}">{{ company.website|split:"://"|last }}</a>
-              </div>
-            </header>
+                  <h1 class="company-name">{{ company.name }}</h1>
+                  <p class="company-description">{{ company.description }}</p>
+                  <a class="company-website" href="{{ company.website }}">{{ company.website|split:"://"|last }}</a>
+                </div>
+              </header>
 
-            <div class="company-body">
-              <div class="page-container">
+              <div class="company-body">
+                <div class="page-container">
 
-                {{ content }}
+                  {{ content }}
 
+                </div>
               </div>
             </div>
-          </div>
-
-        </main>
-
+          </main>
+        </div>
       </div>
-
     </body>
 
     <footer id="site-footer">
