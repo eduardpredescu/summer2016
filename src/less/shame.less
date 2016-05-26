@@ -19,10 +19,13 @@
 .listing-jobs {
   .listing-group {
     margin-bottom: @rem-v-xlarge;
+    border-top: 1px solid @color-soft;
   }
   .listing-group-header {
-    padding-top: @leading-large;
-    border-top: 1px solid @color-soft;
+    padding-top: @leading-xlarge;
+  }
+  .listing-items {
+    padding: @leading 0;
   }
   @media @screen-md {
     .listing-group {
@@ -36,9 +39,6 @@
     .listing-items,
     .listing-item {
       overflow: hidden;
-    }
-    .listing-item {
-      border-top: 1px solid @color-soft;
     }
   }
 }
