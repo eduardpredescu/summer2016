@@ -29,8 +29,14 @@
           {% assign job = page.job %}
           {% assign company = page.company %}
           <main class="page-main">
-            <article class="job" id="{{ job.id }}">
+            <article vocab="http://schema.org/" typeof="JobPosting" class="job" id="{{ job.id }}">
               <header class="job-header">
+                <span property="name" class="hidden">{{job.id}}</span>
+                <span property="address" class="hidden">{{company.address}}</span>
+                <img src="{{company.logo}}" property="image" class="hidden"/>
+                <span property="description" class="hidden">{{job.description}}</span>
+                <span property="url" class="hidden">{{job.applyUrl}}</span>
+                <span property="datePosted" class="hidden">{{job.date}}</span>
                 <div class="page-container">
                   <a href="./" class="job-company">
 
