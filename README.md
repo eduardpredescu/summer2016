@@ -1,7 +1,9 @@
 Junio Summerjobs 2016
 =====================
 
-## Prerequisites
+## Setup
+
+### Prerequisites
 
 1. NodeJS
 2. `npm update npm`
@@ -12,7 +14,7 @@ Junio Summerjobs 2016
 7. `[sudo] gem install jekyll-sitemap`
 
 
-## Development
+### Development
 
 ```
 npm install
@@ -21,7 +23,7 @@ jekyll serve
 # open localhost:4000 to see the website
 ```
 
-## Build
+### Build
 
 ```
 npm install
@@ -30,8 +32,9 @@ jekyll build
 # the build is in located in _site/
 ```
 
+## Edit content
 
-## Add a new company/job
+### Add a new company/job
 
   1. Make a copy of the template folder:
 
@@ -77,18 +80,43 @@ The result should look something like this:
   # other photos
 ```
 
-# Asset versioning
+### Sort jobs/companies
+
+Add `weight: [int]` to sort jobs/companies like so:
+
+```
+job:
+  title: 'Job example'
+  weight: 10
+```
+
+Jobs and companies are sorted by weight from largest number to lowest.
+Default is 0 for opened jobs and -1 for closed jobs.
+
+### Close jobs
+
+Add `status: closed` to job like so:
+
+```
+job:
+  title: 'Job example'
+  status: closed
+  ...
+```
+
+## Plugins
+
+### Asset versioning
 
 CSS and JS files are versioned using the `jekyll-minibundle` gem. For that to work, we need to build the files in `_static/` and the gem takes care of the rest.
 
 In order to correctly link to assets read [the jekyll-minibundle documentation](https://github.com/tkareine/jekyll-minibundle)
 
 
-# Sitemap
+### Sitemap
 
 Most of the sitemap is generated automatically by the _jekyll-sitemap_ gem.
 In order to add `<changefreq/>` or `<priority/>` to some locations you need to add:
 
   1. Add `sitemap: false` to the front matter of that page. This excludes it from the automatic sitemap generator, then
   2. Add that url and additional properties in `sitemap_handmade.xml`
-
