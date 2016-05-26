@@ -22,11 +22,14 @@ module.exports = {
         }
       ]
     },
-    node:{
-      expand:true,
-      cwd:'<%= path.node%>/list.js/dist/',
-      src:['list.js'],
-      dest:'<%= path.src %>/js/'
+    node: {
+      files: [
+        { expand: true,
+          cwd: '<%= path.node%>/list.js/dist/',
+          src: ['list.js'],
+          dest: '<%= path.static %>/js/'
+        }
+      ]
     }
   },
   watch: {
