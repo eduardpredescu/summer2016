@@ -1,7 +1,7 @@
 <div id="{{ jobId }}" class="job snippet is-{{ include.job.status }}">
   {% if include.job.thumbnail %}
   <div class="job-thumbnail">
-    <img src="{{ company.page.dir }}{{ include.job.thumbnail }}"
+    <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="{{ company.page.dir }}{{ include.job.thumbnail }}"
          alt="{{ include.job.title }}">
   </div>
   {% endif %}

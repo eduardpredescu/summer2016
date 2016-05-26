@@ -196,3 +196,11 @@ blockquote {
 .container-sm {
   max-width: @container-sm;
 }
+.b-lazy {
+  transition: opacity 500ms ease-in-out;
+  max-width: 100%;
+  opacity: 0;
+}
+.b-lazy.b-loaded {
+  opacity: 1;
+}
