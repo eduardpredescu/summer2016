@@ -59,6 +59,8 @@
                 {% else %}
                 <span style="font-size:1rem;padding:2px;" class="btn btn-apply">Job închis</span>
                 {% endif %}
+
+                <div class="job-date">Publicat pe {{ job.date | humanday }}</div>
               </div>
             </header>
 

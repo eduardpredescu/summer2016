@@ -10,4 +10,5 @@
     <a href="{{ job.page.url }}" title="Detalii despre job">{{ job.title }}</a>
   </h4>
   <p class="job-description">{{ job.description }}</p>
+  <div class="job-date">Publicat pe {{ job.date | humanday }}</div>
 </div>
