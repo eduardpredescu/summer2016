@@ -51,7 +51,28 @@
 .right-float{
   float:right;
 }
+.label(@color,@bg-1,@bg-2){
 
+color: @color;
+background-color: @bg-2;
+background-image: linear-gradient(@bg-1, @bg-2);
+background-repeat: no-repeat;
+background-position: center top;
+background-size: 100% 100%;
+box-shadow: 0 3px 0 @bg-1,
+0 3px 5px fade(#000, 25%);
+text-shadow: 0 -1px 0 @bg-1;
+}
+
+.label-closed{
+  .label(#fff, #16b15b, #21c374);
+  max-width: 100%;
+  width: 15rem;
+  font-size:0.8rem;
+  padding:0.25rem;
+  border-radius:0.25rem;
+  font-weight: normal;
+}
 
 
 .social {
