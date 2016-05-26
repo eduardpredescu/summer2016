@@ -1,5 +1,5 @@
 {% if job.status == "open" %}
-  <a href="{{ include.href }}" class="btn btn-apply leading">Aplică</a>
+  <a property="url" href="{{ include.href }}" class="btn btn-apply leading">Aplică</a>
 {% else %}
   <span class="btn btn-apply-disabled leading">Job închis</span>
 {% endif %}

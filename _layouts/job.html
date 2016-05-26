@@ -29,6 +29,7 @@
           {% assign job = page.job %}
           {% assign company = page.company %}
           <main class="page-main">
+            <div vocab="http://schema.org/" typeof="JobPosting">
             <article class="job" id="{{ job.id }}">
               <header class="job-header">
                 <div class="page-container">
@@ -55,7 +56,7 @@
 
                   {% include btn-apply.html href=job.applyUrl %}
 
-                  <div class="job-date">Publicat pe {{ job.date | humanday }}</div>
+                  <div property="datePosted" class="job-date">Publicat pe {{ job.date | humanday }}</div>
                 </div>
               </header>
 
@@ -64,7 +65,9 @@
                   {{ content }}
 
                 </div>
+
               </div>
+
 
               <footer class="job-footer">
                 <div class="page-container">
@@ -111,6 +114,7 @@
                 </div>
               </footer>
             </article>
+              </div>
           </main>
 
           {% assign dim=company.jobs | size %}
