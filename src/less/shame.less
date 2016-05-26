@@ -51,11 +51,11 @@
 .right-float{
   float:right;
 }
-.label(@color,@bg-1,@bg-2){
+.label(@color,@bg-1){
 
 color: @color;
-background-color: @bg-2;
-background-image: linear-gradient(@bg-1, @bg-2);
+background-color: @bg-1;
+background-image: linear-gradient(@bg-1, @bg-1);
 background-repeat: no-repeat;
 background-position: center top;
 background-size: 100% 100%;
@@ -65,7 +65,7 @@ text-shadow: 0 -1px 0 @bg-1;
 }
 
 .label-closed{
-  .label(#fff, #16b15b, #21c374);
+  .label(#fff,#21c374);
   max-width: 100%;
   width: 15rem;
   font-size:0.8rem;
