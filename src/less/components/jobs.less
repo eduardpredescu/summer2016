@@ -161,12 +161,6 @@
   
 }
 
-
-
-
-
-
-
 .job.snippet {
   overflow: hidden;
   padding: @rem-x-xlarge;
@@ -174,12 +168,21 @@
   border-radius: @radius;
   .job-thumbnail {
     margin-left: @rem-h-large;
-    float:right;
-  }
-  .is-closed{
-    color:@color-muted;
+    float: right;
   }
 }
+
+.job.snippet.is-closed {
+  color: @color-muted;
+  .job-title a {
+    color: @color-muted;
+    &:hover {
+      color: @color-anchor-hover;
+    }
+  }
+}
+
+
 
 .job {
   &.snippet-large {
