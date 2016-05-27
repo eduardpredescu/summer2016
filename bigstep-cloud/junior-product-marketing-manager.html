@@ -17,14 +17,22 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
 
   .job-header {
     /* change header background */
-    background: rgba(34, 34, 34, 0.25);
+    background: url("company-bigstep-cover-tablet.png") #000;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:right;
     color: #fff;
+    text-shadow:  0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
   }
 
   .job-title,
   .job-domain,
   .job-company {
     color: inherit;
+  }
+  .job-company img{
+    background-color:#fff;
+    border-radius:10px;
   }
 
   .btn-apply {
@@ -34,7 +42,23 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
     box-shadow: 0 3px 0 #16b15b, 0 3px 5px rgba(0, 0, 0, 0.25);
     text-shadow: 0 -1px 0 #16b15b;
   }
+  @media only screen and (max-width: 768px) {
+    .job-header {
+      background: url("company-bigstep-cover-tablet.png") #000;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+    }
+  }
 
+  @media only screen and (max-width: 425px) {
+    .job-header {
+      background: url("company-bigstep-cover-tablet.png") #000;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+    }
+  }
 </style>
 
 <!-- Basic section markup -->

@@ -21,18 +21,43 @@ useLogoAlt: false # uses dark bg version of logo. delete entirely to remove
 <!-- Customize page here -->
 <style>
   .company-header {
-    background-color: #000;
+    background: url("company-bigstep-cover-tablet.png") #000;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:right;
+    color: #fff;
+    text-shadow:  0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
+  }
 
+  .company-logo{
+    background-color:#fff;
+    border-radius:10px;
   }
   .company-name,
-  .company-description, 
+  .company-description,
   .company-website{
-    color: #fff;    
+    color: #fff;
   }
   .company-website:hover{
     color: #D91729;
   }
+  @media only screen and (max-width: 768px) {
+    .company-header {
+      background: url("company-bigstep-cover-tablet.png") #000;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+    }
+  }
 
+  @media only screen and (max-width: 425px) {
+    .company-header {
+      background: url("company-bigstep-cover-mobile.png") #000;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+    }
+  }
 </style>
 
 {% assign company=page.company %}

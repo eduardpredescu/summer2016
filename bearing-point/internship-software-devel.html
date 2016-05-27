@@ -12,17 +12,21 @@ job:
 <!-- Customize page here -->
 <!-- Delete <style> to see default -->
 <style>
-
   .job-header {
     /* change header background */
-    background: #D52B1E;
-    color: #fff;
+    background: url("company-bearingpoint-cover-desktop.png"), linear-gradient(180deg, #EDEAE1 50%, #FFFFFF 50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+    color: #000;
+    text-shadow: 3px 3px 3px #fff;
   }
 
   .job-title,
   .job-domain,
   .job-company {
     color: inherit;
+    background: rgba(0, 0, 0, 0.1);
   }
 
   .job-header .btn-apply {
@@ -32,10 +36,27 @@ job:
     background-position: center top;
     background-size: 100% 100%;
     box-shadow: 0 3px 0 #2D97D4,
-                0 3px 5px rgba(0,0,0, .25);
+    0 3px 5px rgba(0, 0, 0, .25);
     text-shadow: 0 -1px 0 #2D97D4;
   }
 
+  @media only screen and (max-width: 768px) {
+    .job-header {
+      background: url("company-bearingpoint-cover-tablet.png"), linear-gradient(180deg, #EDEAE1 50%, #FFFFFF 50%);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    .job-header {
+      background: url("company-bearingpoint-cover-mobile.png"), linear-gradient(180deg, #EDEAE1 50%, #FFFFFF 50%);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
 </style>
 
 

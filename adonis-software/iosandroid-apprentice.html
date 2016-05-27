@@ -16,13 +16,15 @@ useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
 <style>
 
   .job-header {
-    /* change header background */
-    background: #fff;
-    border-radius: 0;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    background-color:  #3798d3;
+    background-image: linear-gradient(to bottom, #3798d3,#3798d3 46%,#fff 46%, #fff 70%,#000 70%,#000 100%);
   }
-
+  @media only screen and (max-width: 425px) {
+    .job-header{
+      background-color:  #3798d3;
+      background-image: linear-gradient(to bottom, #3798d3,#3798d3 30%,#fff 30%, #fff 75%,#000 75%,#000 100%);
+    }
+  }
 </style>
 
 <section class="section">
