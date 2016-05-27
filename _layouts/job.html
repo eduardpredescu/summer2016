@@ -31,12 +31,20 @@
           <main class="page-main">
             <article vocab="http://schema.org/" typeof="JobPosting" class="job" id="{{ job.id }}">
               <header class="job-header">
-                <span property="name" class="hidden">{{job.id}}</span>
-                <span property="address" class="hidden">{{company.address}}</span>
-                <img src="{{company.logo}}" property="image" class="hidden"/>
-                <span property="description" class="hidden">{{job.description}}</span>
-                <span property="url" class="hidden">{{job.applyUrl}}</span>
-                <span property="datePosted" class="hidden">{{job.date}}</span>
+                <dl class="hidden">
+                  <dt>Job title</dt>
+                  <dd property="name">{{job.title}}</dd>
+                  <dt>Job location</dt>
+                  <dd property="address">{{company.address}}</dd>
+                  <dt>Job image</dt>
+                  <dd><img src="{{company.logo}}" property="image"/></dd>
+                  <dt>Job description</dt>
+                  <dd property="description">{{job.description}}</dd>
+                  <dt>Job URL</dt>
+                  <dd property="url">{{job.applyUrl}}</dd>
+                  <dt>Job post date</dt>
+                  <dd property="datePosted">{{job.date}}</dd>
+                </dl>
                 <div class="page-container">
                   <a href="./" class="job-company">
 
