@@ -1,5 +1,5 @@
 
-<div onclick="document.location='{{include.job.page.url}}'" id="{{ jobId }}" class="job snippet is-{{ include.job.status }}">
+<div onclick="document.location='{{include.job.page.url}}'" id="{{ jobId }}" class="job snippet is-{{ include.job.status }}" tabindex="20">
   {% if include.job.thumbnail %}
   <div class="job-thumbnail">
     <img src="{{ company.page.dir }}{{ include.job.thumbnail }}"
