@@ -1,10 +1,8 @@
-{% assign jobs=include.jobs %}
-
 <div class="listing">
   
   <div class="listing-body">
     <ul class="listing-items">
-    {% for JOB in jobs %}
+    {% for JOB in include.jobs %}
       {% assign jobId = JOB[0] %}
       {% assign job = JOB[1]  %}
       <li class="listing-item">

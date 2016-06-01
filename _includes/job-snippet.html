@@ -1,14 +1,28 @@
-{% assign job = include.job %}
-<div id="{{ jobId }}" class="job snippet is-{{ job.status }}">
-  {% if job.thumbnail %}
+
+{% if include.job.status == 'closed' %}
+  {% assign jobSnippetTitle = "Anunțul nu mai este valabil | Vezi detalii" %}
+{% else %}
+  {% assign jobSnippetTitle = "Vezi detalii" %}
+{% endif %}
+<div id="{{ jobId }}"
+     class="job snippet is-{{ include.job.status }}"
+     tabindex="20"
+     onclick="document.location='{{include.job.page.url}}'"
+     title="{{ jobSnippetTitle }}">
+  {% if include.job.thumbnail %}
   <div class="job-thumbnail">
-    <img src="{{ company.page.dir }}{{ job.thumbnail }}"
-         alt="{{ job.title }}">
+    <img src="{{ company.page.dir }}{{ include.job.thumbnail }}"
+         alt="{{ include.job.title }}">
   </div>
   {% endif %}
   <h4 class="job-title">
-    <a href="{{ job.page.url }}" title="Detalii despre job">{{ job.title }}</a>
+    <a href="{{ include.job.page.url }}">{{ include.job.title }}</a>
   </h4>
-  <p class="job-description">{{ job.description }}</p>
-  <div class="job-date">Publicat pe {{ job.date | humanday }}</div>
+  {% if include.job.status == "closed" %}
+    <span class="label-closed"
+          title="Anunțul nu mai este valabil">S-a dat :)</span>
+  {% endif %}
+  <p class="job-description">{{ include.job.description }}</p>
+  <div class="job-date">Publicat pe {{ include.job.date | humanday }}</div>
 </div>
+
