@@ -1,4 +1,5 @@
-<div id="{{ jobId }}" class="job snippet is-{{ include.job.status }}">
+
+<div onclick="document.location='{{include.job.page.url}}'" id="{{ jobId }}" class="job snippet is-{{ include.job.status }}">
   {% if include.job.thumbnail %}
   <div class="job-thumbnail">
     <img src="{{ company.page.dir }}{{ include.job.thumbnail }}"
@@ -11,3 +12,4 @@
   <p class="job-description">{{ include.job.description }}</p>
   <div class="job-date">Publicat pe {{ include.job.date | humanday }}</div>
 </div>
+
