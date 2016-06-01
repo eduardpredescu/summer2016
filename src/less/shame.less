@@ -41,6 +41,20 @@
 }
 
 
+.label(@color, @bg-1) {
+  color: @color;
+  background-color: @bg-1;
+}
+
+.label-closed{
+  .label(#fff, #21c374);
+  max-width: 100%;
+  width: 15rem;
+  font-size: @smaller;
+  padding: @em-small;
+  border-radius: @radius;
+  font-weight: normal;
+}
 
 
 .social {
