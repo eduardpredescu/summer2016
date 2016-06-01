@@ -161,12 +161,6 @@
   
 }
 
-
-
-
-
-
-
 .job.snippet {
   overflow: hidden;
   padding: @rem-x-xlarge;
@@ -175,8 +169,8 @@
   cursor: pointer;
   transition: border .1s;
   .job-thumbnail {
-    float: right;
     margin-left: @rem-h-large;
+    float: right;
   }
   &:hover,
   &:focus {
@@ -187,6 +181,13 @@
   }
 }
 
+.job.snippet.is-closed {
+  color: @color-muted;
+  background-color: @color-softer;
+}
+
+
+
 .job {
   &.snippet-large {
     border: 1px solid @color-soft;
@@ -194,14 +195,20 @@
 }
 
 .job-title {
-  a {
-    transition: border .1s;
+  .snippet & {
+    display: inline;
+    color: @color-anchor;
+    a {
+      color: inherit;
+      transition: color .1s;
+    }
+  }
+  .snippet.is-closed & {
+    color: @color-muted;
   }
   .snippet:hover &,
   .snippet:focus & {
-    a {
-      color: @color-lightblue;
-    }
+    color: @color-lightblue!important;
   }
   .snippet-large & {
     font-size: @font-size-h3;
@@ -209,12 +216,15 @@
 }
 
 .job-description {
+  margin-top: 0.5rem;
+
+
   .snippet-large & {
     font-size: @larger;
-
   }
+
   .snippet & {
-    max-width: @container-sm;
+    max-width: @container-md;
   }
 }
 
@@ -224,6 +234,7 @@
     color: @color-muted;
   }
 }
+
 
 
 .company-description {
