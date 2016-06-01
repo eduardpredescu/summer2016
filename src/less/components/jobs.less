@@ -172,16 +172,18 @@
   padding: @rem-x-xlarge;
   border: 1px solid @color-soft;
   border-radius: @radius;
+  cursor: pointer;
+  transition: border .1s;
   .job-thumbnail {
     float: right;
     margin-left: @rem-h-large;
   }
-  &:hover,&:focus{
-    border-color:@color-lightblue;
-    outline-color:@color-lightblue;
+  &:hover,
+  &:focus {
+    border-color: @color-lightblue;
   }
-  &:active{
-    border-color:@color-navy;
+  &:active {
+    border-color: @color-navy;
   }
 }
 
@@ -192,6 +194,15 @@
 }
 
 .job-title {
+  a {
+    transition: border .1s;
+  }
+  .snippet:hover &,
+  .snippet:focus & {
+    a {
+      color: @color-lightblue;
+    }
+  }
   .snippet-large & {
     font-size: @font-size-h3;
   }
