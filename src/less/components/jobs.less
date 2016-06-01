@@ -166,21 +166,24 @@
   padding: @rem-x-xlarge;
   border: 1px solid @color-soft;
   border-radius: @radius;
+  cursor: pointer;
+  transition: border .1s;
   .job-thumbnail {
     margin-left: @rem-h-large;
     float: right;
+  }
+  &:hover,
+  &:focus {
+    border-color: @color-lightblue;
+  }
+  &:active {
+    border-color: @color-navy;
   }
 }
 
 .job.snippet.is-closed {
   color: @color-muted;
   background-color: @color-softer;
-  .job-title a {
-    color: @color-muted;
-    &:hover {
-      color: @color-anchor-hover;
-    }
-  }
 }
 
 
@@ -194,6 +197,18 @@
 .job-title {
   .snippet & {
     display: inline;
+    color: @color-anchor;
+    a {
+      color: inherit;
+      transition: color .1s;
+    }
+  }
+  .snippet.is-closed & {
+    color: @color-muted;
+  }
+  .snippet:hover &,
+  .snippet:focus & {
+    color: @color-lightblue!important;
   }
   .snippet-large & {
     font-size: @font-size-h3;
