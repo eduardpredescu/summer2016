@@ -8,7 +8,7 @@
   <h4 class="job-title">
     <a href="{{ include.job.page.url }}" title="Detalii despre job">{{ include.job.title }}</a>
   </h4>
-  {% if job.status == "closed" %}
+  {% if include.job.status == "closed" %}
   <span class="label-closed">S-a dat :)</span>
   {% endif %}
   <p class="job-description">{{ include.job.description }}</p>
