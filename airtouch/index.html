@@ -1,0 +1,72 @@
+---
+company:
+  name: 'AirTouch New Media'
+  description: >
+    Successfully Launch Mobile & Web Products (We take care of everything)
+  address: Iuliu Maniu 7, Bucharest, Romania
+  website: https://www.airtouchmedia.com/
+  logo: logo-company.png
+  social:
+     facebook: https://www.facebook.com/airtouchmedia
+     twitter: https://twitter.com/AirTouchMedia
+     linkedin: https://www.linkedin.com/company/airtouch-new-media/
+     googleplus: https://plus.google.com/+Airtouchmedia/posts
+---
+
+<!-- Customize page here -->
+<style>
+  .company-header {
+    background-color:#000;
+    background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("company-airtouch-cover-desktop.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: right center;
+    color:#fff;
+  }
+  .company-name{
+    visibility: hidden;
+    position: absolute;
+  }
+  .company-logo img{
+    height:3em!important;
+  }
+  .company-description,.company-website {
+    color:#fff;
+    text-shadow: 1px 1px 1px 1px #000;
+    
+  }
+</style>
+
+{% assign company=page.company %}
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Who we are</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>AirTouch New Media (ATNM) is an International Company with offices in Madrid, Paris, Mexico City and Bucharest,
+        with clients in Western Europe and the US, that offer Digital Marketing Support in times when the needs for
+        Digital Strategies/Activities are growing exponentially, focused mainly in Mobile Apps Development, Web
+        Development, Social Marketing.</p>
+      <p>In times when the Digital Marketing needs are growing exponentially and the traditional business is moving to
+        the virtual world, Airtouch New Media is a great ally to execute all you need to be successful on Digital
+        Marketing to increase revenues, save costs and increase margins!
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+  </header>
+  <div class="section-body">
+
+    {% include company-jobs.html jobs=company.jobs %}
+  
+  </div>
+</section>
+
