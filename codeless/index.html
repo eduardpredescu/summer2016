@@ -1,0 +1,120 @@
+---
+company:
+  name: Codeless
+  description: >
+    We are a highly technical, client-focused organization that supports companies with their digitalization and complexities of doing business globally.
+  address: Strada Sfantul Lazar 50, România
+  website: http://codeless.com/en/
+  logo: logo-company.png
+  logoAlt: logo-company-alt.png
+  social:
+    # facebook: https://www.facebook.com/...
+    # twitter: ''
+    linkedin: 'https://www.linkedin.com/company/248688'
+    # googleplus: ''
+    # instagram: ''
+    # youtube: ''
+useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
+---
+
+<!-- Customize page here -->
+<style>
+  .company-header {
+    background-color: #adb095;
+    background: url("company-codeless-cover-desktop.jpg") #adb095;
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    color: #fff;
+  }
+
+  .company-name{
+    visibility: hidden;
+    position: absolute;
+  }
+  
+  .company-description, .company-website {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    color: inherit;
+    
+  }
+  @media screen and (max-width: 425px){
+    .company-header {
+      background-color: #adb095;
+      background: url("company-codeless-cover-mobile.jpg") #adb095;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
+  }
+</style>
+
+{% assign company=page.company %}
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Who are we</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      Codeless Technology is a software integrator with its very unique vision to the software automation process. We
+      are convinced that customers should not be confronted with the option to either choose the high financial risks
+      that come with any customized software development project or the limited options that come with any standard
+      software product. Codeless can offer the best of breed solution in the one and only Codeless&reg; platform. In
+      1988 Codeless started to develop the Codeless development platform, able to delivery high-end software solutions
+      in different Dutch markets. Our software professionals have gained the unique experience over the last 30 years to
+      efficiently translate any legacy system into the state of the art IT solution. We are a Microsoft Gold partner and
+      use latest Microsoft technologies to implement all our successful solutions. In Codeless we are a highly motivated
+      group of young professionals, open minded with and creative mindset, always taking the initiative to get the best
+      out of ourselves and the solutions we provide. Our team with over 40 industry professionals, is providing
+      software-solutions that are user-friendly, efficient and according to the Mobile & Cloud first principle.
+    </div>
+    Find us on: {% include company-social.html social=page.company.social %}
+  </div>
+</section>
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">The Platform. CodeX.</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+
+      <div class="row">
+        <div class="col sm-6">
+          <div class="align-center">
+            <div class="leading">
+              <img src="codex-bench.jpg" alt="CodeX Bench" width="200">
+            </div>
+            <h4>Our Workbench.</h4>
+            <p>This is where we create your new working environment, using various tools. Also, you are free to
+              implement any changes to the system at later stage, yourself.</p>
+          </div>
+        </div>
+        <div class="col sm-6">
+          <div class="align-center">
+            <div class="leading">
+              <img src="codex-app.jpg" alt="CodeX App" width="200">
+            </div>
+            <h4>Your familiar functionalities. Intuitive and self-explanatory.</h4>
+            <p>We duplicate and convert your features into new, modern user screens. Accessible on desktop, smartphone,
+              tablet and other devices.</p>
+          </div>
+        </div>
+      </div>
+
+</section>
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+  </header>
+  <div class="section-body">
+
+    {% include company-jobs.html jobs=company.jobs %}
+  
+  </div>
+</section>
+
