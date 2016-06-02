@@ -29,9 +29,22 @@
           {% assign job = page.job %}
           {% assign company = page.company %}
           <main class="page-main">
-            <div vocab="http://schema.org/" typeof="JobPosting">
-            <article class="job" id="{{ job.id }}">
+            <article vocab="http://schema.org/" typeof="JobPosting" class="job" id="{{ job.id }}">
               <header class="job-header">
+                <dl class="hidden">
+                  <dt>Job title</dt>
+                  <dd property="name">{{job.title}}</dd>
+                  <dt>Job location</dt>
+                  <dd property="address">{{company.address}}</dd>
+                  <dt>Job image</dt>
+                  <dd><img src="{{company.logo}}" property="image"/></dd>
+                  <dt>Job description</dt>
+                  <dd property="description">{{job.description}}</dd>
+                  <dt>Job URL</dt>
+                  <dd property="url">{{job.applyUrl}}</dd>
+                  <dt>Job post date</dt>
+                  <dd property="datePosted">{{job.date}}</dd>
+                </dl>
                 <div class="page-container">
                   <a href="./" class="job-company">
 
@@ -114,7 +127,6 @@
                 </div>
               </footer>
             </article>
-              </div>
           </main>
 
           {% assign dim=company.jobs | size %}
