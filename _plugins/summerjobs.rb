@@ -28,7 +28,7 @@ module Summerjobs
       companies.each do |page|
         if not page.data['demo']
           company = page.data['company']
-          company['id'] = slug(company['name'])
+          company['id'] = slug(page.path.rpartition('/')[-3])
           company['jobs'] = {}
           company['page'] = page
           company['weight']= (page.data['company']['weight']) ? page.data['company']['weight'] : 0
