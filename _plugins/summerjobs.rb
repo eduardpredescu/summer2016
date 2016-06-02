@@ -27,6 +27,7 @@ module Summerjobs
 
       companies.each do |page|
         if not page.data['demo']
+
           company = page.data['company']
           company['id'] = slug(page.path.rpartition('/')[-3])
           company['jobs'] = {}
@@ -45,22 +46,30 @@ module Summerjobs
 
       jobs.each do |page|
         if not page.data['demo']
-
           job = page.data['job']
+
           job['company'] = (company = getCompany(page))
+
           job['id'] = company['id'] + '_' + slug(job['title'])
+
           job['page'] = page
+
           job['weight'] = (page.data['job']['status'] == "closed") ? -1 : 0
+
           job['status'] = (page.data['job']['status']) ? page.data['job']['status'] : 'open'
+
           company['jobs'].merge!({
             job['id'] => job
           })
+
+
 
           page.data.merge!({
             'layout' => 'job',
             'job' => job,
             'company' => company
           })
+
           @jobs[job['id']] = job
         else
           page.data['layout'] = 'job'
