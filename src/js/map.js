@@ -92,7 +92,7 @@ summer.init = function() {
   });
   summer.plugins.gm.address = summer.dom.mapCanvas.getAttribute('data-address');
   summer.plugins.gm();
-}
+};
 
 
 
