@@ -1,0 +1,67 @@
+---
+company:
+  name: AGVision Software
+  description: >
+    AGVision Software is a young software development company based in Europe’s fastest growing IT market, specialized in developing SaaS products.
+  address: Muzelor 22A, București, România
+  website: https://www.agvision.ro
+  logo: company-agvision-logo.png
+  logoAlt: company-agvision-logo-alt.png
+  social:
+    facebook: https://www.facebook.com/agvisionsoftwareromania
+    # twitter: ''
+    linkedin: https://www.linkedin.com/company/agvision-software
+    googleplus: https://plus.google.com/+AgvisionRoSoftware
+    instagram: https://instagram.com/agvision.software
+    # youtube: ''
+useLogoAlt: true
+---
+
+<!-- Customize page here -->
+<style>
+  .company-header {
+    background-color:#000;
+    background: url("company-agvision-cover-desktop.jpg");
+    color:#fff;
+    background-size:cover;
+    background-position: top;
+  }
+  .company-name,
+  .company-description,
+  .company-website{
+    color:inherit;
+    
+  }
+</style>
+
+{% assign company=page.company %}
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Who we are</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>AGVision Software, a young software development company in the fastest growing IT market in Europe.</p>
+      <p>We have established an exciting company culture by taking what’s best from both worlds: corporate and
+        studio.</p>
+      <p> At AGVision Software we use the most efficient medium to large scale planning methods (distributed revision
+        control system, agile methodology) and add a personal twist. We adhere to a people come first mentality.</p>
+    </div>
+    Find us on: {% include company-social.html social=page.company.social %}
+  </div>
+</section>
+
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+  </header>
+  <div class="section-body">
+
+    {% include company-jobs.html jobs=company.jobs %}
+  
+  </div>
+</section>
+
