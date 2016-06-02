@@ -19,18 +19,31 @@ useLogoAlt: false # uses dark bg version of logo. delete entirely to remove
 <!-- Customize page here -->
 <style>
   .company-header {
-    background-color: #000;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("company-nutristandard-cover-desktop.jpg");
-    background-size: cover;
-    background-position: center right;
     color: #fff;
-
+    text-shadow: 0 .1em .3em rgba(0,0,0,.5);
   }
   .company-name,
   .company-description,
   .company-website{
     color:inherit;
     
+  }
+
+  @media (min-width: 640px) {
+    .company-header {
+      background: url("company-nutristandard-cover-desktop.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .company-header {
+      background: url("company-nutristandard-cover-mobile.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: #fff;
+    }
   }
 </style>
 
