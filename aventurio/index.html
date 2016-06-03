@@ -1,0 +1,65 @@
+---
+company:
+  name: Aventurio
+  description: >
+    Aventurio este o platformă online pentru rezervarea de activități indoor și outdoor. Aici încărcăm activități de petrecere a timpului liber și de aventură precum parapantă, zbor cu balonul, călărie, alpinism, ture cu caiacul și multe altele.
+  address: Str. Vaselor, nr. 42, Sector 2, Bucuresti
+  website:  https://www.aventurio.ro/
+  logo: company-logo.png
+  social:
+    facebook: https://www.facebook.com/aventurio.ro
+    instagram: https://www.instagram.com/aventurio.ro
+---
+
+<!-- Customize page here -->
+<style>
+  .company-header {
+    background-color:#000;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("company-aventurio-cover.jpg");
+    background-size:cover;
+    background-position: left top;
+    color: #fff;
+
+  }
+
+  .company-name {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .company-description, .company-website {
+    color: inherit;
+
+  }
+</style>
+
+{% assign company=page.company %}
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Cine suntem</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>Aventurio este o platformă online pentru rezervarea de activități indoor și outdoor. Aici încărcăm activități
+        de petrecere a timpului liber și de aventură (parapantă, zbor cu balonul, călărie, alpinism, ture cu caiacul și
+        multe altele).
+      </p>
+    </div>
+    Ne puteți găsi pe {% include company-social.html social=page.company.social %}
+  </div>
+</section>
+
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+  </header>
+  <div class="section-body">
+
+    {% include company-jobs.html jobs=company.jobs %}
+  
+  </div>
+</section>
+
