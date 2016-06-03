@@ -1,0 +1,127 @@
+---
+job:
+  title: 'Junior Java Developer'
+  description: >
+    Pe durata internship-ului dorim sa dezvoltam adminul platformei care va deservi atat userii, cat si partenerii nostri (furnizorii care organizeaza activitatile promovate).
+  applyUrl: 'https://junio.ro/jobs/i-sport-j-junior-java-developer-c-sc-tortuga-travel-srl-50561' # the url from the corresponding job in Junio.ro
+  date: 2016-06-02
+
+---
+
+<!-- Customize page here -->
+<!-- Delete <style> to see default -->
+<style>
+
+  .job-header {
+    background-color: #000;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("company-aventurio-cover.jpg");
+    background-size: cover;
+    background-position: left top;
+    color: #fff;
+  }
+
+  .job-company strong {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .job-title,
+  .job-domain {
+    color: inherit;
+  }
+
+  .btn-apply {
+    color: #fff;
+    background-color: #21c374;
+    background-image: linear-gradient(#16b15b, #21c374);
+    box-shadow: 0 3px 0 #16b15b, 0 3px 5px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 -1px 0 #16b15b;
+  }
+
+</style>
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Responsabilități</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>Pe durata internship-ului dorim să dezvoltăm adminul platformei care va deservi atât userii, cât și partenerii
+      noștri (furnizorii care organizează activitățile promovate). Secțiunea pentru useri va cuprinde partea de date
+      personale, rezervări, cadouri și vouchere, review-uri și oferte favorite, iar secțiunea pentru parteneri va
+      cuprinde partea de administrare a ofertelor, a rezervărilor și a bazei de date cu clienți.</p>
+
+
+      <p>Partea de client va fi construită peste o arhitectura modulară, folosind AngularJS sau ReactJS, care va comunica
+      printr-un API REST cu componentă de server, ce va fi construită folosind Java și Spring.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Calificări</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>Dacă îți dorești să faci parte din echipa noastră, avem nevoie de:</p>
+      <ul>
+        <li>o persoană pozitivă, căreia îi place lucrul în echipă;
+        </li>
+        <li> să fii deschis provocărilor și îți dorești să te
+          dezvolți;
+        </li>
+        <li>să ai inițiativă și dorintă de implicare;</li>
+        <li>să fii o persoană organizată, care știe să prioritizeze
+          task-urile pe care și le propune.
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Beneficii</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>Internship-ul va fi unul plătit și există posibilitatea continuării și după finalizarea acestuia.</p>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Tehnologii</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <div class="leading align-center">
+        <ul class="list-inline align-center leading tech">
+          <li>{% include tech-thumb.html tech='java' %}</li>
+          <li>{% include tech-thumb.html tech='sql' %}</li>
+          <li>{% include tech-thumb.html tech='html' %}</li>
+          <li>{% include tech-thumb.html tech='css' %}</li>
+          <li>{% include tech-thumb.html tech='js' %}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section with map -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Locație</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-media">
+      <div class="map-container">
+        <div id="map-canvas" data-address="{{ page.company.address }}"></div>
+      </div>
+    </div>
+  </div>
+</section>
