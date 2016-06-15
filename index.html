@@ -31,16 +31,7 @@ sitemap: false
         {% assign company = COMPANY[1] %}
         {% assign check = 0 %}
         {% assign dim=company.jobs | size %}
-        {% if dim <= 1 %}
-          {% for JOB in company.jobs %}
-            {% assign jobId = JOB[0] %}
-            {% assign job = JOB[1] %}
-            {% if JOB[1].status == "closed" %}
-              {% assign check=1 %}
-            {% endif %}
-           {% endfor %}
-        {% endif %}
-        {% if check == 0 %}
+   
         <div class="listing-group">
 
           <header class="listing-group-header">
@@ -77,7 +68,6 @@ sitemap: false
           </ul>
 
         </div>
-        {% endif %}
         {% endfor %}
 
       </div>
