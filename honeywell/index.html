@@ -1,0 +1,58 @@
+---
+company:
+  name: Honeywell
+  description: >
+    Honeywell International is a $37 billion diversified technology and manufacturing global leader, with more than 120,000 employees in 100 countries around the world and has a demonstrated heritage of both innovation and achievement.
+  address: ''
+  website: www.honeywell.com
+  logo: honeywell-logo.png
+  logoAlt:
+  social:
+    # facebook: https://www.facebook.com/pages/Honeywell
+    # twitter: https://twitter.com/honeywellnow
+    # linkedin: https://www.linkedin.com/company/honeywell
+    # googleplus: https://plus.google.com/+honeywellhome/videos
+    # instagram: ''
+    # youtube: ''
+useLogoAlt: false # uses dark bg version of logo. delete entirely to remove
+---
+
+<!-- Customize page here -->
+<style>
+  .company-header {
+
+  }
+  .company-name,
+  .company-description {
+    
+  }
+</style>
+
+{% assign company=page.company %}
+
+<!-- Basic section markup -->
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Who are we</h2>
+  </header>
+  <div class="section-body">
+    <div class="section-copy">
+      <p>
+        Honeywell is the leader in gas detection, fire systems, personal protective equipment, building controls, home comfort and security,  and scanning and mobility. Our products and solutions give customers the ability to capture more and better data faster and across  a wireless landscape, improve productivity, safety, and security, drive better decision making, and reduce costs. We are at work in 150  million homes, 10 million buildings, 5,000 industrial facilities, and hundreds of gas and electric utilities worldwide. People are our  ultimate differentiator. Bring your passion to a fast paced and professional work atmosphere.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <header class="section-header">
+    <h2 class="section-title">Joburi</h2>
+  </header>
+  <div class="section-body">
+
+    {% include company-jobs.html jobs=company.jobs %}
+  
+  </div>
+</section>
+
