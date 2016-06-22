@@ -1,12 +1,12 @@
 ---
 company:
-  name: ''
+  name: 'Honeywell'
   description: >
     Honeywell International is a $37 billion diversified technology and manufacturing global leader, with more than 120,000 employees in 100 countries around the world and has a demonstrated heritage of both innovation and achievement.
   address: 'Pipera, Bucharest'
   website: www.honeywell.com
   logo: honeywell-logo.png
-  logoAlt:
+  logoAlt: honeywell-logo-alt.png
   social:
     # facebook: https://www.facebook.com/pages/Honeywell
     # twitter: https://twitter.com/honeywellnow
@@ -14,18 +14,35 @@ company:
     # googleplus: https://plus.google.com/+honeywellhome/videos
     # instagram: ''
     # youtube: ''
-useLogoAlt: false # uses dark bg version of logo. delete entirely to remove
+useLogoAlt: true # uses dark bg version of logo. delete entirely to remove
 ---
 
 <!-- Customize page here -->
 <style>
   .company-header {
-
+background-color:#DE1E34;
+color:white;
   }
   .company-name,
   .company-description {
-    
+    color: inherit;
   }
+  .company-name{
+    visibility:hidden;
+    position:absolute;
+  }
+  .company-website {
+    color: inherit;
+    display: inline-block;
+    border-bottom: 1px dashed;
+  }
+  .company-website:hover,
+  .company-website:focus {
+    color: inherit;
+    border-bottom-style: solid;
+  }
+  
+
 </style>
 
 {% assign company=page.company %}
