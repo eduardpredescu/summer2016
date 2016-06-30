@@ -3,3 +3,58 @@ title: Ce am învățat în 2016
 layout: default
 permalink: raport.html
 ---
+<div class="page-container">
+    <div class="section-copy leading">
+        <h2 class="section-title">Companii</h2>
+        <ul class="list-inline">
+            {% for COMPANY in site.data.companies %}
+            {% assign companyId = COMPANY[0] %}
+            {% assign company = COMPANY[1] %}
+            <li><img src="{{ company.page.dir }}{{ company.logo }}"
+                     alt="{{ company.name }} logo" style="width:auto;height:100px;"></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="section-copy leading">
+        <h2 class="section-title">Facultăți</h2>
+        <ul class="list">
+            <li>București<br>
+                <ul class="list">
+                    <li>
+                        Universitatea Politehnică din București
+                    </li>
+                    <li>
+                        Academia de Studii Economice din București
+                    </li>
+                    <li>
+                        Universitatea din București
+                    </li>
+                </ul>
+            </li>
+            <li>Iași<br>
+                <ul class="list">
+                    <li>Universitatea Alexandru Ioan Cuza din Iași</li>
+                    <li>Universitatea Tehnică Gh. Asachi din Iași</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="section-copy leading"><h2 class="section-title">Sumar</h2>
+        <p>
+        638 aplicări<br>
+        523 studenți înscriși<br>
+        {{ site.data.companies|size }} companii<br>
+        {{ site.data.jobs|size }} joburi (6 închise)<br>
+        2 orașe<br>
+        16 facultăți<br></p>
+
+    </div>
+    <div class="align-center">
+        <ul class="list-inline">
+            <li><a href="https://summer.junio.ro">Summerjobs actual</a></li>
+            <li><a href="https://junio.ro">Junio.ro</a></li>
+            <li><a href="https://www.facebook.com/junio.recrutare/?fref=ts">Facebook Junio</a></li>
+        </ul>
+
+    </div>
+</div>

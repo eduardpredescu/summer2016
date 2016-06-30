@@ -3,17 +3,16 @@
   position: relative;
   overflow: hidden;
   // height: 100vh;
-  background: #eabd76
-              url('@{path-images}/bg-homepage-header-desktop.jpg')
-              center
-              no-repeat;
+  background: #eabd76 url('@{path-images}/bg-homepage-header-desktop.jpg') center no-repeat;
   background-size: cover;
   text-align: center;
   @media @screen-md-upto {
     background-color: #eabd76;
     background-image: url('@{path-images}/bg-homepage-header-mobile.jpg');
   }
-
+  @media @screen-lg {
+    border-radius: @page-padding / 2;
+  }
 
   .site-description {
     .utils > .center;
@@ -57,37 +56,27 @@
   }
 }
 
-
-.end-bar{
-  padding:1rem 0;
+.end-bar {
+  padding: 1rem 0;
 }
+
 .site-navbar {
-  color:#fff;
-  max-width: none !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  max-width: none;
   text-align: center;
-  margin: 0 !important;
+  margin: 0;
   background-color: #ef8150;
-  padding:1.5rem 0;
+  padding: 1.5rem 0;
   a, a:hover {
     color: #fff;
-    border-bottom:2px solid #fff;
+    border-bottom: 2px dashed #fff;
   }
   a:hover {
-    border-bottom:2px dashed #fff;
+    border-bottom: 2px solid #fff;
   }
 }
-.home-button{
-  float:left;
-  background-color:#ecdacd;
-  font-size:@smaller;
-  padding:0.2rem;
-  border:1px solid #000;
-  >a{
-    border-bottom:none;
-    color:#000;
-  }
-  a:hover{
-    color:#000;
-    border-bottom:none;
-  }
-}
+
