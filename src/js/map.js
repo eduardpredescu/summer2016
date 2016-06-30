@@ -13,86 +13,100 @@ if (summer.plugins === undefined)
 if(summer.plugins.gm===undefined)
   summer.plugins.gm={};
 
-(function () {
-  var googleMaps =function() {
-    var start = {};
-    googleMaps.address=summer.plugins.gm.address;
-    navigator.geolocation.watchPosition(showPosition, showError);
-    function showPosition(position) {
-      start = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      var directionsService = new google.maps.DirectionsService();
-      var request = {
-        origin: start,
-        destination: googleMaps.address,
-        travelMode: google.maps.TravelMode.TRANSIT
-      };
-      directionsService.route(request, function (result, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-          summer.plugins.gm.directionsDisplay.setDirections(result);
-        }
-      });
-      googleMaps.map = new google.maps.Map(summer.dom.mapCanvas, {
-        zoom: 17,
-        scrollwheel: false,
-        center: start,
-        styles: []
-      });
-      summer.plugins.gm.directionsDisplay.setMap(summer.plugins.gm.map);
-    }
 
-    function showError(error) {
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          console.warn("User denied the request for Geolocation.");
-          break;
-        case error.POSITION_UNAVAILABLE:
-          console.warn("Location information is unavailable.");
-          break;
-        case error.TIMEOUT:
-          console.warn("The request to get user location timed out.");
-          break;
-        case error.UNKNOWN_ERR:
-          console.warn("An unknown error occurred.");
-          break;
-      }
-      googleMaps.map = new google.maps.Map(summer.dom.mapCanvas, {
-        zoom: 17,
-        scrollwheel: false,
-        center: googleMaps.codeAddress(summer.plugins.gm.address),
-        styles: []
-      });
-
-    }
-
-  };
-  googleMaps.codeAddress=function codeAddress(address) {
-    googleMaps.geocoder = new google.maps.Geocoder();
-    googleMaps.geocoder.geocode( { 'address': address}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        googleMaps.map.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-          map: googleMaps.map,
-          position: results[0].geometry.location
-        });
-      } else {
-        alert("Geocode was not successful for the following reason: " + status);
-      }
-    });
-  }
-  summer.plugins.gm = googleMaps;
-}());
 
 summer.init = function() {
+
   summer.dom.mapCanvas = document.getElementById('map-canvas');
   summer.plugins.gm.directionsDisplay = new google.maps.DirectionsRenderer({
     draggable: true
   });
+  summer.plugins.gm.map = new google.maps.Map(summer.dom.mapCanvas,summer.plugins.gm.mapOptions);
+  summer.plugins.gm.geocoder = new google.maps.Geocoder();
   summer.plugins.gm.address = summer.dom.mapCanvas.getAttribute('data-address');
-  summer.plugins.gm();
+  summer.plugins.gm.run();
 };
+
+
+
+
+  summer.plugins.gm.mapOptions={
+    zoom: 17,
+    scrollwheel: false,
+    center: new google.maps.LatLng(28.42, -81.58),
+    styles: []
+  };
+
+summer.plugins.gm.searchAddress=function(address) {
+
+    summer.maps.gm.geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        summer.plugins.gm.createMarker(results[0].geometry.location);
+
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  };
+  summer.plugins.gm.createMarker=function(latlng) {
+    var marker;
+    // If the user makes another search you must clear the marker variable
+    if(marker != undefined && marker != ''){
+      marker.setMap(null);
+      marker = '';
+    }
+
+    marker = new google.maps.Marker({
+      map: googleMaps.map,
+      position: latlng
+    });
+
+  };
+  summer.plugins.gm.start = {};
+  function showPosition(position) {
+    summer.plugins.gm.start = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    };
+    var directionsService = new google.maps.DirectionsService();
+    var request = {
+      origin: summer.plugins.gm.start,
+      destination:  summer.plugins.gm.address,
+      travelMode: google.maps.TravelMode.TRANSIT
+    };
+    directionsService.route(request, function (result, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        summer.plugins.gm.directionsDisplay.setDirections(result);
+      }
+    });
+    summer.plugins.gm.directionsDisplay.setMap(summer.plugins.gm.map);
+  }
+
+  function showError(error) {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        console.warn("User denied the request for Geolocation.");
+        break;
+      case error.POSITION_UNAVAILABLE:
+        console.warn("Location information is unavailable.");
+        break;
+      case error.TIMEOUT:
+        console.warn("The request to get user location timed out.");
+        break;
+      case error.UNKNOWN_ERR:
+        console.warn("An unknown error occurred.");
+        break;
+    }
+
+    console.log( summer.plugins.gm.searchAddress(summer.plugins.gm.address));
+    summer.plugins.gm.searchAddress(summer.plugins.gm.address);
+  }
+
+
+  summer.plugins.gm.run=function(){
+    navigator.geolocation.watchPosition(showPosition, showError);
+  };
+
 
 
 
@@ -108,15 +122,9 @@ summer.utils.once=function once(fn, context) {
     return result;
   };
 }
-summer.load=function loadScript() {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js' +
-      '?key=AIzaSyCgzwlVgB2yRIIW89qbpi9dAiWlD1DAjy0' + '&libraries=places'+"&callback=summer.init";
-  document.body.appendChild(script);
-}
+
 window.onload = function() {
-  summer.handler = summer.utils.once(onVisibilityChange(document.getElementById('map-canvas'),summer.load()));
+  summer.handler = summer.utils.once(onVisibilityChange(document.getElementById('map-canvas'),summer.init()));
   if (window.addEventListener) {
     addEventListener('DOMContentLoaded', summer.handler, false);
     addEventListener('load', summer.handler, false);

@@ -13,9 +13,7 @@
     background-color: #eabd76;
     background-image: url('@{path-images}/bg-homepage-header-mobile.jpg');
   }
-  @media @screen-lg {
-    border-radius: @page-padding / 2;
-  }
+
 
   .site-description {
     .utils > .center;
@@ -56,5 +54,41 @@
     width: 24rem;
     max-width: 100%;
     height: auto;
+  }
+}
+
+
+.end-bar{
+  padding:1rem 0;
+}
+.site-navbar {
+  color:#fff;
+  max-width: none !important;
+  text-align: center;
+  margin: 0 !important;
+  background-color: #ef8150;
+  padding:1.5rem 0;
+  a, a:hover {
+    color: #fff;
+    border-bottom:2px solid #fff;
+  }
+  a:hover {
+    border-bottom:2px dashed #fff;
+  }
+}
+.home-button{
+  position:absolute;
+  float:left;
+  background-color:#ecdacd;
+  font-size:@smaller;
+  padding:0.2rem;
+  border:1px solid #000;
+  >a{
+    border-bottom:none;
+    color:#000;
+  }
+  a:hover{
+    color:#000;
+    border-bottom:none;
   }
 }
