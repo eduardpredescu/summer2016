@@ -1,256 +1,270 @@
 ---
-layout: default
 class: page-homepage
-showBanner: yes
 sitemap: false
 ---
 
-<header class="page-header">
-  {% if page.showBanner %}
-    {% include banner.html %}
-  {% endif %}
-</header>
+<!DOCTYPE html>
+<html lang="ro" class="{{ page.class | default:'page-default' }}">
 
-<main class="page-body">
-  <div class="page-container">
+<head>
+    {% include head.html %}
 
-    <section class="section align-left">
-      <header class="section-header align-center">
-        <h2 class="section-title">Joburi</h2>
-      </header>
-      <div class="section-body">
-        
-        <div class="listing listing-jobs">
+    {% if page.title %}
+    {% capture title %}{{ page.title }} | Summerjobs{% endcapture %}
+    {% else %}
+    {% assign title = 'Junio Summerjobs' %}
+    {% endif %}
 
-      
+    <title>{{ title | }}</title>
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}/summer-cover.jpg">
+    <meta name="description" content="{{ site.description }}">
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+<style>
+    body {
+        padding: 0;
+        max-width: none;
+        font-family:"Work Sans"!important;
+    }
+    section{
+        padding:20px;
+        color:#D8D8D8;
+    }
+    .titles{
+        font-weight:normal;
+    }
+    .subtitle1,.subtitle2{
+        color:#374779;
+    }
+    .main-title{
+        color:#fff;
+    }
+    .banner {
+        background: url('static/img/summerjobs-revine-in-2017-lg.jpg') center no-repeat;
+        background-color: #263366;
+        background-size: cover;
+        height:800px;
+        text-align:center;
+        overflow:hidden;
+        display:flex;
+        flex-flow: column;
+        padding:20px;
+    }
 
-      <div class="listing-body">
-        {% assign check = 0 %}
-        {% for COMPANY in site.data.companies %}
-        {% assign companyId = COMPANY[0] %}
-        {% assign company = COMPANY[1] %}
-        {% assign check = 0 %}
-        {% assign dim=company.jobs | size %}
-   
-        <div class="listing-group">
+    @media screen and (max-width: 768px) {
+        .banner {
+            background-image: url('static/img/summerjobs-revine-in-2017-md.jpg');
+            height:400px;
+        }
+    }
 
-          <header class="listing-group-header">
+    @media screen and (max-width: 425px) {
+        .banner {
+            background-image: url('static/img/summerjobs-revine-in-2017-sm.jpg');
+            height:350px;
+            width:auto;
+            background-position: top;
+            background-size:contain;
 
-            <div id="{{ companyId }}" class="company snippet">
-              <div class="leading">
-                {% if company.logo %}
-                  <a class="company-logo"
-                     href="{{ company.page.url }}" 
-                     title="Detalii despre companie">
-                    <img src="{{ company.page.dir }}{{ company.logo }}"
-                         alt="{{ company.name }} logo">
-                  </a>
-                {% endif %}
-                <h3 class="company-name">
-                  <a href="{{ company.page.url }}" title="Detalii despre companie">
-                    {{ company.name }}
-                  </a>
-                </h3>
-              </div>
-              <p class="company-description">{{ company.description }}</p>
-              <a class="company-website" href="{{ company.website }}" target="_blank" rel="external">{{ company.website | split:"://" | last }}</a>
-            </div>
-          </header>
+        }
+        h3,h4,h5{
+        font-family:"Work Sans Thin"!important;}
+        .title-image{
+            order:1;
+        }
+        .titles{
+            order:2;
+            margin-top:60%;
+        }
+        .subtitle1{
+            color:#9EAAD9;
+        }
+        .subtitle2{
+            color:#F4793E;
+        }
+        .main-title{
+            color:#fff;
+            font-size:24px;
+        }
+    }
 
-          <ul class="listing-items">
-            {% for JOB in company.jobs %}
-              {% assign jobId = JOB[0] %}
-              {% assign job = JOB[1] %}
-              <li class="listing-item">
-                {% include job-snippet.html job=job %}
-              </li>
-            {% endfor %}
-          </ul>
+    .big-wrapper {
+        background-color: #263366;
+    }
+    .list-inline{
+        margin:0;
+        padding:0;
+        display:inline;
+        font-size:24px;
 
-        </div>
-        {% endfor %}
+    }
+    .list-inline li{
+        list-style-type: none;
+    }
+    .list-companies{
+        margin:0;
+        padding:0;
+        display:inline-block;
+    }
 
-      </div>
+    .list-companies img{
+       width:100px;
+        height:auto;
+        margin:10px;
+    }
+    .title-image{
+        position:relative;
+        left:50%;
+        transform:translateX(-50%);
+    }
+    .titles{
+        font-weight:normal;
+    }
+    .page-homepage .section{
+        border:0;
+    }
+    .section{
+        text-align:center;
 
+    }
+    .footer p{
+        color:#000!important;
+    }
+    a{
+        color:#0D75D3;
+    }
+    a:hover{
+        border-bottom: 1px dashed #0D75D3;
+    }
+    h3,h4,h5{
+        font-family:"Work Sans";
+        font-weight:normal!important;
+    }
+    .spriteairtouch, .spriteadonis-software, .spritenutristandard, .spritecodeless, .spritebearing-point,
+    .spritefordaq, .spritehoneywell, .spriteaventurio, .spriteagvision, .spriteinfo-world,
+    .spritebigstep-cloud, .spritenxp, .spriteanritsu, .spriteintegrisoft, .spritebitdefender
+    { max-width: 100%; background-size: 100%; background-image: url('static/img/company-grayscale-sprites.png'); }
 
-      </div>
+    .spriteairtouch { background-position: 0 0%; background-size: 100%; }
+    .spriteadonis-software { background-position: 0 7.142857%; background-size: 103.333333%; }
+    .spritenutristandard { background-position: 0 14.285714%; background-size: 108.349515%; }
+    .spritecodeless { background-position: 0 21.428571%; background-size: 132.541568%; }
+    .spritebearing-point { background-position: 0 28.571429%; background-size: 139.5%; }
+    .spritefordaq { background-position: 0 35.714286%; background-size: 146.456693%; }
+    .spritehoneywell { background-position: 0 42.857143%; background-size: 153.719008%; }
+    .spriteaventurio { background-position: 0 50%; background-size: 173.831776%; }
+    .spriteagvision { background-position: 0 57.142857%; background-size: 176.025237%; }
+    .spriteinfo-world { background-position: 0 64.285714%; background-size: 176.025237%; }
+    .spritebigstep-cloud { background-position: 0 71.428571%; background-size: 177.142857%; }
+    .spritenxp { background-position: 0 78.571429%; background-size: 210.566038%; }
+    .spriteanritsu { background-position: 0 85.714286%; background-size: 216.27907%; }
+    .spriteintegrisoft { background-position: 0 92.857143%; background-size: 225%; }
+    .spritebitdefender { background-position: 0 100%; background-size: 245.814978%; }
+    .mail a{
+        color:#9EAAD9;
+        font-size:10px;
+    }
+    hr{
+        width:200px;
+        border-top:0;
+        border-bottom: 2px solid #F4793E;
+    }
+    .list-companies a:hover{
+        border-bottom: 0;
+
+    }
+</style>
+<body>
+
+<div class="banner">
+    <div class="titles">
+        <h5 class="subtitle1">Summerjobs 2016 s-a încheiat</h5>
+        <h3 class="main-title">Ne vedem în 2017!</h3>
+        <h4 class="subtitle2">Să aveți o vară de neuitat!</h4>
+    </div>
+    <div class="title-image">
+        <img src="{{ site.static }}/img/summer-logo.png" alt="Summerjobs"
+             width="60%" height="auto">
+
+    </div>
+
+</div>
+
+<div class="big-wrapper">
+    <section class="section">
+        <ul class="list-inline">
+            <li><a href="https://junio.ro">Junio.ro</a></li>|
+            <li><a href="https://junio.ro/blog/tag/blog/">Blog</a></li>|
+            <li>
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.73 455.73" style="enable-background:new 0 0 455.73 455.73;width:30px;height:30px;margin-top:4px;" xml:space="preserve"><rect x="0" y="0" width="455.73" height="455.73" style="fill: #ffffff">
+
+</rect>
+  <path style="fill:#3A559F;" d="M0,0v455.73h242.704V279.691h-59.33v-71.864h59.33v-60.353c0-43.893,35.582-79.475,79.475-79.475
+    h62.025v64.622h-44.382c-13.947,0-25.254,11.307-25.254,25.254v49.953h68.521l-9.47,71.864h-59.051V455.73H455.73V0H0z"></path></svg>
+            </li>
+        </ul>
     </section>
-    <script 
-  src="https://code.jquery.com/jquery-2.2.3.min.js"
-  integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
-  crossorigin="anonymous">
-</script>
 
-    <!--
-    <section id="companii" class="section">
-      <header class="section-header">
-        <h2 class="section-title">Companii</h2>
-      </header>
-      <div class="section-body">
-        <ul class="no-list">
-        {% for COMPANY in site.data.companies %}
-          <li>
-            {% assign companyId = COMPANY[0] %}
-            {% assign company = COMPANY[1] %}
-            <h4><a href="{{ company.page.url }}">{{ company.name }}</a></h4>
-          </li>
-        {% endfor %}
-        </ul>
-      </div>
-    </section> -->
+<section class="section">
+    <div class="mail">
+        <div>
+   <img width="25px" src="static/img/noun_110511_cc.svg" /></div>
+    <a class="large" href="mailto:suport@junio.ro">suport@junio.ro</a>
+    </div>
+</section>
+    <hr>
+<section class="section">
+    <p>Feedbackul pe care l-am primit anul acesta și experiențele pe care le-ați împărtășit cu noi ne-au făcut mare
+        bucurie - <span style="color: #F4793E">mulțumim tuturor celor care ne-au contactat</span></p>
+    <hr>
+    <p>Summerjobs a fost un bun prilej de învățare pentru noi și am decis să facem <a href="raport.html">concluziile</a> publice.</p>
+    <p><a href="https://summer.junio.ro">Summerjobs 2016</a> este în continuare vizibil ca referință</p>
+</section>
+    </div>
+<div class="footer">
+<section class="section">
+    <p>Mulțumim tuturor partenerilor și companiilor care s-au implicat și au făcut acest eveniment posibil</p>
 
-    <section id="parteneri" class="section">
-      <header class="section-header">
-        <h2 class="section-title">Parteneri</h2>
-      </header>
-      <div class="section-body">
-        <ul class="list-partners">
-          <li>
-            <a href="http://www.asaff.ro/" rel="external" target="_blank">
-              <span class="sprite-partners sprite-asaff"></span>
-              Asociația Studenților și Absolvenților Francofoni ASAFF
-            </a>
-          </li>
-          <li>
-            <a href="http://ascig.ro/" rel="external" target="_blank">
-              <span class="sprite-partners sprite-ascig"></span>
-              Asociația Studenților în Contabilitate și Informatică de Gestiune ASCIG
-            </a>
-          </li>
-          <li>
-            <a href="http://as-mi.ro" rel="external" target="_blank">
-              <span class="sprite-partners sprite-asmi"></span>
-              Asociația Studenților la Matematică și Informatică ASMI
-            </a>
-          </li>
-          <li>
-            <a href="http://lsacbucuresti.ro/" rel="external" target="_blank">
-              <span class="sprite-partners sprite-lsac"></span>
-              Liga Studenților din Facultatea de Automatică și Calculatoare LSAC
-            </a>
-          </li>
-          <li>
-            <a href="http://lse.org.ro/" rel="external" target="_blank">
-              <span class="sprite-partners sprite-lse"></span>
-              Liga Studenților Electroniști LSE
-            </a>
-          </li>
-          <li>
-            <a href="http://sisc.ro/" rel="external" target="_blank">
-              <span class="sprite-partners sprite-sisc"></span>
-              Sindicatul Studenților din Cibernetică
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section id="facultati" class="section">
-      <header class="section-header">
-        <h2 class="section-title">Facultăți</h2>
-      </header>
-      <div class="section-body">
-        <a href="http://www.upb.ro/" rel="external" target="_blank">
-          <span class="sprite-universities sprite-upb"></span>
-          <h6 class="inline">Universitatea Politehnică din București</h6>
-        </a>
-
-        <ul class="no-list">
-          <li>
-            <a href="http://acs.pub.ro//" rel="external" target="_blank">
-              Facultatea de Automatică și Calculatoare
-            </a>
-          </li>
-          <li>
-            <a href="http://www.electronica.pub.ro/" rel="external" target="_blank">
-              Facultatea de Electronică, Telecomunicații și Tehnologia Informației
-            </a>
-          </li>
-          <li>
-            <a href="http://ing.pub.ro/" rel="external" target="_blank">
-              Facultatea de Inginerie în Limbi Străine
-            </a>
-          </li>
-          <li>
-            <a href="http://www.faima.pub.ro/" rel="external" target="_blank">
-              Facultatea de Antreprenoriat, Ingineria și Managementul Afacerilor
-            </a>
-          </li>
-        </ul>
-
-        <a href="http://www.ase.ro/" rel="external" target="_blank">
-          <span class="sprite-universities sprite-ase"></span>
-          <h6 class="inline">Academia de Studii Economice din București</h6>
-        </a>
-        <ul class="no-list">
-          <li>
-            <a href="http://www.csie.ase.ro/" rel="external" target="_blank">
-              Facultatea de Cibernetică, Statistică și Informatică Economică
-            </a>
-          </li>
-          <li>
-            <a href="http://www.cig.ase.ro/" rel="external" target="_blank">
-              Facultatea de Contabilitate și Informatică de gestiune
-            </a>
-          </li>
-          <li>
-            <a href="http://www.rei.ase.ro/" rel="external" target="_blank">
-              Facultatea de Relații Economice Internaționale
-            </a>
-          </li>
-        </ul>
+    <div class="list-companies">
+        <a rel="external" target="_blank" href="https://www.airtouchmedia.com/"><img class="spriteairtouch" alt=""
+                                                                                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi4AAACnAQMAAAAMpEWlAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAACFJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAcGkuUQAB0TEtYAAAAABJRU5ErkJggg=="></a>
+        <a rel="external" target="_blank" href="http://adonissoft.com/"><img class="spriteadonis-software" alt=""
+                                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi4AAACnAQMAAAAMpEWlAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAACFJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAcGkuUQAB0TEtYAAAAABJRU5ErkJggg=="></a>
+        <a rel="external" target="_blank" href="http://www.nutristandard.com/"><img class="spritenutristandard" alt=""
+                                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi4AAACnAQMAAAAMpEWlAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAACFJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAcGkuUQAB0TEtYAAAAABJRU5ErkJggg=="></a>
+        <a rel="external" target="_blank" href="http://codeless.com/en/"><img class="spritecodeless" alt=""
+                                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaUAAACnAQMAAACLo9FSAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB9JREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAwKMBIzoAAfNglnIAAAAASUVORK5CYII="></a>
+        <a rel="external" target="_blank" href="http://www.bearingpoint.com/en-us/"><img class="spritebearing-point" alt=""
+                                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAACnAQMAAAAFeZguAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB1JREFUeNrtwQEBAAAAgJD+r+4ICgAAAAAAAACABiFFAAFBUlaJAAAAAElFTkSuQmCC"></a>
+        <a rel="external" target="_blank" href="http://www.fordaq.com/"><img class="spritefordaq" alt=""
+                                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAACnAQMAAADHZR7vAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB9JREFUeNrtwQENAAAAwqD3T20ON6AAAAAAAAAAgFMDH/cAAV1nK58AAAAASUVORK5CYII="></a>
+        <a rel="external" target="_blank" href="http://www.honeywell.com/"><img class="spritehoneywell" alt=""
+                                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWsAAACnAQMAAADt1e9AAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20LL6AAAAAAAAAA4GgeqQAB5jKbtgAAAABJRU5ErkJggg=="></a>
+        <a rel="external" target="_blank" href="https://www.aventurio.ro/"><img class="spriteaventurio" alt=""
+                                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUEAAACnAQMAAAC1qnxZAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20Gf6AAAAAAAACAzwAbZgABG2J9DwAAAABJRU5ErkJggg=="></a>
+        <a rel="external" target="_blank" href="https://www.agvision.ro/"> <img class="spriteagvision" alt=""
+                                                                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT0AAACnAQMAAABZ3xlPAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAADgxgAavwAB0bj46QAAAABJRU5ErkJggg=="></a>
+        <a rel="external" target="_blank" href="http://www.infoworld.ro/"><img class="spriteinfo-world" alt=""
+                                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT0AAACnAQMAAABZ3xlPAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAADgxgAavwAB0bj46QAAAABJRU5ErkJggg=="></a>
+        <a rel="external" target="_blank" href="http://bigstep.com/"> <img class="spritebigstep-cloud" alt=""
+                                                                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATsAAACnAQMAAABUwWkIAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAADgxgAavwAB0bj46QAAAABJRU5ErkJggg=="></a>
+        <a rel="external" target="_blank" href="http://www.nxp.com/"><img class="spritenxp" alt=""
+                                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACnAQMAAAA4xzsNAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB1JREFUeNrtwQENAAAAwqD3T20ON6AAAAAAAODEABbVAAHR8l87AAAAAElFTkSuQmCC"></a>
+        <a rel="external" target="_blank" href="https://www.anritsu.com/en-US/"><img class="spriteanritsu" alt=""
+                                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQIAAACnAQMAAADAJ8D6AAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABpJREFUeNrtwQEBAAAAgJD+r+4ICgAAAAAABhYuAAGKXEO6AAAAAElFTkSuQmCC"></a>
+        <a rel="external" target="_blank" href="http://www.integrisoft.ro/"><img class="spriteintegrisoft" alt=""
+                                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAACnAQMAAAAGxwNqAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABxJREFUeNrtwQENAAAAwqD3T20ON6AAAAAAAD4NFOAAAW8ZgxAAAAAASUVORK5CYII="></a>
+        <a rel="external" target="_blank" href="http://www.bitdefender.ro/"><img class="spritebitdefender" alt=""
+                                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOMAAACnAQMAAADZiXl1AAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABxJREFUeNrtwTEBAAAAwqD1T20LL6AAAAAAgJ8BE5IAAQXeKsAAAAAASUVORK5CYII="></a>
 
 
-        <a href="http://unibuc.ro/" rel="external" target="_blank">
-          <span class="sprite-universities sprite-unibuc"></span>
-          <h6 class="inline">Universitatea din București</h6>
-        </a>
+    </div>
 
-        <ul class="no-list">
-          <li>
-            <a href="http://fmi.unibuc.ro/" rel="external" target="_blank">
-              Facultatea de Matematică și Informatică
-            </a>
-          </li>
-          <li>
-            <a href="http://www.istorie.unibuc.ro/" rel="external" target="_blank">
-              Facultatea de Istorie
-            </a>
-          </li>
-        </ul>
-        <a href="http://www.uaic.ro/" rel="external" target="_blank">
-          <span class="sprite-universities sprite-uaic"></span>
-          <h6 class="inline">Universitatea Alexandru Ioan Cuza din Iași</h6>
-        </a>
-        <ul class="no-list">
-          <li>
-            <a href="http://www.info.uaic.ro/" rel="external" target="_blank">
-              Facultatea de Informatică
-            </a>
-          </li>
-          <li>
-            <a href="http://www.feaa.uaic.ro/" rel="external" target="_blank">
-              Facultatea de Economie și Administrarea Afacerilor
-            </a>
-          </li>
-          <li>
-            <a href="http://www.bio.uaic.ro/" rel="external" target="_blank">
-              Facultatea de Biologie
-            </a>
-          </li>
-        </ul>
+</section>
+    </div>
+{% include scripts.html %}
+</body>
 
-        <a href="http://www.tuiasi.ro/" rel="external" target="_blank">
-          <span class="sprite-universities sprite-tuiasi"></span>
-          <h6 class="inline">Universitatea Tehnică Gh. Asachi din Iași</h6>
-        </a>
-        <ul class="no-list">
-          <li>
-            <a href="http://www.ace.tuiasi.ro/" rel="external" target="_blank">
-              Facultatea de Automatică și Calculatoare
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-  </div>
-</main>
+</html>
