@@ -1,36 +1,31 @@
----
-class: page-homepage
-sitemap: false
----
+
 
 <!DOCTYPE html>
-<html lang="ro" class="{{ page.class | default:'page-default' }}">
+<html lang="ro">
 
 <head>
-    {% include head.html %}
-
-    {% if page.title %}
-    {% capture title %}{{ page.title }} | Summerjobs{% endcapture %}
-    {% else %}
-    {% assign title = 'Junio Summerjobs' %}
-    {% endif %}
-
-    <title>{{ title | }}</title>
-    <meta property="og:title" content="{{ title }}">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    <meta property="og:image" content="{{ site.url }}/summer-cover.jpg">
-    <meta name="description" content="{{ site.description }}">
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <style>
+    html{
+        font-size: 15px;
+    }
     body {
         padding: 0;
+        margin: 0;
         max-width: none;
-        font-family:"Work Sans"!important;
+        font-family: "Work Sans";
+        font-weight: 400;
+
     }
     section{
         padding:20px;
         color:#D8D8D8;
+        max-width:50%;
+        margin: 0 auto;
+        text-align:center;
+
     }
     .titles{
         font-weight:normal;
@@ -53,42 +48,15 @@ sitemap: false
         padding:20px;
     }
 
-    @media screen and (max-width: 768px) {
-        .banner {
-            background-image: url('static/img/summerjobs-revine-in-2017-md.jpg');
-            height:400px;
-        }
+
+
+    .main-title{
+        font-size:4rem;
+    }
+    .subtitle1,.subtitle2{
+        font-size:2rem;
     }
 
-    @media screen and (max-width: 425px) {
-        .banner {
-            background-image: url('static/img/summerjobs-revine-in-2017-sm.jpg');
-            height:350px;
-            width:auto;
-            background-position: top;
-            background-size:contain;
-
-        }
-        h3,h4,h5{
-        font-family:"Work Sans Thin"!important;}
-        .title-image{
-            order:1;
-        }
-        .titles{
-            order:2;
-            margin-top:60%;
-        }
-        .subtitle1{
-            color:#9EAAD9;
-        }
-        .subtitle2{
-            color:#F4793E;
-        }
-        .main-title{
-            color:#fff;
-            font-size:24px;
-        }
-    }
 
     .big-wrapper {
         background-color: #263366;
@@ -97,11 +65,16 @@ sitemap: false
         margin:0;
         padding:0;
         display:inline;
-        font-size:24px;
+        font-size:2rem;
+
 
     }
     .list-inline li{
         list-style-type: none;
+        display: inline-block;
+        margin-right:15px;
+        margin-left:15px;
+
     }
     .list-companies{
         margin:0;
@@ -119,28 +92,33 @@ sitemap: false
         left:50%;
         transform:translateX(-50%);
     }
+    .title-image img{
+        max-width:540px;
+    }
     .titles{
         font-weight:normal;
     }
     .page-homepage .section{
         border:0;
     }
-    .section{
-        text-align:center;
 
-    }
     .footer p{
-        color:#000!important;
+        color:#000;
+    }
+    #fb a:hover{
+        border-bottom:0;
     }
     a{
         color:#0D75D3;
+        text-decoration: none;
     }
     a:hover{
         border-bottom: 1px dashed #0D75D3;
     }
     h3,h4,h5{
         font-family:"Work Sans";
-        font-weight:normal!important;
+        font-weight:normal;
+        margin:0;
     }
     .spriteairtouch, .spriteadonis-software, .spritenutristandard, .spritecodeless, .spritebearing-point,
     .spritefordaq, .spritehoneywell, .spriteaventurio, .spriteagvision, .spriteinfo-world,
@@ -165,16 +143,78 @@ sitemap: false
     .mail a{
         color:#9EAAD9;
         font-size:10px;
+        border-bottom:0;
     }
     hr{
         width:200px;
         border-top:0;
-        border-bottom: 2px solid #F4793E;
+        border-bottom: 1px solid #F4793E;
     }
     .list-companies a:hover{
         border-bottom: 0;
 
     }
+    .mail a{
+        font-size:1rem;
+    }
+    .caret{
+        color:#4a5887;
+        display:inline;
+    }
+    @media screen and (max-width: 768px) {
+        .banner {
+            background-image: url('static/img/summerjobs-revine-in-2017-md.jpg');
+            height:400px;
+        }
+    }
+    @media only screen and (max-width: 425px) {
+        .banner {
+            background-image: url('static/img/summerjobs-revine-in-2017-sm.jpg');
+            height:350px;
+            width:auto;
+            background-position: top;
+            background-size:contain;
+
+        }
+
+        .list-inline{
+            font-size: 1.5rem;
+        }
+
+        .title-image{
+            order:1;
+        }
+        .titles{
+            order:2;
+            margin-top:60%;
+
+        }
+        .subtitle1{
+            color:#9EAAD9;
+        }
+        .subtitle2{
+            color:#f4793e;
+        }
+        .main-title{
+            color:#fff;
+            font-size:2rem;
+
+        }
+        section{
+            max-width:100%;
+        }
+        .subtitle1{
+            font-size:1.1rem;
+        }
+        .subtitle2{
+            font-size:1.3rem;
+        }
+        .title-image img{
+            max-width:260px;
+        }
+    }
+
+
 </style>
 <body>
 
@@ -185,8 +225,7 @@ sitemap: false
         <h4 class="subtitle2">Să aveți o vară de neuitat!</h4>
     </div>
     <div class="title-image">
-        <img src="{{ site.static }}/img/summer-logo.png" alt="Summerjobs"
-             width="60%" height="auto">
+        <img src="/static/img/summer-logo.png" alt="Summerjobs" height="auto">
 
     </div>
 
@@ -195,14 +234,15 @@ sitemap: false
 <div class="big-wrapper">
     <section class="section">
         <ul class="list-inline">
-            <li><a href="https://junio.ro">Junio.ro</a></li>|
-            <li><a href="https://junio.ro/blog/tag/blog/">Blog</a></li>|
-            <li>
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.73 455.73" style="enable-background:new 0 0 455.73 455.73;width:30px;height:30px;margin-top:4px;" xml:space="preserve"><rect x="0" y="0" width="455.73" height="455.73" style="fill: #ffffff">
+            <li><a href="https://junio.ro">Junio.ro</a></li><div class="caret">|</div>
+            <li><a href="https://junio.ro/blog/tag/blog/">Blog</a></li><div class="caret">|</div>
+            <li id="fb"><a href="https://www.facebook.com/junio.recrutare/?fref=ts">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.73 455.73" style="enable-background:new 0 0 455.73 455.73;width:30px;height:30px;vertical-align: middle;" xml:space="preserve"><rect x="0" y="0" width="455.73" height="455.73" style="fill: #ffffff">
 
 </rect>
   <path style="fill:#3A559F;" d="M0,0v455.73h242.704V279.691h-59.33v-71.864h59.33v-60.353c0-43.893,35.582-79.475,79.475-79.475
     h62.025v64.622h-44.382c-13.947,0-25.254,11.307-25.254,25.254v49.953h68.521l-9.47,71.864h-59.051V455.73H455.73V0H0z"></path></svg>
+            </a>
             </li>
         </ul>
     </section>
@@ -210,14 +250,14 @@ sitemap: false
 <section class="section">
     <div class="mail">
         <div>
-   <img width="25px" src="static/img/noun_110511_cc.svg" /></div>
-    <a class="large" href="mailto:suport@junio.ro">suport@junio.ro</a>
+   <img width="30px" src="static/img/noun_110511_cc.svg" /></div>
+    <a class="large" href="mailto:summer@junio.ro">summer@junio.ro</a>
     </div>
 </section>
     <hr>
 <section class="section">
     <p>Feedbackul pe care l-am primit anul acesta și experiențele pe care le-ați împărtășit cu noi ne-au făcut mare
-        bucurie - <span style="color: #F4793E">mulțumim tuturor celor care ne-au contactat</span></p>
+        bucurie - <span style="color: #F4793E">mulțumim tuturor celor care ne-au contactat.</span></p>
     <hr>
     <p>Summerjobs a fost un bun prilej de învățare pentru noi și am decis să facem <a href="raport.html">concluziile</a> publice.</p>
     <p><a href="https://summer.junio.ro">Summerjobs 2016</a> este în continuare vizibil ca referință</p>
@@ -261,10 +301,8 @@ sitemap: false
 
 
     </div>
-
 </section>
     </div>
-{% include scripts.html %}
 </body>
 
 </html>
