@@ -85,9 +85,7 @@
         margin: 0;
         padding: 0;
         display: inline-block;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        white-space: nowrap;
+        overflow:hidden;
         width:100%;
     }
 
@@ -248,7 +246,10 @@
         color: #4a5887;
         display: inline;
     }
-    
+
+    .companies{
+        max-width:75%;
+    }
     @media screen and (min-width: 1025px) {
         .banner {
             max-height: 100%;
@@ -273,6 +274,11 @@
 
         }
 
+        .list-companies{
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
         .list-inline {
             font-size: 1.5rem;
         }
@@ -378,7 +384,8 @@
 <div class="footer">
     <section class="section">
         <p>Mulțumim tuturor partenerilor și companiilor care s-au implicat și au făcut acest eveniment posibil</p>
-
+</section>
+    <section class="section companies">
         <div class="list-companies">
             <a rel="external" target="_blank" href="https://www.airtouchmedia.com/"><img class="spriteairtouch" alt=""
                                                                                          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi4AAACnAQMAAAAMpEWlAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAACFJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAcGkuUQAB0TEtYAAAAABJRU5ErkJggg=="></a>
