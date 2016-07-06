@@ -3,7 +3,100 @@ title: Ce am învățat în 2016
 layout: default
 permalink: raport.html
 ---
+<style>
+    .sprite {
+        max-width: 100%;
+        background-size: 100%;
+        background-image: url('static/img/company-grayscale-sprites.png');
+    }
 
+    .spriteairtouch {
+        background-position: 0 0%;
+        background-size: 100%;
+    }
+
+    .spriteadonis-software {
+        background-position: 0 7.142857%;
+        background-size: 103.333333%;
+    }
+
+    .spritenutristandard {
+        background-position: 0 14.285714%;
+        background-size: 108.349515%;
+    }
+
+    .spritecodeless {
+        background-position: 0 21.428571%;
+        background-size: 132.541568%;
+    }
+
+    .spritebearing-point {
+        background-position: 0 28.571429%;
+        background-size: 139.5%;
+    }
+
+    .spritefordaq {
+        background-position: 0 35.714286%;
+        background-size: 146.456693%;
+    }
+
+    .spritehoneywell {
+        background-position: 0 42.857143%;
+        background-size: 153.719008%;
+    }
+
+    .spriteaventurio {
+        background-position: 0 50%;
+        background-size: 173.831776%;
+    }
+
+    .spriteagvision {
+        background-position: 0 57.142857%;
+        background-size: 176.025237%;
+    }
+
+    .spriteinfo-world {
+        background-position: 0 64.285714%;
+        background-size: 176.025237%;
+    }
+
+    .spritebigstep-cloud {
+        background-position: 0 71.428571%;
+        background-size: 177.142857%;
+    }
+
+    .spritenxp {
+        background-position: 0 78.571429%;
+        background-size: 210.566038%;
+    }
+
+    .spriteanritsu {
+        background-position: 0 85.714286%;
+        background-size: 216.27907%;
+    }
+
+    .spriteintegrisoft {
+        background-position: 0 92.857143%;
+        background-size: 225%;
+    }
+
+    .spritebitdefender {
+        background-position: 0 100%;
+        background-size: 245.814978%;
+    }
+    .list-companies {
+        margin: 0;
+        padding: 0;
+        overflow:hidden;
+        max-width: 100%;
+    }
+
+    .list-companies img {
+        width: auto;
+        height: 4em;
+        margin: 10px;
+    }
+</style>
 <header class="page-header">
     <div class="page-container">
         <h1 class="page-title">
@@ -34,14 +127,53 @@ permalink: raport.html
 
 
         <h2>Companii</h2>
-        <ul class="list-inline">
-            {% for COMPANY in site.data.companies %}
-            {% assign companyId = COMPANY[0] %}
-            {% assign company = COMPANY[1] %}
-            <li><img src="{{ company.page.dir }}{{ company.logo }}"
-                     alt="{{ company.name }} logo" style="width:auto;height:100px;"></li>
-            {% endfor %}
-        </ul>
+            <div class="list-companies">
+                <a rel="external" target="_blank" href="https://www.airtouchmedia.com/">
+                    <img class="sprite spriteairtouch" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi4AAACnAQMAAAAMpEWlAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAACFJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAcGkuUQAB0TEtYAAAAABJRU5ErkJggg==">
+                </a>
+                <a rel="external" target="_blank" href="http://adonissoft.com/">
+                    <img class="sprite spriteadonis-software" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi4AAACnAQMAAAAMpEWlAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAACFJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAcGkuUQAB0TEtYAAAAABJRU5ErkJggg==">
+                </a>
+                <a rel="external" target="_blank" href="http://www.nutristandard.com/">
+                    <img class="sprite spritenutristandard" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi4AAACnAQMAAAAMpEWlAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAACFJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAcGkuUQAB0TEtYAAAAABJRU5ErkJggg==">
+                </a>
+                <a rel="external" target="_blank" href="http://codeless.com/en/">
+                    <img class="sprite spritecodeless" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaUAAACnAQMAAACLo9FSAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB9JREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAwKMBIzoAAfNglnIAAAAASUVORK5CYII=">
+                </a>
+                <a rel="external" target="_blank" href="http://www.bearingpoint.com/en-us/">
+                    <img class="sprite spritebearing-point" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAACnAQMAAAAFeZguAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB1JREFUeNrtwQEBAAAAgJD+r+4ICgAAAAAAAACABiFFAAFBUlaJAAAAAElFTkSuQmCC">
+                </a>
+                <a rel="external" target="_blank" href="http://www.fordaq.com/">
+                    <img class="sprite spritefordaq" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAACnAQMAAADHZR7vAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB9JREFUeNrtwQENAAAAwqD3T20ON6AAAAAAAAAAgFMDH/cAAV1nK58AAAAASUVORK5CYII=">
+                </a>
+                <a rel="external" target="_blank" href="http://www.honeywell.com/">
+                    <img class="sprite spritehoneywell" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWsAAACnAQMAAADt1e9AAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20LL6AAAAAAAAAA4GgeqQAB5jKbtgAAAABJRU5ErkJggg==">
+                </a>
+                <a rel="external" target="_blank" href="https://www.aventurio.ro/">
+                    <img class="sprite spriteaventurio" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUEAAACnAQMAAAC1qnxZAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20Gf6AAAAAAAACAzwAbZgABG2J9DwAAAABJRU5ErkJggg==">
+                </a>
+                <a rel="external" target="_blank" href="https://www.agvision.ro/">
+                    <img class="sprite spriteagvision" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT0AAACnAQMAAABZ3xlPAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAADgxgAavwAB0bj46QAAAABJRU5ErkJggg==">
+                </a>
+                <a rel="external" target="_blank" href="http://www.infoworld.ro/">
+                    <img class="sprite spriteinfo-world" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT0AAACnAQMAAABZ3xlPAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAADgxgAavwAB0bj46QAAAABJRU5ErkJggg==">
+                </a>
+                <a rel="external" target="_blank" href="http://bigstep.com/">
+                    <img class="sprite spritebigstep-cloud" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATsAAACnAQMAAABUwWkIAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAADgxgAavwAB0bj46QAAAABJRU5ErkJggg==">
+                </a>
+                <a rel="external" target="_blank" href="http://www.nxp.com/">
+                    <img class="sprite spritenxp" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACnAQMAAAA4xzsNAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB1JREFUeNrtwQENAAAAwqD3T20ON6AAAAAAAODEABbVAAHR8l87AAAAAElFTkSuQmCC">
+                </a>
+                <a rel="external" target="_blank" href="https://www.anritsu.com/en-US/">
+                    <img class="sprite spriteanritsu" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQIAAACnAQMAAADAJ8D6AAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABpJREFUeNrtwQEBAAAAgJD+r+4ICgAAAAAABhYuAAGKXEO6AAAAAElFTkSuQmCC">
+                </a>
+                <a rel="external" target="_blank" href="http://www.integrisoft.ro/">
+                    <img class="sprite spriteintegrisoft" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAACnAQMAAAAGxwNqAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABxJREFUeNrtwQENAAAAwqD3T20ON6AAAAAAAD4NFOAAAW8ZgxAAAAAASUVORK5CYII=">
+                </a>
+                <a rel="external" target="_blank" href="http://www.bitdefender.ro/">
+                    <img class="sprite spritebitdefender" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOMAAACnAQMAAADZiXl1AAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABxJREFUeNrtwTEBAAAAwqD1T20LL6AAAAAAgJ8BE5IAAQXeKsAAAAAASUVORK5CYII=">
+                </a>
+            </div>
 
         <h2>Facultăți</h2>
         <ul class="list">
