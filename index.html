@@ -92,8 +92,6 @@
     .banner {
         text-align: center;
         overflow: hidden;
-        display: flex;
-        flex-flow: column;
         padding: 20px;
     }
 
@@ -112,7 +110,7 @@
     .list-inline {
       list-style: none;
       display: inline-block;
-      margin: 1em 0;
+      margin: 0;
       padding: 0;
       font-size: 200%;
     }
@@ -154,8 +152,9 @@
 
     .title-image {
         position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0;
+        right: 0;
+        top: 9%;
     }
 
     .title-image img {
@@ -287,37 +286,36 @@
 
     #menu {
       text-align: center;
+      padding: 0.5rem 0;
     }
-    @media screen and (min-width: 1100px) {
-      .title-image {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-      }
-    }
-    @media screen and (min-width: 1200px) {
+
+
+    @media screen and (min-width: 1000px) {
       .banner {
         background-image: url('static/img/summerjobs-revine-in-2017-lg.jpg');
-        background-size: 1920px auto;
+        background-size: cover;
+        padding-bottom: 8rem;
       }
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 960px) {
         .banner {
-          background-image: url('static/img/summerjobs-revine-in-2017-md.jpg');
-          background-size: auto 34rem;
-          background-position: center 0;
+            background-image: url('static/img/summerjobs-revine-in-2017-md.jpg');
+            background-size: cover;
+            background-position: center 60%;
         }
+
         .title-image {
-          margin-top: 2rem;
+          margin: 4rem 0;
         }
         .title-image img {
           max-width: 24rem;
         }
         .subtitle1,
         .subtitle2 {
-          font-size: 1.5rem;
+          font-size: 1.1rem;
         }
         .main-title {
-          font-size: 3rem;
+          font-size: 2rem;
         }
     }
 
@@ -325,24 +323,17 @@
         .banner {
           background-position: center -33%;
           background-size: auto 24rem;
-        }
-        .titles {
-          margin-top: 11rem;
+          padding-top: 21rem;
+          overflow: hidden;
+          position: relative;
         }
         .title-image {
-            order: 1;
             margin: 0;
-        }
-
-        .titles {
-            order: 2;
-                    
+            position: absolute;
 
         }
-        .banner {
-            width: auto;
 
-        }
+
 
 
         .list-companies{
@@ -388,7 +379,15 @@
             max-width: 260px;
         }
     }
-
+    @media (max-width: 2800px){
+        .banner{
+            padding-bottom: 22%;
+        }
+        .title-image {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
 
 </style>
 <body>
@@ -403,27 +402,27 @@
         <img src="static/img/summer-logo.png" alt="Summerjobs">
     </div>
   </header>
-
-    <nav id="menu">
+  <nav id="menu">
       <div class="page-container">
-        <ul class="list-inline">
-          <li>
-            <a href="https://junio.ro">Junio.ro</a>
-          </li><!-- removing unwanted whitespace
+          <ul class="list-inline">
+              <li>
+                  <a href="https://junio.ro">Junio.ro</a>
+              </li><!-- removing unwanted whitespace
        --><li>
-            <a href="https://junio.ro/blog/">Blog</a>
+              <a href="https://junio.ro/blog/">Blog</a>
           </li><!-- removing unwanted whitespace
        --><li id="fb">
-            <a href="https://www.facebook.com/junio.recrutare">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.73 455.73" xml:space="preserve">
+              <a href="https://www.facebook.com/junio.recrutare">
+                  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.73 455.73" xml:space="preserve">
                 <rect x="0" y="0" width="455.73" height="455.73" style="fill: #ffffff"></rect>
                 <path style="fill:#3A559F;" d="M0,0v455.73h242.704V279.691h-59.33v-71.864h59.33v-60.353c0-43.893,35.582-79.475,79.475-79.475 h62.025v64.622h-44.382c-13.947,0-25.254,11.307-25.254,25.254v49.953h68.521l-9.47,71.864h-59.051V455.73H455.73V0H0z"></path>
               </svg>
-            </a>
+              </a>
           </li>
-        </ul>
+          </ul>
       </div>
-    </nav>
+  </nav>
+
 
     <section class="section" id="thanks">
       <div class="page-container">
