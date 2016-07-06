@@ -3,9 +3,37 @@ title: Ce am învățat în 2016
 layout: default
 permalink: raport.html
 ---
-<div class="page-container">
-    <div class="section-copy leading">
-        <h2 class="section-title">Companii</h2>
+
+<header class="page-header">
+    <div class="page-container">
+        <h1 class="page-title">
+            Junio Summerjobs
+            <em>Ce am învățat în 2016</em>
+        </h1>
+        <p>Lorem ipsum</p>
+
+    </div>
+</header>
+<div class="page-body">
+    <div class="page-container">
+        <h2>Sumar</h2>
+        <dl class="summer-stats">
+            <dt>638</dt>
+            <dd>aplicări</dd>
+            <dt>523</dt>
+            <dd> studenți înscriși</dd>
+            <dt>{{ site.data.companies|size }}</dt>
+            <dd> companii</dd>
+            <dt>{{ site.data.jobs|size }}</dt>
+            <dd>joburi (6 închise)</dd>
+            <dt>2</dt>
+            <dd>orașe</dd>
+            <dt>16</dt>
+            <dd>facultăți</dd>
+        </dl>
+
+
+        <h2>Companii</h2>
         <ul class="list-inline">
             {% for COMPANY in site.data.companies %}
             {% assign companyId = COMPANY[0] %}
@@ -14,9 +42,8 @@ permalink: raport.html
                      alt="{{ company.name }} logo" style="width:auto;height:100px;"></li>
             {% endfor %}
         </ul>
-    </div>
-    <div class="section-copy leading">
-        <h2 class="section-title">Facultăți</h2>
+
+        <h2>Facultăți</h2>
         <ul class="list">
             <li>București<br>
                 <ul class="list">
@@ -38,23 +65,15 @@ permalink: raport.html
                 </ul>
             </li>
         </ul>
-    </div>
-    <div class="section-copy leading"><h2 class="section-title">Sumar</h2>
-        <p>
-        638 aplicări<br>
-        523 studenți înscriși<br>
-        {{ site.data.companies|size }} companii<br>
-        {{ site.data.jobs|size }} joburi (6 închise)<br>
-        2 orașe<br>
-        16 facultăți<br></p>
 
-    </div>
-    <div class="align-center">
-        <ul class="list-inline">
-            <li><a href="https://summer.junio.ro">Summerjobs actual</a></li>
-            <li><a href="https://junio.ro">Junio.ro</a></li>
-            <li><a href="https://www.facebook.com/junio.recrutare/?fref=ts">Facebook Junio</a></li>
-        </ul>
 
+        <div class="align-center">
+            <ul class="list-inline">
+                <li><a href="https://summer.junio.ro">Summerjobs actual</a></li>
+                <li><a href="https://junio.ro">Junio.ro</a></li>
+                <li><a href="https://www.facebook.com/junio.recrutare/?fref=ts">Facebook Junio</a></li>
+            </ul>
+
+        </div>
     </div>
 </div>
