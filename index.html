@@ -2,32 +2,79 @@
 <html lang="ro">
 
 <head>
+    <meta charset="UTF-8">
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:300&subset=latin,latin-ext' rel='stylesheet'
           type='text/css'>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <style>
     html {
-        font-size: 15px;
+      font-size: 15px;
+    }
+
+    @media (min-width: 1200px) {
+      html {
+        /*font-size: 18px;*/
+      }
     }
 
     body {
-        padding: 0;
-        margin: 0;
-        max-width: none;
-        font-family: "Work Sans";
-        font-weight: 400;
-
+      padding: 0;
+      margin: 0;
+      max-width: none;
+      font-family: "Work Sans";
+      font-weight: 400;
+      line-height: 1.5;
+      background-color: #263366;
+      
     }
 
-    section {
-        padding-bottom: 10px;
-        color: #D8D8D8;
-        max-width: 45%;
-        margin: 0 auto;
-        text-align: center;
-        vertical-align: middle;
+    .banner {
+      background: url('static/img/summerjobs-revine-in-2017-sm.jpg') center bottom no-repeat;
+      background-size: auto 100%;
+    }
 
+    hr {
+      margin: 2rem auto;
+      width: 10rem;
+      border-top: 0;
+      border-bottom: 1px solid #F4793E;
+    }
+
+    p {
+      margin: 1rem auto;
+    }
+
+    .footer {
+      text-align: center;
+    }
+
+    .mail {
+      display: inline-block;
+      color: #9EAAD9;
+    }
+    .mail svg {
+      margin: 0 auto;
+      display: block;
+      height: 2em;
+      width: auto;
+    }
+
+    .section {
+      color: #D8D8D8;
+      text-align: center;
+      vertical-align: middle;
+      padding: 2rem;
+    }
+    .companies {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .page-container {
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .titles {
@@ -43,9 +90,6 @@
     }
 
     .banner {
-        background: url('static/img/summerjobs-revine-in-2017-lg.jpg') center no-repeat;
-        background-color: #263366;
-        background-size: cover;
         text-align: center;
         overflow: hidden;
         display: flex;
@@ -61,37 +105,50 @@
         font-size: 2rem;
     }
 
-    .big-wrapper {
+    /*.big-wrapper {
         background-color: #263366;
-    }
+    }*/
 
     .list-inline {
-        margin: 0;
-        padding: 0;
-        display: inline;
-        font-size: 2rem;
-
+      list-style: none;
+      display: inline-block;
+      margin: 1em 0;
+      padding: 0;
+      font-size: 200%;
     }
 
     .list-inline li {
-        list-style-type: none;
-        display: inline-block;
-        margin-right: 15px;
-        margin-left: 15px;
-
+      display: inline-block;
+      vertical-align: middle;
+      border-right: 1px solid #485B8C;
+      /*margin-right: 15px;
+      margin-left: 15px;*/
+    }
+    .list-inline li:last-child {
+      border-right: 0;
+    }
+    #menu a {
+      display: block;
+      margin-top: -.5em;
+      margin-bottom: -.5em;
+      padding: .5em;
+    }
+    #menu svg {
+      display: block;
+      height: 1.4em;
+      width: auto;
     }
 
     .list-companies {
         margin: 0;
         padding: 0;
-        display: inline-block;
         overflow:hidden;
-        width:100%;
+        max-width: 100%;
     }
 
     .list-companies img {
-        width: 100px;
-        height: auto;
+        width: auto;
+        height: 4em;
         margin: 10px;
     }
 
@@ -102,7 +159,8 @@
     }
 
     .title-image img {
-        max-width: 70%;
+        width: 100%;
+        max-width: 42rem;
         display:inline-block;
         height: auto;
     }
@@ -115,21 +173,29 @@
         border: 0;
     }
 
+    .footer {
+      background-color: #fff;
+      overflow: hidden;
+    }
     .footer p {
         color: #000;
     }
 
-    #fb a:hover {
-        border-bottom: 0;
+
+    #thanks {
+      padding-top: 0;
+    }
+    #thanks p a {
+      display: inline-block;
+      border-bottom: 1px dashed #0D75D3;
+    }
+    #thanks p a:hover {
+      border-bottom-style: solid;
     }
 
     a {
-        color: #0D75D3;
-        text-decoration: none;
-    }
-
-    a:hover {
-        border-bottom: 1px dashed #0D75D3;
+      color: #0D75D3;
+      text-decoration: none;
     }
 
     h3, h4, h5 {
@@ -138,9 +204,7 @@
         margin: 0;
     }
 
-    .spriteairtouch, .spriteadonis-software, .spritenutristandard, .spritecodeless, .spritebearing-point,
-    .spritefordaq, .spritehoneywell, .spriteaventurio, .spriteagvision, .spriteinfo-world,
-    .spritebigstep-cloud, .spritenxp, .spriteanritsu, .spriteintegrisoft, .spritebitdefender {
+    .sprite {
         max-width: 100%;
         background-size: 100%;
         background-image: url('static/img/company-grayscale-sprites.png');
@@ -221,63 +285,65 @@
         background-size: 245.814978%;
     }
 
-    .mail a {
-        color: #9EAAD9;
-        font-size: 10px;
-        border-bottom: 0;
+    #menu {
+      text-align: center;
     }
-
-    hr {
-        width: 200px;
-        border-top: 0;
-        border-bottom: 1px solid #F4793E;
+    @media screen and (min-width: 1100px) {
+      .title-image {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
     }
-
-    .list-companies a:hover {
-        border-bottom: 0;
-
+    @media screen and (min-width: 1200px) {
+      .banner {
+        background-image: url('static/img/summerjobs-revine-in-2017-lg.jpg');
+        background-size: 1920px auto;
+      }
     }
-
-    .mail a {
-        font-size: 1rem;
-    }
-
-    .caret {
-        color: #4a5887;
-        display: inline;
-    }
-
-    .companies{
-        max-width:75%;
-    }
-    @media screen and (min-width: 1800px){
-        .banner{
-            height:800px;
-        }
-    }
-    @media screen and (min-width: 1025px) {
-        .banner {
-            max-height: 100%;
-            background-size:100% 100%;
-
-        }
-    }
-
     @media screen and (max-width: 768px) {
         .banner {
-            background-image: url('static/img/summerjobs-revine-in-2017-md.jpg');
-
+          background-image: url('static/img/summerjobs-revine-in-2017-md.jpg');
+          background-size: auto 34rem;
+          background-position: center 0;
+        }
+        .title-image {
+          margin-top: 2rem;
+        }
+        .title-image img {
+          max-width: 24rem;
+        }
+        .subtitle1,
+        .subtitle2 {
+          font-size: 1.5rem;
+        }
+        .main-title {
+          font-size: 3rem;
         }
     }
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 440px) {
         .banner {
-            background-image: url('static/img/summerjobs-revine-in-2017-sm.jpg');
-            width: auto;
-            background-position: top;
-            background-size: contain;
+          background-position: center -33%;
+          background-size: auto 24rem;
+        }
+        .titles {
+          margin-top: 11rem;
+        }
+        .title-image {
+            order: 1;
+            margin: 0;
+        }
+
+        .titles {
+            order: 2;
+                    
 
         }
+        .banner {
+            width: auto;
+
+        }
+
 
         .list-companies{
             overflow-x: scroll;
@@ -288,15 +354,7 @@
             font-size: 1.5rem;
         }
 
-        .title-image {
-            order: 1;
-        }
-
-        .titles {
-            order: 2;
-            margin-top: 60%;
-
-        }
+        
 
         .subtitle1 {
             color: #9EAAD9;
@@ -317,10 +375,7 @@
             padding-left: 20px;
             padding-right: 20px;
         }
-        #menu{
-            padding-left: 0;
-            padding-right: 0;
-        }
+        
         .subtitle1 {
             font-size: 1.1rem;
         }
@@ -338,95 +393,119 @@
 </style>
 <body>
 
-<div class="banner">
+  <header class="banner">
     <div class="titles">
         <h5 class="subtitle1">Summerjobs 2016 s-a încheiat</h5>
         <h3 class="main-title">Ne vedem în 2017!</h3>
         <h4 class="subtitle2">Să aveți o vară de neuitat!</h4>
     </div>
     <div class="title-image">
-        <img src="/static/img/summer-logo.png" alt="Summerjobs">
+        <img src="static/img/summer-logo.png" alt="Summerjobs">
     </div>
+  </header>
 
-</div>
-
-<div class="big-wrapper">
-    <section id="menu" class="section">
+    <nav id="menu">
+      <div class="page-container">
         <ul class="list-inline">
-            <li><a href="https://junio.ro">Junio.ro</a></li>
-            <div class="caret">|</div>
-            <li><a href="https://junio.ro/blog/tag/blog/">Blog</a></li>
-            <div class="caret">|</div>
-            <li id="fb"><a href="https://www.facebook.com/junio.recrutare/?fref=ts">
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.73 455.73" style="enable-background:new 0 0 455.73 455.73;width:30px;height:30px;vertical-align: middle;" xml:space="preserve"><rect x="0" y="0" width="455.73" height="455.73" style="fill: #ffffff">
-
-</rect>
-  <path style="fill:#3A559F;" d="M0,0v455.73h242.704V279.691h-59.33v-71.864h59.33v-60.353c0-43.893,35.582-79.475,79.475-79.475
-    h62.025v64.622h-44.382c-13.947,0-25.254,11.307-25.254,25.254v49.953h68.521l-9.47,71.864h-59.051V455.73H455.73V0H0z"></path></svg>
+          <li>
+            <a href="https://junio.ro">Junio.ro</a>
+          </li><!-- removing unwanted whitespace
+       --><li>
+            <a href="https://junio.ro/blog/">Blog</a>
+          </li><!-- removing unwanted whitespace
+       --><li id="fb">
+            <a href="https://www.facebook.com/junio.recrutare">
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.73 455.73" xml:space="preserve">
+                <rect x="0" y="0" width="455.73" height="455.73" style="fill: #ffffff"></rect>
+                <path style="fill:#3A559F;" d="M0,0v455.73h242.704V279.691h-59.33v-71.864h59.33v-60.353c0-43.893,35.582-79.475,79.475-79.475 h62.025v64.622h-44.382c-13.947,0-25.254,11.307-25.254,25.254v49.953h68.521l-9.47,71.864h-59.051V455.73H455.73V0H0z"></path>
+              </svg>
             </a>
-            </li>
+          </li>
         </ul>
-    </section>
+      </div>
+    </nav>
 
-    <section class="section">
-        <div class="mail">
-            <div>
-                <svg style="width:30px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 48 60" enable-background="new 0 0 48 48" xml:space="preserve"><g><g><polyline fill="none" stroke="#9EAAD9" stroke-width="2" stroke-miterlimit="10" points="35.6,13.7 47,13.7 47,45.8 1,45.8     1,13.7 12.2,13.7   "/><polyline fill="none" stroke="#9EAAD9" stroke-width="2" stroke-miterlimit="10" points="1,13.7 24,36.7 47,13.7   "/><line fill="none" stroke="#9EAAD9" stroke-width="2" stroke-miterlimit="10" x1="17.1" y1="29.7" x2="1" y2="45.8"/><line fill="none" stroke="#9EAAD9" stroke-width="2" stroke-miterlimit="10" x1="47" y1="45.8" x2="30.9" y2="29.7"/></g><g><path fill="none" stroke="#9EAAD9" stroke-width="2" stroke-miterlimit="10" d="M28.1,8.2c0,0-2.5-0.7-5.6,0.7    c-2.7,1.2-6.7,5.3-4.1,9c1.8,2.5,6.5,1,8.4-2.7c0.2-0.3,0.3-0.6,0.4-0.9L28.1,8.2z"/><path fill="none" stroke="#9EAAD9" stroke-width="2" stroke-miterlimit="10" d="M27.2,14.1c-1,4.4,6.3,8.6,7.7,0.3    c1.4-8.2-4.4-12.3-10.2-12.3c-3.9,0-11.8,2.6-11.8,13.2c0,9.2,11.1,11.8,15.5,8.3"/></g></g><text x="0" y="63" fill="#9EAAD9" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Creative Stall</text><text x="0" y="68" fill="#9EAAD9" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg>
-            </div>
-            <a class="large" href="mailto:summer@junio.ro">summer@junio.ro</a>
-        </div>
-    </section>
-    <hr>
-    <section class="section">
+    <section class="section" id="thanks">
+      <div class="page-container">
+        <a class="mail" href="mailto:summer@junio.ro">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 48 60" enable-background="new 0 0 48 48" xml:space="preserve">
+            <g>
+              <polyline fill="none" stroke="#9EAAD9" stroke-width="2" stroke-miterlimit="10" points="35.6,13.7 47,13.7 47,45.8 1,45.8     1,13.7 12.2,13.7   " />
+              <polyline fill="none" stroke="#9EAAD9" stroke-width="2" stroke-miterlimit="10" points="1,13.7 24,36.7 47,13.7   " />
+              <line fill="none" stroke="#9EAAD9" stroke-width="2" stroke-miterlimit="10" x1="17.1" y1="29.7" x2="1" y2="45.8" />
+              <line fill="none" stroke="#9EAAD9" stroke-width="2" stroke-miterlimit="10" x1="47" y1="45.8" x2="30.9" y2="29.7" />
+            </g>
+            <g>
+              <path fill="none" stroke="#9EAAD9" stroke-width="2" stroke-miterlimit="10" d="M28.1,8.2c0,0-2.5-0.7-5.6,0.7    c-2.7,1.2-6.7,5.3-4.1,9c1.8,2.5,6.5,1,8.4-2.7c0.2-0.3,0.3-0.6,0.4-0.9L28.1,8.2z" />
+              <path fill="none" stroke="#9EAAD9" stroke-width="2" stroke-miterlimit="10" d="M27.2,14.1c-1,4.4,6.3,8.6,7.7,0.3    c1.4-8.2-4.4-12.3-10.2-12.3c-3.9,0-11.8,2.6-11.8,13.2c0,9.2,11.1,11.8,15.5,8.3" />
+            </g>
+          </svg>
+          summer@junio.ro
+        </a>
+
+        <hr>
+
         <p>Feedbackul pe care l-am primit anul acesta și experiențele pe care le-ați împărtășit cu noi ne-au făcut mare
             bucurie - <span style="color: #F4793E">mulțumim tuturor celor care ne-au contactat.</span></p>
+        
         <hr>
+
         <p>Summerjobs a fost un bun prilej de învățare pentru noi și am decis să facem <a
                 href="raport.html">concluziile</a> publice.</p>
         <p><a href="https://summer.junio.ro">Summerjobs 2016</a> este în continuare vizibil ca referință</p>
-    </section>
-</div>
-<div class="footer">
-    <section class="section">
-        <p>Mulțumim tuturor partenerilor și companiilor care s-au implicat și au făcut acest eveniment posibil</p>
-</section>
-    <section class="section companies">
-        <div class="list-companies">
-            <a rel="external" target="_blank" href="https://www.airtouchmedia.com/"><img class="spriteairtouch" alt=""
-                                                                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi4AAACnAQMAAAAMpEWlAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAACFJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAcGkuUQAB0TEtYAAAAABJRU5ErkJggg=="></a>
-            <a rel="external" target="_blank" href="http://adonissoft.com/"><img class="spriteadonis-software" alt=""
-                                                                                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi4AAACnAQMAAAAMpEWlAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAACFJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAcGkuUQAB0TEtYAAAAABJRU5ErkJggg=="></a>
-            <a rel="external" target="_blank" href="http://www.nutristandard.com/"><img class="spritenutristandard"
-                                                                                        alt=""
-                                                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi4AAACnAQMAAAAMpEWlAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAACFJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAcGkuUQAB0TEtYAAAAABJRU5ErkJggg=="></a>
-            <a rel="external" target="_blank" href="http://codeless.com/en/"><img class="spritecodeless" alt=""
-                                                                                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaUAAACnAQMAAACLo9FSAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB9JREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAwKMBIzoAAfNglnIAAAAASUVORK5CYII="></a>
-            <a rel="external" target="_blank" href="http://www.bearingpoint.com/en-us/"><img class="spritebearing-point"
-                                                                                             alt=""
-                                                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAACnAQMAAAAFeZguAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB1JREFUeNrtwQEBAAAAgJD+r+4ICgAAAAAAAACABiFFAAFBUlaJAAAAAElFTkSuQmCC"></a>
-            <a rel="external" target="_blank" href="http://www.fordaq.com/"><img class="spritefordaq" alt=""
-                                                                                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAACnAQMAAADHZR7vAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB9JREFUeNrtwQENAAAAwqD3T20ON6AAAAAAAAAAgFMDH/cAAV1nK58AAAAASUVORK5CYII="></a>
-            <a rel="external" target="_blank" href="http://www.honeywell.com/"><img class="spritehoneywell" alt=""
-                                                                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWsAAACnAQMAAADt1e9AAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20LL6AAAAAAAAAA4GgeqQAB5jKbtgAAAABJRU5ErkJggg=="></a>
-            <a rel="external" target="_blank" href="https://www.aventurio.ro/"><img class="spriteaventurio" alt=""
-                                                                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUEAAACnAQMAAAC1qnxZAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20Gf6AAAAAAAACAzwAbZgABG2J9DwAAAABJRU5ErkJggg=="></a>
-            <a rel="external" target="_blank" href="https://www.agvision.ro/"> <img class="spriteagvision" alt=""
-                                                                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT0AAACnAQMAAABZ3xlPAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAADgxgAavwAB0bj46QAAAABJRU5ErkJggg=="></a>
-            <a rel="external" target="_blank" href="http://www.infoworld.ro/"><img class="spriteinfo-world" alt=""
-                                                                                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT0AAACnAQMAAABZ3xlPAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAADgxgAavwAB0bj46QAAAABJRU5ErkJggg=="></a>
-            <a rel="external" target="_blank" href="http://bigstep.com/"> <img class="spritebigstep-cloud" alt=""
-                                                                               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATsAAACnAQMAAABUwWkIAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAADgxgAavwAB0bj46QAAAABJRU5ErkJggg=="></a>
-            <a rel="external" target="_blank" href="http://www.nxp.com/"><img class="spritenxp" alt=""
-                                                                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACnAQMAAAA4xzsNAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB1JREFUeNrtwQENAAAAwqD3T20ON6AAAAAAAODEABbVAAHR8l87AAAAAElFTkSuQmCC"></a>
-            <a rel="external" target="_blank" href="https://www.anritsu.com/en-US/"><img class="spriteanritsu" alt=""
-                                                                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQIAAACnAQMAAADAJ8D6AAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABpJREFUeNrtwQEBAAAAgJD+r+4ICgAAAAAABhYuAAGKXEO6AAAAAElFTkSuQmCC"></a>
-            <a rel="external" target="_blank" href="http://www.integrisoft.ro/"><img class="spriteintegrisoft" alt=""
-                                                                                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAACnAQMAAAAGxwNqAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABxJREFUeNrtwQENAAAAwqD3T20ON6AAAAAAAD4NFOAAAW8ZgxAAAAAASUVORK5CYII="></a>
-            <a rel="external" target="_blank" href="http://www.bitdefender.ro/"><img class="spritebitdefender" alt=""
-                                                                                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOMAAACnAQMAAADZiXl1AAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABxJREFUeNrtwTEBAAAAwqD1T20LL6AAAAAAgJ8BE5IAAQXeKsAAAAAASUVORK5CYII="></a>
+      </div>
+  </section>
 
-        </div>
-    </section>
+  <footer class="footer">
+    <p>Mulțumim tuturor partenerilor și companiilor care s-au implicat și au făcut acest eveniment posibil</p>
+    <div class="list-companies">
+      <a rel="external" target="_blank" href="https://www.airtouchmedia.com/">
+          <img class="sprite spriteairtouch" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi4AAACnAQMAAAAMpEWlAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAACFJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAcGkuUQAB0TEtYAAAAABJRU5ErkJggg==">
+      </a>
+      <a rel="external" target="_blank" href="http://adonissoft.com/">
+          <img class="sprite spriteadonis-software" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi4AAACnAQMAAAAMpEWlAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAACFJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAcGkuUQAB0TEtYAAAAABJRU5ErkJggg==">
+      </a>
+      <a rel="external" target="_blank" href="http://www.nutristandard.com/">
+          <img class="sprite spritenutristandard" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAi4AAACnAQMAAAAMpEWlAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAACFJREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAAAAAcGkuUQAB0TEtYAAAAABJRU5ErkJggg==">
+      </a>
+      <a rel="external" target="_blank" href="http://codeless.com/en/">
+          <img class="sprite spritecodeless" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAaUAAACnAQMAAACLo9FSAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB9JREFUeNrtwQEBAAAAgiD/r25IQAEAAAAAAAAAwKMBIzoAAfNglnIAAAAASUVORK5CYII=">
+      </a>
+      <a rel="external" target="_blank" href="http://www.bearingpoint.com/en-us/">
+          <img class="sprite spritebearing-point" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAACnAQMAAAAFeZguAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB1JREFUeNrtwQEBAAAAgJD+r+4ICgAAAAAAAACABiFFAAFBUlaJAAAAAElFTkSuQmCC">
+      </a>
+      <a rel="external" target="_blank" href="http://www.fordaq.com/">
+          <img class="sprite spritefordaq" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAX0AAACnAQMAAADHZR7vAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB9JREFUeNrtwQENAAAAwqD3T20ON6AAAAAAAAAAgFMDH/cAAV1nK58AAAAASUVORK5CYII=">
+      </a>
+      <a rel="external" target="_blank" href="http://www.honeywell.com/">
+          <img class="sprite spritehoneywell" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWsAAACnAQMAAADt1e9AAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20LL6AAAAAAAAAA4GgeqQAB5jKbtgAAAABJRU5ErkJggg==">
+      </a>
+      <a rel="external" target="_blank" href="https://www.aventurio.ro/">
+          <img class="sprite spriteaventurio" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUEAAACnAQMAAAC1qnxZAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20Gf6AAAAAAAACAzwAbZgABG2J9DwAAAABJRU5ErkJggg==">
+      </a>
+      <a rel="external" target="_blank" href="https://www.agvision.ro/">
+          <img class="sprite spriteagvision" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT0AAACnAQMAAABZ3xlPAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAADgxgAavwAB0bj46QAAAABJRU5ErkJggg==">
+      </a>
+      <a rel="external" target="_blank" href="http://www.infoworld.ro/">
+          <img class="sprite spriteinfo-world" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT0AAACnAQMAAABZ3xlPAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAADgxgAavwAB0bj46QAAAABJRU5ErkJggg==">
+      </a>
+      <a rel="external" target="_blank" href="http://bigstep.com/">
+          <img class="sprite spritebigstep-cloud" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATsAAACnAQMAAABUwWkIAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB5JREFUeNrtwTEBAAAAwqD1T20ND6AAAAAAAADgxgAavwAB0bj46QAAAABJRU5ErkJggg==">
+      </a>
+      <a rel="external" target="_blank" href="http://www.nxp.com/">
+          <img class="sprite spritenxp" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQkAAACnAQMAAAA4xzsNAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAB1JREFUeNrtwQENAAAAwqD3T20ON6AAAAAAAODEABbVAAHR8l87AAAAAElFTkSuQmCC">
+      </a>
+      <a rel="external" target="_blank" href="https://www.anritsu.com/en-US/">
+          <img class="sprite spriteanritsu" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQIAAACnAQMAAADAJ8D6AAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABpJREFUeNrtwQEBAAAAgJD+r+4ICgAAAAAABhYuAAGKXEO6AAAAAElFTkSuQmCC">
+      </a>
+      <a rel="external" target="_blank" href="http://www.integrisoft.ro/">
+          <img class="sprite spriteintegrisoft" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAACnAQMAAAAGxwNqAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABxJREFUeNrtwQENAAAAwqD3T20ON6AAAAAAAD4NFOAAAW8ZgxAAAAAASUVORK5CYII=">
+      </a>
+      <a rel="external" target="_blank" href="http://www.bitdefender.ro/">
+          <img class="sprite spritebitdefender" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOMAAACnAQMAAADZiXl1AAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABxJREFUeNrtwTEBAAAAwqD1T20LL6AAAAAAgJ8BE5IAAQXeKsAAAAAASUVORK5CYII=">
+      </a>
+    </div>
+  </footer>
 </div>
 </body>
 </html>
