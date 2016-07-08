@@ -98,16 +98,25 @@ permalink: 'raport.html'
     margin: 10px;
   }
 </style>
+
 <header class="page-header">
   <div class="page-container">
     <h1 class="page-title">
       Junio Summerjobs
       <em>Ce am învățat în 2016</em>
     </h1>
-    <p>Lorem ipsum</p>
+    <p>Am decis sa plecam in vacanta de vara 2016. O buna oportunitate pentru noi sa ne relaxam astfel incat experientele acumulate in urma planificarii si organizarii evenimentului SummerJobs 2016 sa se sedimenteze.</p>
 
+    <nav>
+      <ul class="list-inline">
+        <li><a href="https://summer.junio.ro">Summerjobs actual</a></li>
+        <li><a href="https://junio.ro">Junio.ro</a></li>
+        <li><a href="https://www.facebook.com/junio.recrutare/?fref=ts">Facebook Junio</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
+
 <div class="page-body">
   <div class="page-container">
     <h2>Sumar</h2>
@@ -119,7 +128,7 @@ permalink: 'raport.html'
       <dt>{{ site.data.companies|size }}</dt>
       <dd> companii</dd>
       <dt>{{ site.data.jobs|size }}</dt>
-      <dd>joburi (6 închise)</dd>
+      <dd>joburi</dd>
       <dt>2</dt>
       <dd>orașe</dd>
       <dt>16</dt>
@@ -177,36 +186,156 @@ permalink: 'raport.html'
       </div>
 
     <h2>Facultăți</h2>
-    <ul class="list">
-      <li>București<br>
-        <ul class="list">
+
+    <div class="faculties">
+      <div class="faculties-by-city">
+
+        <h5>București</h5>
+        <ul class="list-inline leading">
           <li>
-            Universitatea Politehnică din București
+            <a href="http://www.upb.ro/" rel="external" target="_blank"
+               title="Universitatea Politehnică din București">
+              <span class="sprite-universities sprite-upb"></span>
+            </a>
           </li>
           <li>
-            Academia de Studii Economice din București
+            <a href="http://www.ase.ro/" rel="external" target="_blank"
+               title="Academia de Studii Economice din București">
+              <span class="sprite-universities sprite-ase"></span>
+            </a>
           </li>
           <li>
-            Universitatea din București
+            <a href="http://unibuc.ro/" rel="external" target="_blank"
+               title="Universitatea din București">
+              <span class="sprite-universities sprite-unibuc"></span>
+            </a>
           </li>
         </ul>
-      </li>
-      <li>Iași<br>
-        <ul class="list">
-          <li>Universitatea Alexandru Ioan Cuza din Iași</li>
-          <li>Universitatea Tehnică Gh. Asachi din Iași</li>
+
+        <ul class="list-faculties">
+          <li>
+            <a href="http://acs.pub.ro//" rel="external" target="_blank">
+              Automatică și Calculatoare
+            </a>
+          </li>
+          <li>
+            <a href="http://www.electronica.pub.ro/" rel="external" target="_blank">
+              Electronică, Telecomunicații și Tehnologia Informației
+            </a>
+          </li>
+          <li>
+            <a href="http://ing.pub.ro/" rel="external" target="_blank">
+              Inginerie în Limbi Străine
+            </a>
+          </li>
+          <li>
+            <a href="http://www.faima.pub.ro/" rel="external" target="_blank">
+              Antreprenoriat, Ingineria și Managementul Afacerilor
+            </a>
+          </li>
+          <li>
+            <a href="http://www.csie.ase.ro/" rel="external" target="_blank">
+              Cibernetică, Statistică și Informatică Economică
+            </a>
+          </li>
+          <li>
+            <a href="http://www.cig.ase.ro/" rel="external" target="_blank">
+              Contabilitate și Informatică de gestiune
+            </a>
+          </li>
+          <li>
+            <a href="http://www.rei.ase.ro/" rel="external" target="_blank">
+              Relații Economice Internaționale
+            </a>
+          </li>
+          <li>
+            <a href="http://fmi.unibuc.ro/" rel="external" target="_blank">
+              Matematică și Informatică
+            </a>
+          </li>
+          <li>
+            <a href="http://www.istorie.unibuc.ro/" rel="external" target="_blank">
+              Istorie
+            </a>
+          </li>
         </ul>
-      </li>
-    </ul>
 
+      </div>
 
-    <div class="align-center">
-      <ul class="list-inline">
-        <li><a href="https://summer.junio.ro">Summerjobs actual</a></li>
-        <li><a href="https://junio.ro">Junio.ro</a></li>
-        <li><a href="https://www.facebook.com/junio.recrutare/?fref=ts">Facebook Junio</a></li>
-      </ul>
+      <div class="faculties-by-city">
+        <h5>Iași</h5>
 
+        <ul class="list-inline leading">
+          <li>
+            <a href="http://www.uaic.ro/" rel="external" target="_blank"
+               title="Universitatea Alexandru Ioan Cuza din Iași">
+              <span class="sprite-universities sprite-uaic"></span>
+            </a>
+          </li>
+          <li>
+            <a href="http://www.tuiasi.ro/" rel="external" target="_blank"
+               title="Universitatea Tehnică Gh. Asachi din Iași">
+              <span class="sprite-universities sprite-tuiasi"></span>
+            </a>
+          </li>
+        </ul>
+
+        <ul class="list-faculties">
+          <li>
+            <a href="http://www.info.uaic.ro/" rel="external" target="_blank">
+              Informatică
+            </a>
+          </li>
+          <li>
+            <a href="http://www.feaa.uaic.ro/" rel="external" target="_blank">
+              Economie și Administrarea Afacerilor
+            </a>
+          </li>
+          <li>
+            <a href="http://www.bio.uaic.ro/" rel="external" target="_blank">
+              Biologie
+            </a>
+          </li>
+          <li>
+            <a href="http://www.ace.tuiasi.ro/" rel="external" target="_blank">
+              Automatică și Calculatoare
+            </a>
+          </li>
+        </ul>
+
+      </div>
     </div>
+
+    <style>
+      .page-header {
+        padding-bottom: 0;
+      }
+      .page-body {
+        padding-top: 0;
+      }
+      h2 {
+        margin-top: 2rem;
+      }
+      .list-faculties li {
+        margin-bottom: .5rem; 
+      }
+      @media (min-width: 960px) {
+        .faculties {
+          margin: 0 -.75rem;
+        }
+        .faculties::after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+        .faculties-by-city {
+          box-sizing: border-box;
+          float: left;
+          width: 50%;
+          padding: 0 .75rem;
+        }
+      }
+    </style>
+
   </div>
 </div>
