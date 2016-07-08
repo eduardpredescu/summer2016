@@ -234,3 +234,26 @@ blockquote {
     clear: both;
   }
 }
+
+#site-message {
+  color: #fff;
+  max-width: none;
+  text-align: center;
+  margin: 0;
+  background-color: #ef8150;
+  padding: 1rem;
+  a {
+    color: inherit;
+    border-bottom: 1px dashed;
+    &:hover {
+      border-bottom-style: solid;
+    }
+  }
+  @media @screen-lg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+}
